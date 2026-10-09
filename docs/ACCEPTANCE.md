@@ -59,3 +59,11 @@ MCP、初始化脚本和运行时归档未修改，归档 SHA-256 保持本报�
 ## 公开 CI 可复现性修正
 
 首次 GitHub Actions 回归暴露了 CAD 测试缺少随包夹具、以及长路径测试依赖 Windows 策略的问题。CAD 回归现使用明确标注的公开合成模型和冻结 IR，121 项测试均执行并通过；长路径用例在两种 Windows 策略下均检查证据哈希和保留行为。修改仅涉及测试及来源记录，求解执行代码保持一致；运行时归档已重新构建，当前哈希以 runtime-release.json 和 acceptance.json 为准。
+
+## GitHub 公开发布验证（2026-10-09）
+
+公开源提交 `097bffac9f87126e9341f29b2853a4d09c0e7eb6` 的 [GitHub Actions](https://github.com/LeeHongji/cst-skills/actions/runs/37891251788) 已通过：五套测试合计 **789 项通过，0 失败、0 错误、0 跳过**；重新构建的运行时归档与提交中的归档哈希一致，官方 Skills CLI 复制安装检查通过。
+
+另在新的工作区直接通过 `skills add LeeHongji/cst-skills` 安装：Codex 和 Claude Code 各十个 Skills，96 个复制资源逐字节核对一致；从复制后的入口部署全新版本运行时，依赖检查、初始化、doctor 和两个 MCP 的 stdio 协议检查通过。当前归档 SHA-256 为 `3f81f7ee5d2e08b91b52337622b6084eb33f9223fa4c65cd5de076ea9a5eb8dc`。
+
+发布为 `v0.1.0` 公开预览版本。上述远程测试绑定到明确的源提交；随后补充的发布记录和 README 状态链接属于文档修改。真实 CST 证据沿用本报告记录的实机闭环，没有在 GitHub 托管机器上运行 CST。真实 Agent 客户端加载、人工批准交互及未覆盖适配器仍按前述清单验收。

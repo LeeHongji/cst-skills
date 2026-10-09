@@ -1,5 +1,7 @@
 # CST Skills
 
+[![Verify distribution](https://github.com/LeeHongji/cst-skills/actions/workflows/verify.yml/badge.svg)](https://github.com/LeeHongji/cst-skills/actions/workflows/verify.yml) · [MIT](LICENSE) · [Releases](https://github.com/LeeHongji/cst-skills/releases)
+
 [English](README.en.md) | 简体中文
 
 **面向微波研究的 Agent 工具包：从理论设计、模型审查和 CST 仿真，到优化、结果归档与经验复用。**

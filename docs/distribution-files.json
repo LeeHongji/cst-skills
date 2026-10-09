@@ -1319,13 +1319,13 @@
     },
     {
       "path": "README.en.md",
-      "bytes": 11312,
-      "sha256": "3d58e847a17ed7e6caddc1d88bcc686f6a8f0603e11800c5ffd86c069ce408fd"
+      "bytes": 11570,
+      "sha256": "5ed5f82c69d77e96740ed217bde0720581db2b815ab8620eafe9d0cd1ff40b01"
     },
     {
       "path": "README.md",
-      "bytes": 8691,
-      "sha256": "ced3e2498d5498532d4033eaa9b8018309d536bafdbe6d9b55e38f7490e427c2"
+      "bytes": 8949,
+      "sha256": "1e77be1e99f6425ba444a4d0cb2ea8dfb4069c9c17e76ab92deda58a480fca72"
     },
     {
       "path": "THIRD_PARTY_NOTICES",
@@ -1449,8 +1449,8 @@
     },
     {
       "path": "docs/ACCEPTANCE.md",
-      "bytes": 6708,
-      "sha256": "99164aae9808756c34af7a86d0c4d99c408868531e8ed25dae6e1f133cf3168b"
+      "bytes": 7842,
+      "sha256": "10a5054ad4057980d79f134743eda5ee9c35cdc4e8de66d4fd3e2b28b95a1e84"
     },
     {
       "path": "docs/AGENT_SETUP.md",
@@ -1489,8 +1489,8 @@
     },
     {
       "path": "docs/acceptance.json",
-      "bytes": 7800,
-      "sha256": "a60fc53ddbcb10d729c1816958750fe74cf9254232deff1a9456c47493d35ba3"
+      "bytes": 8622,
+      "sha256": "3a87e43a2160c368f52d2aa75695a7ccffc54d9f38c07559b0cd30052f75827e"
     },
     {
       "path": "docs/source-adaptations.json",

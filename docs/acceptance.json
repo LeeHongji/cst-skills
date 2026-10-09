@@ -2,7 +2,7 @@
   "schema_version": 1,
   "version": "0.1.0",
   "date": "2026-10-09",
-  "delivery_status": "awaiting-user-acceptance",
+  "delivery_status": "published-preview-awaiting-user-acceptance",
   "release_sha256": "3f81f7ee5d2e08b91b52337622b6084eb33f9223fa4c65cd5de076ea9a5eb8dc",
   "runtime_files": 304,
   "regression": [
@@ -211,8 +211,26 @@
   "pending": [
     "User final acceptance",
     "Codex project trust/reload and actual client tool/approval interaction",
-    "Claude Code not installed: actual client load and human elicitation",
-    "Remote CI verification of public source"
+    "Claude Code not installed: actual client load and human elicitation"
   ],
-  "scope_limit": "Specific two-port TD/Hex lowpass case; not all CST solvers, Eigenmode/field/far-field or arbitrary model adapters"
+  "scope_limit": "Specific two-port TD/Hex lowpass case; not all CST solvers, Eigenmode/field/far-field or arbitrary model adapters",
+  "publication": {
+    "repository": "https://github.com/LeeHongji/cst-skills",
+    "visibility": "public",
+    "source_commit": "097bffac9f87126e9341f29b2853a4d09c0e7eb6",
+    "official_github_copy_install": "pass-for-codex-and-claude-code",
+    "copied_runtime_sha256": "3f81f7ee5d2e08b91b52337622b6084eb33f9223fa4c65cd5de076ea9a5eb8dc",
+    "workspace_initialization": "pass",
+    "background_mcp_protocol": "pass-3-execution-tools-and-12-brain-tools",
+    "remote_ci": {
+      "conclusion": "success",
+      "commit": "097bffac9f87126e9341f29b2853a4d09c0e7eb6",
+      "url": "https://github.com/LeeHongji/cst-skills/actions/runs/37891251788",
+      "tests": 789,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "note": "Client loading/approval and solver coverage limits remain separately documented."
+  }
 }

@@ -1,5 +1,7 @@
 # CST Skills
 
+[![Verify distribution](https://github.com/LeeHongji/cst-skills/actions/workflows/verify.yml/badge.svg)](https://github.com/LeeHongji/cst-skills/actions/workflows/verify.yml) · [MIT](LICENSE) · [Releases](https://github.com/LeeHongji/cst-skills/releases)
+
 English | [简体中文](README.md)
 
 **An Agent toolkit for microwave research: from theory, CAD review, and CST simulation to optimization, evidence archiving, and reusable engineering knowledge.**
