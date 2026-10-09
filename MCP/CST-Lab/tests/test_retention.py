@@ -292,7 +292,10 @@ def test_index_hashes_evidence_beyond_the_windows_path_limit(tmp_path: Path) -> 
     long_path(deep).mkdir(parents=True, exist_ok=True)
     long_path(target).write_text("! touchstone\n", encoding="utf-8")
     assert len(str(target)) > 260
-    assert not target.is_file(), "precondition: plain pathlib cannot see this file"
+    # Windows hosts may enable long paths globally. The catalog must preserve
+    # and hash this evidence in either configuration; invisibility through plain
+    # pathlib is not a valid portable precondition.
+    assert long_path(target).is_file()
 
     stats = ops.index_artifacts()["stats"]
     assert stats["hash_errors"] == 0, "long paths must not surface as hash errors"

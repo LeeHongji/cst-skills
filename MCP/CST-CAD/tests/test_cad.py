@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import copy
 import json
-import subprocess
 import sys
 from pathlib import Path
 
@@ -14,19 +13,9 @@ sys.path.insert(0, str(REPO_ROOT / "MCP" / "CST-CAD" / "src"))
 from cst_cad import drc, emit_vba, ir  # noqa: E402
 from cst_cad.dsl import Expr, ModelBuilder, as_expr  # noqa: E402
 
-FIG15_DESIGN = (
-    REPO_ROOT
-    / "MCP"
-    / "CST-Lab"
-    / "tests"
-    / "fixtures"
-    / "dual-mode-open-loop-filters"
-    / "designs"
-    / "fig15-filter-d"
-)
-FIG15_IR = FIG15_DESIGN / "attempts" / "a01-paper-ideal" / "geometry-ir.json"
-FIG15_MODEL = FIG15_DESIGN / "model.py"
-FIG15_ZERO_REGRESSION = FIG15_DESIGN / "zero_regression.py"
+PUBLIC_CAD_DESIGN = Path(__file__).parent / "fixtures" / "public-cad"
+PUBLIC_CAD_IR = PUBLIC_CAD_DESIGN / "geometry-ir.json"
+PUBLIC_CAD_MODEL = PUBLIC_CAD_DESIGN / "model.py"
 
 
 # --------------------------------------------------------------------- fixtures
@@ -64,41 +53,39 @@ def two_net_model(gap: float = 0.5, width: float = 0.4, bridge: bool = False, sp
 
 
 @pytest.fixture(scope="module")
-def fig15() -> dict:
-    if not FIG15_IR.exists():
-        pytest.skip("fig15 IR has not been built yet")
-    return ir.read(FIG15_IR)
+def cad_fixture() -> dict:
+    return ir.read(PUBLIC_CAD_IR)
 
 
 # ------------------------------------------------------------- IR canonical form
 
 
-def test_intent_id_is_stable_across_key_and_declaration_order(fig15: dict) -> None:
-    shuffled = copy.deepcopy(fig15)
+def test_intent_id_is_stable_across_key_and_declaration_order(cad_fixture: dict) -> None:
+    shuffled = copy.deepcopy(cad_fixture)
     shuffled["nets"] = list(reversed(shuffled["nets"]))
     shuffled["parameters"] = list(reversed(shuffled["parameters"]))
     for net in shuffled["nets"]:
         net["solids"] = list(reversed(net["solids"]))
-    assert ir.model_intent_id(shuffled) == ir.model_intent_id(fig15)
+    assert ir.model_intent_id(shuffled) == ir.model_intent_id(cad_fixture)
 
 
-def test_intent_id_ignores_float_noise_below_resolution(fig15: dict) -> None:
-    noisy = copy.deepcopy(fig15)
+def test_intent_id_ignores_float_noise_below_resolution(cad_fixture: dict) -> None:
+    noisy = copy.deepcopy(cad_fixture)
     for net in noisy["nets"]:
         for solid in net["solids"]:
             if solid["kind"] == "box":
                 solid["box"]["x0"] += 1e-13
-    assert ir.model_intent_id(noisy) == ir.model_intent_id(fig15)
+    assert ir.model_intent_id(noisy) == ir.model_intent_id(cad_fixture)
 
 
-def test_intent_id_changes_when_a_real_dimension_moves(fig15: dict) -> None:
-    moved = copy.deepcopy(fig15)
+def test_intent_id_changes_when_a_real_dimension_moves(cad_fixture: dict) -> None:
+    moved = copy.deepcopy(cad_fixture)
     moved["nets"][0]["solids"][0]["box"]["x0"] += 0.001
-    assert ir.model_intent_id(moved) != ir.model_intent_id(fig15)
+    assert ir.model_intent_id(moved) != ir.model_intent_id(cad_fixture)
 
 
-def test_intent_id_ignores_metadata_and_analysis_setup(fig15: dict) -> None:
-    rebranded = copy.deepcopy(fig15)
+def test_intent_id_ignores_metadata_and_analysis_setup(cad_fixture: dict) -> None:
+    rebranded = copy.deepcopy(cad_fixture)
     rebranded["title"] = "a completely different title"
     rebranded["description"] = None
     rebranded["source"] = {"paper": "someone else"}
@@ -106,15 +93,15 @@ def test_intent_id_ignores_metadata_and_analysis_setup(fig15: dict) -> None:
     rebranded["simulation"]["frequency"]["max"] = 99.0
     rebranded["simulation"]["convergence"]["max_passes"] = 1
     rebranded["simulation"]["monitors"] = []
-    assert ir.model_intent_id(rebranded) == ir.model_intent_id(fig15)
+    assert ir.model_intent_id(rebranded) == ir.model_intent_id(cad_fixture)
 
 
-def test_intent_id_treats_absent_and_null_identically(fig15: dict) -> None:
-    with_nulls = copy.deepcopy(fig15)
+def test_intent_id_treats_absent_and_null_identically(cad_fixture: dict) -> None:
+    with_nulls = copy.deepcopy(cad_fixture)
     for parameter in with_nulls["parameters"]:
         parameter.setdefault("description", None)
         parameter.setdefault("min", None)
-    assert ir.model_intent_id(with_nulls) == ir.model_intent_id(fig15)
+    assert ir.model_intent_id(with_nulls) == ir.model_intent_id(cad_fixture)
 
 
 def test_canonical_number_collapses_accumulated_noise() -> None:
@@ -130,8 +117,8 @@ def test_canonical_number_rejects_non_finite() -> None:
         ir.canonical_number(float("nan"))
 
 
-def test_stamp_is_idempotent(fig15: dict) -> None:
-    once = ir.stamp(fig15)
+def test_stamp_is_idempotent(cad_fixture: dict) -> None:
+    once = ir.stamp(cad_fixture)
     assert ir.stamp(once)["model_intent_id"] == once["model_intent_id"]
 
 
@@ -168,35 +155,35 @@ def _perturb_dimensions(document: dict, scale: float = 1.37) -> dict:
     }
 
 
-def test_topology_hash_survives_every_dimension_changing(fig15: dict) -> None:
-    moved = _perturb_dimensions(fig15)
-    assert ir.topology_hash(moved) == ir.topology_hash(fig15)
-    assert ir.model_intent_id(moved) != ir.model_intent_id(fig15)
+def test_topology_hash_survives_every_dimension_changing(cad_fixture: dict) -> None:
+    moved = _perturb_dimensions(cad_fixture)
+    assert ir.topology_hash(moved) == ir.topology_hash(cad_fixture)
+    assert ir.model_intent_id(moved) != ir.model_intent_id(cad_fixture)
 
 
-def test_topology_hash_survives_the_documented_parameter_nudge(fig15: dict) -> None:
+def test_topology_hash_survives_the_documented_parameter_nudge(cad_fixture: dict) -> None:
     """The plan's worked example: a coupling gap moves 5 um and iteration continues."""
-    nudged = copy.deepcopy(fig15)
+    nudged = copy.deepcopy(cad_fixture)
     for parameter in nudged["parameters"]:
-        if parameter["name"] == "r2_feed_gap":
+        if parameter["name"] == "coupling_gap":
             parameter["value"] = round(float(parameter["value"]) + 0.005, 6)
             break
     else:  # pragma: no cover - guards against a silent fixture change
-        pytest.fail("fig15 no longer declares r2_feed_gap")
-    assert ir.topology_hash(nudged) == ir.topology_hash(fig15)
+        pytest.fail("cad_fixture no longer declares coupling_gap")
+    assert ir.topology_hash(nudged) == ir.topology_hash(cad_fixture)
 
 
-def test_topology_hash_ignores_declaration_and_key_order(fig15: dict) -> None:
-    shuffled = copy.deepcopy(fig15)
+def test_topology_hash_ignores_declaration_and_key_order(cad_fixture: dict) -> None:
+    shuffled = copy.deepcopy(cad_fixture)
     shuffled["nets"] = list(reversed(shuffled["nets"]))
     for net in shuffled["nets"]:
         net["solids"] = list(reversed(net.get("solids", [])))
     shuffled["parameters"] = list(reversed(shuffled["parameters"]))
-    assert ir.topology_hash(shuffled) == ir.topology_hash(fig15)
+    assert ir.topology_hash(shuffled) == ir.topology_hash(cad_fixture)
 
 
-def test_topology_hash_ignores_annotations(fig15: dict) -> None:
-    relabelled = copy.deepcopy(fig15)
+def test_topology_hash_ignores_annotations(cad_fixture: dict) -> None:
+    relabelled = copy.deepcopy(cad_fixture)
     for parameter in relabelled["parameters"]:
         parameter["provenance"] = "optimized"
         parameter["description"] = "rewritten"
@@ -204,21 +191,21 @@ def test_topology_hash_ignores_annotations(fig15: dict) -> None:
     for material in relabelled["materials"]:
         material["note"] = "rewritten"
         material["color"] = [1, 2, 3]
-    assert ir.topology_hash(relabelled) == ir.topology_hash(fig15)
+    assert ir.topology_hash(relabelled) == ir.topology_hash(cad_fixture)
 
 
-def test_topology_hash_ignores_mesh_density(fig15: dict) -> None:
+def test_topology_hash_ignores_mesh_density(cad_fixture: dict) -> None:
     """Mesh is how we look at the device, not which device it is."""
-    refined = copy.deepcopy(fig15)
+    refined = copy.deepcopy(cad_fixture)
     refined["mesh_hints"]["steps_per_wavelength_near"] = 30.0
-    assert ir.topology_hash(refined) == ir.topology_hash(fig15)
-    assert ir.model_intent_id(refined) != ir.model_intent_id(fig15)
+    assert ir.topology_hash(refined) == ir.topology_hash(cad_fixture)
+    assert ir.model_intent_id(refined) != ir.model_intent_id(cad_fixture)
 
 
-def test_topology_hash_ignores_simulation_setup(fig15: dict) -> None:
-    retuned = copy.deepcopy(fig15)
+def test_topology_hash_ignores_simulation_setup(cad_fixture: dict) -> None:
+    retuned = copy.deepcopy(cad_fixture)
     retuned["simulation"]["frequency"] = {"min": 0.1, "max": 9.9}
-    assert ir.topology_hash(retuned) == ir.topology_hash(fig15)
+    assert ir.topology_hash(retuned) == ir.topology_hash(cad_fixture)
 
 
 @pytest.mark.parametrize(
@@ -254,13 +241,13 @@ def test_topology_hash_ignores_simulation_setup(fig15: dict) -> None:
         (lambda d: d["units"].update(length="mil"), "the length unit changes"),
     ],
 )
-def test_topology_hash_changes_when_the_structure_changes(fig15: dict, mutate, what: str) -> None:
-    mutated = copy.deepcopy(fig15)
+def test_topology_hash_changes_when_the_structure_changes(cad_fixture: dict, mutate, what: str) -> None:
+    mutated = copy.deepcopy(cad_fixture)
     mutate(mutated)
-    assert ir.topology_hash(mutated) != ir.topology_hash(fig15), what
+    assert ir.topology_hash(mutated) != ir.topology_hash(cad_fixture), what
 
 
-def test_topology_hash_changes_when_a_drc_rule_is_loosened(fig15: dict) -> None:
+def test_topology_hash_changes_when_a_drc_rule_is_loosened(cad_fixture: dict) -> None:
     """The one place numbers are kept, and the reason the audit gate is safe.
 
     ``topology_hash`` cannot see a gap driven to zero -- the expressions do not
@@ -268,38 +255,38 @@ def test_topology_hash_changes_when_a_drc_rule_is_loosened(fig15: dict) -> None:
     thresholds were dropped along with every other number, that net could be
     loosened inside an approved attempt and the approval would still look valid.
     """
-    loosened = copy.deepcopy(fig15)
+    loosened = copy.deepcopy(cad_fixture)
     for rule in loosened["design_rules"]:
         if rule["rule"] == "min_spacing":
             rule["params"]["min_spacing"] = 0.001
             break
     else:  # pragma: no cover
-        pytest.fail("fig15 no longer declares a min_spacing rule")
-    assert ir.topology_hash(loosened) != ir.topology_hash(fig15)
+        pytest.fail("cad_fixture no longer declares a min_spacing rule")
+    assert ir.topology_hash(loosened) != ir.topology_hash(cad_fixture)
 
 
-def test_topology_hash_changes_when_a_drc_rule_is_dropped(fig15: dict) -> None:
-    without = copy.deepcopy(fig15)
+def test_topology_hash_changes_when_a_drc_rule_is_dropped(cad_fixture: dict) -> None:
+    without = copy.deepcopy(cad_fixture)
     without["design_rules"] = without["design_rules"][:-1]
-    assert ir.topology_hash(without) != ir.topology_hash(fig15)
+    assert ir.topology_hash(without) != ir.topology_hash(cad_fixture)
 
 
-def test_topology_hash_is_coarser_than_the_intent_id(fig15: dict) -> None:
+def test_topology_hash_is_coarser_than_the_intent_id(cad_fixture: dict) -> None:
     """Every topology change is an intent change, but not the reverse."""
-    moved = _perturb_dimensions(fig15)
-    assert ir.model_intent_id(moved) != ir.model_intent_id(fig15)
-    assert ir.topology_hash(moved) == ir.topology_hash(fig15)
+    moved = _perturb_dimensions(cad_fixture)
+    assert ir.model_intent_id(moved) != ir.model_intent_id(cad_fixture)
+    assert ir.topology_hash(moved) == ir.topology_hash(cad_fixture)
 
-    restructured = copy.deepcopy(fig15)
+    restructured = copy.deepcopy(cad_fixture)
     restructured["nets"][2].update(name="RENAMED")
-    assert ir.model_intent_id(restructured) != ir.model_intent_id(fig15)
-    assert ir.topology_hash(restructured) != ir.topology_hash(fig15)
+    assert ir.model_intent_id(restructured) != ir.model_intent_id(cad_fixture)
+    assert ir.topology_hash(restructured) != ir.topology_hash(cad_fixture)
 
 
-def test_short_topology_hash_is_prefixed_and_accepts_a_digest(fig15: dict) -> None:
-    digest = ir.topology_hash(fig15)
-    assert ir.short_topology_hash(fig15) == f"topo-{digest[:12]}"
-    assert ir.short_topology_hash(digest) == ir.short_topology_hash(fig15)
+def test_short_topology_hash_is_prefixed_and_accepts_a_digest(cad_fixture: dict) -> None:
+    digest = ir.topology_hash(cad_fixture)
+    assert ir.short_topology_hash(cad_fixture) == f"topo-{digest[:12]}"
+    assert ir.short_topology_hash(digest) == ir.short_topology_hash(cad_fixture)
 
 
 def test_topology_hash_distinguishes_a_missing_key_from_a_changed_number() -> None:
@@ -317,42 +304,42 @@ def test_topology_hash_distinguishes_a_missing_key_from_a_changed_number() -> No
 # -------------------------------------------------------------------- validation
 
 
-def test_fig15_ir_validates_cleanly(fig15: dict) -> None:
-    assert ir.validate(fig15) == []
+def test_cad_fixture_ir_validates_cleanly(cad_fixture: dict) -> None:
+    assert ir.validate(cad_fixture) == []
 
 
-def test_validation_catches_a_tampered_identity(fig15: dict) -> None:
-    tampered = copy.deepcopy(fig15)
+def test_validation_catches_a_tampered_identity(cad_fixture: dict) -> None:
+    tampered = copy.deepcopy(cad_fixture)
     tampered["model_intent_id"] = "0" * 64
     problems = ir.validate(tampered)
     assert any("model_intent_id" in problem for problem in problems)
 
 
-def test_validation_catches_dangling_layer_reference(fig15: dict) -> None:
-    broken = copy.deepcopy(fig15)
+def test_validation_catches_dangling_layer_reference(cad_fixture: dict) -> None:
+    broken = copy.deepcopy(cad_fixture)
     broken["nets"][0]["layer"] = "no_such_layer"
     broken = ir.stamp(broken)
     problems = ir.validate(broken)
     assert any("unknown layer" in problem for problem in problems)
 
 
-def test_validation_catches_inverted_box(fig15: dict) -> None:
-    broken = copy.deepcopy(fig15)
+def test_validation_catches_inverted_box(cad_fixture: dict) -> None:
+    broken = copy.deepcopy(cad_fixture)
     box = next(solid["box"] for net in broken["nets"] for solid in net["solids"] if solid["kind"] == "box")
     box["x1"] = box["x0"] - 1.0
     broken = ir.stamp(broken)
     assert any("x1 <= x0" in problem for problem in ir.validate(broken))
 
 
-def test_validation_catches_port_on_unknown_net(fig15: dict) -> None:
-    broken = copy.deepcopy(fig15)
+def test_validation_catches_port_on_unknown_net(cad_fixture: dict) -> None:
+    broken = copy.deepcopy(cad_fixture)
     broken["ports"][0]["net"] = "NOT_A_NET"
     broken = ir.stamp(broken)
     assert any("unknown net" in problem for problem in ir.validate(broken))
 
 
-def test_schema_rejects_an_unknown_provenance_value(fig15: dict) -> None:
-    broken = copy.deepcopy(fig15)
+def test_schema_rejects_an_unknown_provenance_value(cad_fixture: dict) -> None:
+    broken = copy.deepcopy(cad_fixture)
     broken["parameters"][0]["provenance"] = "vibes"
     broken = ir.stamp(broken)
     assert any("provenance" in problem or "vibes" in problem for problem in ir.validate(broken))
@@ -607,14 +594,14 @@ def test_unknown_rule_is_reported_not_swallowed() -> None:
     assert "teleportation" in check["message"]
 
 
-def test_drc_report_is_deterministic(fig15: dict) -> None:
-    first = json.dumps(drc.run(fig15), sort_keys=True)
-    second = json.dumps(drc.run(fig15), sort_keys=True)
+def test_drc_report_is_deterministic(cad_fixture: dict) -> None:
+    first = json.dumps(drc.run(cad_fixture), sort_keys=True)
+    second = json.dumps(drc.run(cad_fixture), sort_keys=True)
     assert first == second
 
 
-def test_fig15_drc_passes_every_rule(fig15: dict) -> None:
-    report = drc.run(fig15)
+def test_cad_fixture_drc_passes_every_rule(cad_fixture: dict) -> None:
+    report = drc.run(cad_fixture)
     assert report["status"] == "pass", [check for check in report["checks"] if check["status"] != "pass"]
     assert report["summary"]["shapes_unsupported"] == 0
 
@@ -634,23 +621,23 @@ def test_ring_distance_is_zero_for_touching_rectangles() -> None:
 # ---------------------------------------------------------------- VBA generation
 
 
-def test_vba_generation_is_byte_identical_for_the_same_ir(fig15: dict) -> None:
-    assert emit_vba.emit(fig15) == emit_vba.emit(copy.deepcopy(fig15))
+def test_vba_generation_is_byte_identical_for_the_same_ir(cad_fixture: dict) -> None:
+    assert emit_vba.emit(cad_fixture) == emit_vba.emit(copy.deepcopy(cad_fixture))
 
 
-def test_vba_generation_is_independent_of_declaration_order(fig15: dict) -> None:
-    shuffled = copy.deepcopy(fig15)
+def test_vba_generation_is_independent_of_declaration_order(cad_fixture: dict) -> None:
+    shuffled = copy.deepcopy(cad_fixture)
     shuffled["nets"] = list(reversed(shuffled["nets"]))
     for net in shuffled["nets"]:
         net["solids"] = list(reversed(net["solids"]))
     shuffled["parameters"] = list(reversed(shuffled["parameters"]))
-    assert emit_vba.emit(shuffled) == emit_vba.emit(fig15)
+    assert emit_vba.emit(shuffled) == emit_vba.emit(cad_fixture)
 
 
-def test_parameters_are_emitted_in_dependency_order(fig15: dict) -> None:
-    ordered = [item["name"] for item in emit_vba.parameter_order(fig15["parameters"])]
+def test_parameters_are_emitted_in_dependency_order(cad_fixture: dict) -> None:
+    ordered = [item["name"] for item in emit_vba.parameter_order(cad_fixture["parameters"])]
     positions = {name: index for index, name in enumerate(ordered)}
-    for parameter in fig15["parameters"]:
+    for parameter in cad_fixture["parameters"]:
         expression = parameter.get("expression")
         if not expression:
             continue
@@ -661,14 +648,14 @@ def test_parameters_are_emitted_in_dependency_order(fig15: dict) -> None:
                 )
 
 
-def test_parameters_use_make_sure_parameter_exists(fig15: dict) -> None:
-    block = next(block for block in emit_vba.build_blocks(fig15) if block.title == "parameters")
+def test_parameters_use_make_sure_parameter_exists(cad_fixture: dict) -> None:
+    block = next(block for block in emit_vba.build_blocks(cad_fixture) if block.title == "parameters")
     assert "StoreParameter" not in block.code
-    assert block.code.count("MakeSureParameterExists") == len(fig15["parameters"])
+    assert block.code.count("MakeSureParameterExists") == len(cad_fixture["parameters"])
 
 
-def test_merge_order_never_adds_a_detached_primitive(fig15: dict) -> None:
-    net = next(net for net in fig15["nets"] if net["name"] == "RESONATOR_1")
+def test_merge_order_never_adds_a_detached_primitive(cad_fixture: dict) -> None:
+    net = next(net for net in cad_fixture["nets"] if net["name"] == "RESONATOR_1")
     ordered = emit_vba.merge_order(net)
     assert [solid["id"] for solid in ordered][0] == sorted(s["id"] for s in net["solids"])[0]
     accumulated = [ir.footprint(ordered[0])]
@@ -678,17 +665,17 @@ def test_merge_order_never_adds_a_detached_primitive(fig15: dict) -> None:
         accumulated.append(ring)
 
 
-def test_each_net_becomes_exactly_one_named_body(fig15: dict) -> None:
-    entities = emit_vba.expected_entities(fig15)
-    assert len(entities) == len(fig15["nets"])
+def test_each_net_becomes_exactly_one_named_body(cad_fixture: dict) -> None:
+    entities = emit_vba.expected_entities(cad_fixture)
+    assert len(entities) == len(cad_fixture["nets"])
     assert {entity["full_name"] for entity in entities} == {
-        f"net_{net['name']}:net_{net['name']}_body" for net in fig15["nets"]
+        f"net_{net['name']}:net_{net['name']}_body" for net in cad_fixture["nets"]
     }
 
 
-def test_every_primitive_is_created_and_merged(fig15: dict) -> None:
-    for net in fig15["nets"]:
-        block = next(b for b in emit_vba.build_blocks(fig15) if b.title == f"net {net['name']}")
+def test_every_primitive_is_created_and_merged(cad_fixture: dict) -> None:
+    for net in cad_fixture["nets"]:
+        block = next(b for b in emit_vba.build_blocks(cad_fixture) if b.title == f"net {net['name']}")
         for solid in net["solids"]:
             assert f'.Name "net_{net["name"]}_{solid["id"]}"' in block.code
         assert block.code.count("Solid.Add ") == len(net["solids"]) - 1
@@ -710,15 +697,15 @@ def test_vba_strings_are_escaped() -> None:
     assert emit_vba.escape('a"b') == 'a""b'
 
 
-def test_solver_block_carries_convergence_not_the_mesh_block(fig15: dict) -> None:
-    blocks = {block.title: block.code for block in emit_vba.build_blocks(fig15)}
+def test_solver_block_carries_convergence_not_the_mesh_block(cad_fixture: dict) -> None:
+    blocks = {block.title: block.code for block in emit_vba.build_blocks(cad_fixture)}
     assert "MeshAdaption3D" in blocks["solver"]
     assert "MeshAdaption3D" not in blocks["mesh"]
 
 
 @pytest.mark.parametrize("adaptive", [True, False])
-def test_fd_setup_replaces_old_adaptation_switch_and_intervals(fig15, adaptive):
-    document = copy.deepcopy(fig15)
+def test_fd_setup_replaces_old_adaptation_switch_and_intervals(cad_fixture, adaptive):
+    document = copy.deepcopy(cad_fixture)
     document["simulation"]["convergence"]["adaptive_mesh"] = adaptive
     code = {b.title: b.code for b in emit_vba.build_blocks(document)}["solver"]
     flag = "True" if adaptive else "False"
@@ -727,8 +714,8 @@ def test_fd_setup_replaces_old_adaptation_switch_and_intervals(fig15, adaptive):
     assert f'"Single", "{flag}"' in code
 
 
-def test_td_setup_explicitly_disables_previous_adaptation(fig15):
-    document = copy.deepcopy(fig15)
+def test_td_setup_explicitly_disables_previous_adaptation(cad_fixture):
+    document = copy.deepcopy(cad_fixture)
     document["simulation"]["solver"] = "time_domain"
     document["simulation"]["convergence"]["adaptive_mesh"] = False
     code = {b.title: b.code for b in emit_vba.build_blocks(document)}["solver"]
@@ -758,7 +745,7 @@ def test_union_drc_scope_checks_shorts_across_two_signal_layers():
     assert drc.run(m.build())['status']=='fail'
 
 
-def test_a_net_local_refinement_is_refused_offline(fig15: dict) -> None:
+def test_a_net_local_refinement_is_refused_offline(cad_fixture: dict) -> None:
     """The emitter must not produce a command nobody has watched CST accept.
 
     It used to emit ``MeshSettings.SetSolidMeshStepWidthTet``, which CST 2026
@@ -766,17 +753,17 @@ def test_a_net_local_refinement_is_refused_offline(fig15: dict) -> None:
     dismisses it. No IR in the repository set ``local_refinements``, so the path was
     never executed until a four-port model needed it.
     """
-    document = copy.deepcopy(fig15)
+    document = copy.deepcopy(cad_fixture)
     document["mesh_hints"]["local_refinements"] = [{"target": "net:SOURCE_FEED", "max_step": 0.4}]
     with pytest.raises(NotImplementedError) as raised:
         emit_vba.build_blocks(document)
     assert "net:SOURCE_FEED" in str(raised.value)
-    assert "SetSolidMeshStepWidthTet" not in emit_vba.emit(fig15)
+    assert "SetSolidMeshStepWidthTet" not in emit_vba.emit(cad_fixture)
 
 
-def test_a_non_net_local_refinement_still_emits(fig15: dict) -> None:
+def test_a_non_net_local_refinement_still_emits(cad_fixture: dict) -> None:
     """Only net-scoped hints were ever emitted, so only they are refused."""
-    document = copy.deepcopy(fig15)
+    document = copy.deepcopy(cad_fixture)
     document["mesh_hints"]["local_refinements"] = [{"target": "solid:probe", "max_step": 0.4}]
     blocks = {block.title: block.code for block in emit_vba.build_blocks(document)}
     assert "MeshSettings" in blocks["mesh"]
@@ -785,7 +772,7 @@ def test_a_non_net_local_refinement_still_emits(fig15: dict) -> None:
 # ------------------------------------------------------------------------ verify
 
 
-def test_verify_reports_a_match_for_a_synthetic_perfect_observation(fig15: dict) -> None:
+def test_verify_reports_a_match_for_a_synthetic_perfect_observation(cad_fixture: dict) -> None:
     from cst_cad import verify
 
     observation = {
@@ -796,27 +783,27 @@ def test_verify_reports_a_match_for_a_synthetic_perfect_observation(fig15: dict)
                 "name": entity["name"],
                 "bounding_box": entity["bounding_box"],
             }
-            for entity in emit_vba.expected_entities(fig15)
+            for entity in emit_vba.expected_entities(cad_fixture)
         ],
-        "parameters": {item["name"]: item["value"] for item in fig15["parameters"]},
+        "parameters": {item["name"]: item["value"] for item in cad_fixture["parameters"]},
     }
-    report = verify.compare(fig15, verify.normalize_observation(observation))
+    report = verify.compare(cad_fixture, verify.normalize_observation(observation))
     assert report["status"] == "match"
     assert report["summary"]["entities_missing"] == 0
 
 
-def test_verify_flags_a_moved_solid(fig15: dict) -> None:
+def test_verify_flags_a_moved_solid(cad_fixture: dict) -> None:
     from cst_cad import verify
 
-    entities = emit_vba.expected_entities(fig15)
+    entities = emit_vba.expected_entities(cad_fixture)
     entities[0]["bounding_box"]["x0"] += 0.01
     observation = {
         "entities": [
             {"component": e["component"], "name": e["name"], "bounding_box": e["bounding_box"]} for e in entities
         ],
-        "parameters": {item["name"]: item["value"] for item in fig15["parameters"]},
+        "parameters": {item["name"]: item["value"] for item in cad_fixture["parameters"]},
     }
-    report = verify.compare(fig15, verify.normalize_observation(observation))
+    report = verify.compare(cad_fixture, verify.normalize_observation(observation))
     assert report["status"] == "mismatch"
     assert report["summary"]["entities_bounding_box_mismatch"] == 1
 
@@ -831,51 +818,46 @@ def test_sanitize_name_strips_the_cst_buffer_garbage() -> None:
 # -------------------------------------------------------------------------- diff
 
 
-def test_diff_is_empty_for_identical_documents(fig15: dict) -> None:
-    report = ir.diff(fig15, copy.deepcopy(fig15))
+def test_diff_is_empty_for_identical_documents(cad_fixture: dict) -> None:
+    report = ir.diff(cad_fixture, copy.deepcopy(cad_fixture))
     assert report["difference_count"] == 0
     assert report["identical_intent"] is True
 
 
-def test_diff_localises_a_single_moved_dimension(fig15: dict) -> None:
-    moved = ir.stamp({**copy.deepcopy(fig15)})
+def test_diff_localises_a_single_moved_dimension(cad_fixture: dict) -> None:
+    moved = ir.stamp({**copy.deepcopy(cad_fixture)})
     moved["nets"][0]["solids"][0]["box"]["x0"] += 0.25
-    report = ir.diff(fig15, moved)
+    report = ir.diff(cad_fixture, moved)
     assert report["difference_count"] >= 1
     assert any(entry["path"].endswith("box.x0") and entry["delta"] == pytest.approx(0.25) for entry in report["differences"])
 
 
-# ------------------------------------------------------------- fig15 integration
+# ------------------------------------------------------------- cad_fixture integration
 
 
-def test_fig15_model_script_is_reproducible(fig15: dict) -> None:
+def test_cad_fixture_model_script_is_reproducible(cad_fixture: dict) -> None:
     from cst_cad.cli import load_model_script
 
-    rebuilt = load_model_script(str(FIG15_MODEL))
-    assert rebuilt["model_intent_id"] == fig15["model_intent_id"]
+    rebuilt = load_model_script(str(PUBLIC_CAD_MODEL))
+    assert rebuilt["model_intent_id"] == cad_fixture["model_intent_id"]
 
 
-def test_fig15_zero_regression_against_the_original_manifest() -> None:
-    result = subprocess.run(
-        [sys.executable, str(FIG15_ZERO_REGRESSION)],
-        capture_output=True,
-        text=True,
-        cwd=str(FIG15_ZERO_REGRESSION.parent),
-    )
-    assert result.returncode == 0, result.stdout + result.stderr
-    report = json.loads(result.stdout)
-    assert report["status"] == "zero_regression"
-    assert report["fields_compared"] >= 150
-    assert report["max_delta"] < 1e-9
+def test_public_fixture_matches_frozen_geometry() -> None:
+    """A public specification baseline, independent of external topic files."""
+    from cst_cad.cli import load_model_script
+
+    expected = json.loads(PUBLIC_CAD_IR.read_text(encoding="utf-8"))
+    rebuilt = load_model_script(str(PUBLIC_CAD_MODEL))
+    assert rebuilt == expected
+    assert ir.diff(expected, rebuilt)["difference_count"] == 0
 
 
-def test_fig15_parameter_provenance_is_fully_declared(fig15: dict) -> None:
-    counts = ir.provenance_summary(fig15)
-    assert counts["paper_explicit"] > 0
-    assert counts["strong_inference"] > 0
+def test_cad_fixture_parameter_provenance_is_fully_declared(cad_fixture: dict) -> None:
+    counts = ir.provenance_summary(cad_fixture)
+    assert counts["synthesized"] > 0
     assert counts["assumption"] > 0
-    assert sum(counts.values()) == len(fig15["parameters"])
+    assert sum(counts.values()) == len(cad_fixture["parameters"])
     assert all(
-        parameter.get("source") for parameter in fig15["parameters"]
+        parameter.get("source") for parameter in cad_fixture["parameters"]
         if parameter["provenance"] != "synthesized"
     )

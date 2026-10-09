@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "date": "2026-10-09",
   "delivery_status": "awaiting-user-acceptance",
-  "release_sha256": "f021c600abd32bb0a5886ccd7010ab24baaaeb5629624540d642fb82c21cb407",
-  "runtime_files": 302,
+  "release_sha256": "3f81f7ee5d2e08b91b52337622b6084eb33f9223fa4c65cd5de076ea9a5eb8dc",
+  "runtime_files": 304,
   "regression": [
     {
       "suite": "CST",
@@ -212,7 +212,7 @@
     "User final acceptance",
     "Codex project trust/reload and actual client tool/approval interaction",
     "Claude Code not installed: actual client load and human elicitation",
-    "Remote CI execution and public repository publication"
+    "Remote CI verification of public source"
   ],
   "scope_limit": "Specific two-port TD/Hex lowpass case; not all CST solvers, Eigenmode/field/far-field or arbitrary model adapters"
 }

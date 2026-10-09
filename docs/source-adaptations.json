@@ -258,6 +258,18 @@
       "baseline_sha256": "9b9351842f4097efe170aa2ebb5aeb16a4fb7143ea7c42990d67fb5c3f33a3d9",
       "distribution_sha256": "f8ceaf14152a93dcec5d4d66148489eff973f77bc30ef4d7e71ff364e320c2c4",
       "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-CAD/tests/test_cad.py",
+      "baseline_sha256": "04f18c53eaa2a211bb68f12f17654074b748e750f96f1e56e4552b2d6bd8e9be",
+      "distribution_sha256": "b2cae7357183c602a27bdce6845480980ceffc41c5d618a8afd2961840545e05",
+      "reason": "Replace missing topic fixture with self-contained public synthetic CAD regression, including a frozen geometry baseline; all 121 CAD tests execute without skipped private fixtures."
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_retention.py",
+      "baseline_sha256": "037d6a44323331bb55d15c0381c041a501bbf0d78a8e135b7d5d202dfe2a8ff7",
+      "distribution_sha256": "20fa7751d08787376481589818e0abf43f8b454cf8506bcafafb0430fc920573",
+      "reason": "Remove host-dependent assumption that plain pathlib cannot see a long path; verify evidence hashing/retention regardless of Windows long-path policy."
     }
   ]
 }

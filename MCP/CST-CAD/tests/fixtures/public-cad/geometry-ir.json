@@ -1,0 +1,466 @@
+{
+  "schema_version": 1,
+  "model_intent_id": "d6af684e45bce867a7c5e0afb88e1eb7de054a836b3efa061ccf796957c0a5db",
+  "model_id": "public-cad-fixture",
+  "units": {
+    "length": "mm",
+    "frequency": "GHz"
+  },
+  "parameters": [
+    {
+      "name": "sub_h",
+      "value": 1.0,
+      "provenance": "assumption",
+      "tunable": false,
+      "unit": "mm",
+      "source": "Synthetic test specification; not measured or paper-derived"
+    },
+    {
+      "name": "cu_t",
+      "value": 0.035,
+      "provenance": "assumption",
+      "tunable": false,
+      "unit": "mm",
+      "source": "Synthetic test specification; not measured or paper-derived"
+    },
+    {
+      "name": "trace_w",
+      "value": 1.0,
+      "provenance": "synthesized",
+      "tunable": false,
+      "unit": "mm",
+      "source": "Synthetic test specification; not measured or paper-derived"
+    },
+    {
+      "name": "board_xmax",
+      "value": 30.0,
+      "provenance": "synthesized",
+      "tunable": false,
+      "unit": "mm",
+      "source": "Synthetic test specification; not measured or paper-derived"
+    },
+    {
+      "name": "coupling_gap",
+      "value": 0.5,
+      "provenance": "synthesized",
+      "tunable": true,
+      "unit": "mm",
+      "source": "Synthetic test specification; not measured or paper-derived",
+      "min": 0.25,
+      "max": 1.0
+    },
+    {
+      "name": "top_z",
+      "value": 1.035,
+      "provenance": "synthesized",
+      "tunable": false,
+      "expression": "sub_h+cu_t",
+      "source": "Synthetic test specification; not measured or paper-derived"
+    }
+  ],
+  "materials": [
+    {
+      "name": "TestDielectric",
+      "kind": "normal",
+      "epsilon": 3.2,
+      "mu": 1.0,
+      "tan_delta": 0.002
+    },
+    {
+      "name": "PEC",
+      "kind": "pec"
+    }
+  ],
+  "stackup": [
+    {
+      "name": "ground_plane",
+      "z0": -0.035,
+      "z1": 0.0,
+      "material": "PEC",
+      "role": "ground"
+    },
+    {
+      "name": "substrate",
+      "z0": 0.0,
+      "z1": 1.0,
+      "material": "TestDielectric",
+      "role": "substrate"
+    },
+    {
+      "name": "signal",
+      "z0": 1.0,
+      "z1": 1.035,
+      "material": "PEC",
+      "role": "signal"
+    }
+  ],
+  "nets": [
+    {
+      "name": "BOARD",
+      "layer": "substrate",
+      "net_class": "reference",
+      "solids": [
+        {
+          "id": "s001",
+          "kind": "box",
+          "box": {
+            "x0": 0.0,
+            "y0": -8.0,
+            "z0": 0.0,
+            "x1": 30.0,
+            "y1": 8.0,
+            "z1": 1.0
+          },
+          "expressions": {
+            "x0": "0.0",
+            "y0": "-8.0",
+            "z0": "0.0",
+            "x1": "board_xmax",
+            "y1": "8.0",
+            "z1": "sub_h"
+          }
+        }
+      ]
+    },
+    {
+      "name": "GROUND",
+      "layer": "ground_plane",
+      "net_class": "reference",
+      "solids": [
+        {
+          "id": "s001",
+          "kind": "box",
+          "box": {
+            "x0": 0.0,
+            "y0": -8.0,
+            "z0": -0.035,
+            "x1": 30.0,
+            "y1": 8.0,
+            "z1": 0.0
+          },
+          "expressions": {
+            "x0": "0.0",
+            "y0": "-8.0",
+            "z0": "-cu_t",
+            "x1": "board_xmax",
+            "y1": "8.0",
+            "z1": "0.0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SOURCE_FEED",
+      "layer": "signal",
+      "net_class": "signal",
+      "solids": [
+        {
+          "id": "s001",
+          "kind": "box",
+          "box": {
+            "x0": 0.0,
+            "y0": -0.5,
+            "z0": 1.0,
+            "x1": 6.0,
+            "y1": 0.5,
+            "z1": 1.035
+          },
+          "expressions": {
+            "x0": "0.0",
+            "y0": "(-trace_w)/2.0",
+            "z0": "sub_h",
+            "x1": "0.0+6.0",
+            "y1": "(-trace_w)/2.0+trace_w",
+            "z1": "top_z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LOAD_FEED",
+      "layer": "signal",
+      "net_class": "signal",
+      "solids": [
+        {
+          "id": "s001",
+          "kind": "box",
+          "box": {
+            "x0": 24.0,
+            "y0": -0.5,
+            "z0": 1.0,
+            "x1": 30.0,
+            "y1": 0.5,
+            "z1": 1.035
+          },
+          "expressions": {
+            "x0": "24.0",
+            "y0": "(-trace_w)/2.0",
+            "z0": "sub_h",
+            "x1": "24.0+6.0",
+            "y1": "(-trace_w)/2.0+trace_w",
+            "z1": "top_z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RESONATOR_1",
+      "layer": "signal",
+      "net_class": "signal",
+      "solids": [
+        {
+          "id": "leg",
+          "kind": "box",
+          "box": {
+            "x0": 8.0,
+            "y0": 1.0,
+            "z0": 1.0,
+            "x1": 9.0,
+            "y1": 5.0,
+            "z1": 1.035
+          },
+          "expressions": {
+            "x0": "8.0",
+            "y0": "1.0",
+            "z0": "sub_h",
+            "x1": "8.0+trace_w",
+            "y1": "1.0+4.0",
+            "z1": "top_z"
+          }
+        },
+        {
+          "id": "arm",
+          "kind": "box",
+          "box": {
+            "x0": 8.0,
+            "y0": 4.0,
+            "z0": 1.0,
+            "x1": 16.0,
+            "y1": 5.0,
+            "z1": 1.035
+          },
+          "expressions": {
+            "x0": "8.0",
+            "y0": "4.0",
+            "z0": "sub_h",
+            "x1": "8.0+8.0",
+            "y1": "4.0+trace_w",
+            "z1": "top_z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RESONATOR_2",
+      "layer": "signal",
+      "net_class": "signal",
+      "solids": [
+        {
+          "id": "leg",
+          "kind": "box",
+          "box": {
+            "x0": 20.5,
+            "y0": -5.0,
+            "z0": 1.0,
+            "x1": 21.5,
+            "y1": -1.0,
+            "z1": 1.035
+          },
+          "expressions": {
+            "x0": "20.0+coupling_gap",
+            "y0": "-5.0",
+            "z0": "sub_h",
+            "x1": "20.0+coupling_gap+trace_w",
+            "y1": "(-5.0)+4.0",
+            "z1": "top_z"
+          }
+        },
+        {
+          "id": "arm",
+          "kind": "box",
+          "box": {
+            "x0": 14.5,
+            "y0": -5.0,
+            "z0": 1.0,
+            "x1": 21.5,
+            "y1": -4.0,
+            "z1": 1.035
+          },
+          "expressions": {
+            "x0": "14.0+coupling_gap",
+            "y0": "-5.0",
+            "z0": "sub_h",
+            "x1": "14.0+coupling_gap+7.0",
+            "y1": "(-5.0)+trace_w",
+            "z1": "top_z"
+          }
+        }
+      ]
+    }
+  ],
+  "title": "Synthetic CAD regression fixture",
+  "source": {
+    "kind": "internal",
+    "reference": "Public CAD test specification"
+  },
+  "ports": [
+    {
+      "name": "P1",
+      "number": 1,
+      "kind": "waveguide",
+      "net": "SOURCE_FEED",
+      "orientation": "xmin",
+      "on_boundary": true,
+      "modes": 1,
+      "extent": {
+        "x0": 0.0,
+        "y0": -2.0,
+        "z0": -0.035,
+        "x1": 0.0,
+        "y1": 2.0,
+        "z1": 3.0
+      },
+      "expressions": {
+        "x0": "0.0",
+        "y0": "-2.0",
+        "z0": "-cu_t",
+        "x1": "0.0",
+        "y1": "2.0",
+        "z1": "3.0*sub_h"
+      },
+      "reference_net": "GROUND",
+      "impedance": 50.0
+    },
+    {
+      "name": "P2",
+      "number": 2,
+      "kind": "waveguide",
+      "net": "LOAD_FEED",
+      "orientation": "xmax",
+      "on_boundary": true,
+      "modes": 1,
+      "extent": {
+        "x0": 30.0,
+        "y0": -2.0,
+        "z0": -0.035,
+        "x1": 30.0,
+        "y1": 2.0,
+        "z1": 3.0
+      },
+      "expressions": {
+        "x0": "board_xmax",
+        "y0": "-2.0",
+        "z0": "-cu_t",
+        "x1": "board_xmax",
+        "y1": "2.0",
+        "z1": "3.0*sub_h"
+      },
+      "reference_net": "GROUND",
+      "impedance": 50.0
+    }
+  ],
+  "boundaries": {
+    "xmin": "open",
+    "xmax": "open",
+    "ymin": "open",
+    "ymax": "open",
+    "zmin": "electric",
+    "zmax": "expanded open"
+  },
+  "mesh_hints": {
+    "kind": "tetrahedral",
+    "steps_per_wavelength_near": 10.0
+  },
+  "design_rules": [
+    {
+      "id": "width",
+      "rule": "min_width",
+      "scope": "layer:signal",
+      "severity": "error",
+      "params": {
+        "min_width": 0.25
+      }
+    },
+    {
+      "id": "spacing",
+      "rule": "min_spacing",
+      "scope": "layer:signal",
+      "severity": "error",
+      "params": {
+        "min_spacing": 0.2
+      }
+    },
+    {
+      "id": "shorts",
+      "rule": "no_cross_net_short",
+      "scope": "layer:signal",
+      "severity": "error"
+    },
+    {
+      "id": "contained",
+      "rule": "board_containment",
+      "scope": "layer:signal",
+      "severity": "error",
+      "params": {
+        "reference_net": "BOARD"
+      }
+    },
+    {
+      "id": "ports",
+      "rule": "port_attachment",
+      "scope": "port:*",
+      "severity": "error",
+      "params": {
+        "tolerance": 1e-06
+      }
+    },
+    {
+      "id": "connected_source_feed",
+      "rule": "net_connectivity",
+      "scope": "net:SOURCE_FEED",
+      "severity": "error",
+      "params": {
+        "max_components": 1
+      }
+    },
+    {
+      "id": "connected_load_feed",
+      "rule": "net_connectivity",
+      "scope": "net:LOAD_FEED",
+      "severity": "error",
+      "params": {
+        "max_components": 1
+      }
+    },
+    {
+      "id": "connected_resonator_1",
+      "rule": "net_connectivity",
+      "scope": "net:RESONATOR_1",
+      "severity": "error",
+      "params": {
+        "max_components": 1
+      }
+    },
+    {
+      "id": "connected_resonator_2",
+      "rule": "net_connectivity",
+      "scope": "net:RESONATOR_2",
+      "severity": "error",
+      "params": {
+        "max_components": 1
+      }
+    }
+  ],
+  "simulation": {
+    "solver": "frequency_domain",
+    "frequency": {
+      "min": 1.0,
+      "max": 5.0,
+      "center": 3.0
+    },
+    "convergence": {
+      "adaptive_mesh": true,
+      "max_passes": 4
+    }
+  }
+}

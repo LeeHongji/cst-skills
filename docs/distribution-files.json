@@ -213,14 +213,24 @@
       "sha256": "6ad204229d12590336228a1fa45bdbe7ce6040dcd46acaf472f717d6af8e73ce"
     },
     {
+      "path": "MCP/CST-CAD/tests/fixtures/public-cad/geometry-ir.json",
+      "bytes": 10449,
+      "sha256": "a7390bed38b1c326cf9f763002944b9b738b47ad6f897eddcadd0b100a4df921"
+    },
+    {
+      "path": "MCP/CST-CAD/tests/fixtures/public-cad/model.py",
+      "bytes": 2900,
+      "sha256": "5bf3331cde6e41036c2f4fdbfef63fe0d876a58ceb747b81fce6550c6a369770"
+    },
+    {
       "path": "MCP/CST-CAD/tests/test_audit.py",
       "bytes": 8964,
       "sha256": "5b55cae20b3b4c0c3bbfa76811be9312b0d5c14ba486ff69f2ae5c99646fc285"
     },
     {
       "path": "MCP/CST-CAD/tests/test_cad.py",
-      "bytes": 36807,
-      "sha256": "04f18c53eaa2a211bb68f12f17654074b748e750f96f1e56e4552b2d6bd8e9be"
+      "bytes": 37218,
+      "sha256": "b2cae7357183c602a27bdce6845480980ceffc41c5d618a8afd2961840545e05"
     },
     {
       "path": "MCP/CST-CAD/tests/test_resonator_fixture.py",
@@ -604,8 +614,8 @@
     },
     {
       "path": "MCP/CST-Lab/tests/test_retention.py",
-      "bytes": 33274,
-      "sha256": "037d6a44323331bb55d15c0381c041a501bbf0d78a8e135b7d5d202dfe2a8ff7"
+      "bytes": 33440,
+      "sha256": "20fa7751d08787376481589818e0abf43f8b454cf8506bcafafb0430fc920573"
     },
     {
       "path": "MCP/CST-Lab/tests/test_topic_integrity.py",
@@ -1439,8 +1449,8 @@
     },
     {
       "path": "docs/ACCEPTANCE.md",
-      "bytes": 6197,
-      "sha256": "f55a4ed60eba242c7fc86d4fe313a0930184eb6c63987c9e41edf63f3454ba05"
+      "bytes": 6708,
+      "sha256": "99164aae9808756c34af7a86d0c4d99c408868531e8ed25dae6e1f133cf3168b"
     },
     {
       "path": "docs/AGENT_SETUP.md",
@@ -1479,13 +1489,13 @@
     },
     {
       "path": "docs/acceptance.json",
-      "bytes": 7814,
-      "sha256": "e0c94f455a3ebcfff94902a0c1fcbf24c015a6bec112106f331ef83ee73b2c66"
+      "bytes": 7800,
+      "sha256": "a60fc53ddbcb10d729c1816958750fe74cf9254232deff1a9456c47493d35ba3"
     },
     {
       "path": "docs/source-adaptations.json",
-      "bytes": 14653,
-      "sha256": "04a68b0c37ed6ba7ff3b63901f760bf03312cbc43affebf483cae3185dc72b93"
+      "bytes": 15538,
+      "sha256": "ed6a8ac10c21c21b8f38781c91898b6e53df536b17ea0af007dd67512276678e"
     },
     {
       "path": "docs/source-baseline.json",
@@ -1714,13 +1724,13 @@
     },
     {
       "path": "skills/cst-research/assets/runtime-release.json",
-      "bytes": 51818,
-      "sha256": "ac520d9b460377192121d116e0fb1d018d1acfc8cbd5ff83889ecfd1d4a37b66"
+      "bytes": 52169,
+      "sha256": "874a70a17fdd3517e21f6d3bb51434edb9d0aec1dda0609fe3eec04afca09409"
     },
     {
       "path": "skills/cst-research/assets/runtime.zip",
-      "bytes": 895335,
-      "sha256": "f021c600abd32bb0a5886ccd7010ab24baaaeb5629624540d642fb82c21cb407"
+      "bytes": 898746,
+      "sha256": "3f81f7ee5d2e08b91b52337622b6084eb33f9223fa4c65cd5de076ea9a5eb8dc"
     },
     {
       "path": "skills/cst-research/references/installation.md",
