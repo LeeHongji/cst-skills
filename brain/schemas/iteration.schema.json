@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/iteration.schema.json",
+  "title": "Iteration contract (one line of iterations.jsonl)",
+  "description": "One line per iteration, append-only, and the single source of truth for what was run and what came out. The SQLite registry is a derived cache rebuildable from these lines, not a second source. Two consequences are deliberate: `acceptance` is a result field rather than a lifecycle state, because mixing 'how far did it get' with 'did it pass' is what left historical experiments stuck in paused; and `param_delta` sits beside `setup_delta` so that changing the device and changing how the device is observed can never be confused for one another.",
+  "type": "object",
+  "required": ["schema_version", "iter", "ts", "param_delta", "setup_delta", "drc"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "required": ["evidence"], "properties": { "evidence": { "required": ["kind"], "properties": { "kind": { "const": "model-audit" } } } } },
+      "then": {
+        "required": ["job_id", "status", "audited", "cache_hit", "topology_hash", "model_intent_id", "acceptance"],
+        "properties": { "status": { "const": "completed" }, "audited": { "const": false }, "cache_hit": { "const": false },
+          "execution_kind": { "const": "offline" }, "fidelity": { "const": "offline" },
+          "acceptance": { "properties": { "status": { "const": "not_evaluated" }, "gates": { "maxItems": 0 } } } },
+        "not": { "anyOf": [{ "required": ["solver"] }, { "required": ["execution"] }, { "required": ["metrics"] }] }
+      }
+    },
+    {
+      "if": { "required": ["job_id"] },
+      "then": { "required": ["request_sha256", "status", "fidelity", "execution_kind", "duration_s", "cache_hit", "provenance", "audited"] }
+    },
+    {
+      "if": { "required": ["cache_hit"], "properties": { "cache_hit": { "const": true } } },
+      "then": { "required": ["execution_kind", "status", "evidence", "execution", "metrics", "acceptance", "audited"], "properties": { "execution_kind": { "const": "cache" }, "status": { "const": "completed" }, "audited": { "const": true }, "evidence": { "properties": { "kind": { "const": "cache-reuse" } } } }, "not": { "required": ["solver"] } }
+    },
+    {
+      "if": { "required": ["evidence"], "properties": { "evidence": { "required": ["kind"], "properties": { "kind": { "const": "execution-diagnostic" } } } } },
+      "then": { "required": ["status", "cache_hit"], "properties": { "status": { "enum": ["failed", "blocked"] }, "cache_hit": { "const": false } } }
+    },
+    {
+      "if": { "required": ["evidence"], "properties": { "evidence": { "required": ["kind"], "properties": { "kind": { "const": "simulation" } } } } },
+      "then": {
+        "required": ["job_id", "status", "cache_hit", "execution", "metrics", "acceptance", "solver", "audited"],
+        "properties": { "status": { "const": "completed" }, "cache_hit": { "const": false },
+          "execution_kind": { "const": "solver" }, "provenance": { "const": "native" }, "audited": { "const": true },
+          "solver": { "required": ["converged"], "properties": { "converged": { "const": true } } } }
+      }
+    },
+    {
+      "if": { "required": ["evidence"], "properties": { "evidence": { "required": ["kind"], "properties": { "kind": { "const": "cache-reuse" } } } } },
+      "then": { "required": ["cache_hit"], "properties": { "cache_hit": { "const": true } } }
+    }
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "job_id": { "type": "string", "pattern": "^job://[0-9a-f]{64}/[0-9a-f]{32}$" },
+    "request_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "status": { "enum": ["completed", "failed", "blocked"] },
+    "fidelity": { "enum": ["offline", "screen", "confirm"] },
+    "execution_kind": { "enum": ["offline", "cache", "solver", "interrupted"] },
+    "duration_s": { "type": "number", "minimum": 0 },
+    "cache_hit": { "type": "boolean" },
+    "execution": {
+      "type": "object",
+      "required": ["schema_version", "parameters", "model_intent_id", "topology_hash", "setup", "setup_sha256", "setup_overrides", "model_source_sha256", "emitted_sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "const": 1 },
+        "parameters": { "type": "object", "additionalProperties": { "type": "number" } },
+        "model_intent_id": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "topology_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "setup": { "type": "object" },
+        "setup_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "setup_overrides": { "type": "object" },
+        "model_source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "emitted_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["kind", "revision", "manifest_sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["offline-analysis", "execution-diagnostic", "simulation", "cache-reuse", "model-audit"] },
+        "revision": { "type": "string", "pattern": "^r-[0-9a-f]{32}$" },
+        "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "iter": { "type": "integer", "minimum": 0 },
+    "ts": { "type": "string", "format": "date-time" },
+    "parent": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Iteration this one was derived from. Null for the first."
+    },
+    "param_delta": {
+      "type": "object",
+      "description": "Geometry parameter changes as {name: [from, to]}. Non-empty means a different device.",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "setup_delta": {
+      "type": "object",
+      "description": "Changes to how the device is observed: mesh density, frequency range, monitors, solver accuracy. Non-empty means the same device seen differently. Sensitivity analysis that mixed this in with param_delta would attribute a mesh effect to geometry.",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "topology_hash": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "model_intent_id": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "drc": { "enum": ["pass", "warn", "fail", "error", "skipped"] },
+    "solver": {
+      "type": "object",
+      "description": "What CST actually did. quiet_mode and dialogs are recorded on every line because quiet mode turns a blocking prompt into a silent default, and a run that took a default nobody saw has to be identifiable after the fact.",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string" },
+        "seconds": { "type": "number", "minimum": 0 },
+        "quiet_mode": { "type": "boolean" },
+        "dialogs": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "mesh": { "type": "object" },
+        "converged": { "type": "boolean" },
+        "messages": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Typed scalar metrics extracted from exported curve data, not read off a plot.",
+      "additionalProperties": { "type": ["number", "null"] }
+    },
+    "acceptance": {
+      "type": "object",
+      "description": "Verdict per gate plus the overall result, filled automatically from the design's frontmatter.",
+      "required": ["status", "gates"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "enum": ["pass", "fail", "error", "not_evaluated"] },
+        "gates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "status"],
+            "additionalProperties": true,
+            "properties": {
+              "id": { "type": "string" },
+              "status": { "enum": ["pass", "fail", "error"] }
+            }
+          }
+        }
+      }
+    },
+    "observation": {
+      "type": "string",
+      "description": "What changed and what it did, in one sentence, derived from the delta and the metrics. This is what makes the file searchable as knowledge rather than only as data."
+    },
+    "artifacts": {
+      "type": "object",
+      "description": "run:// URIs or paths to the durable evidence. exports/ plus vba/ plus this line is enough to rebuild the iteration, which is what makes reclaiming Result/ caches safe.",
+      "additionalProperties": { "type": "string" }
+    },
+    "provenance": {
+      "enum": ["native", "legacy"],
+      "default": "native",
+      "description": "legacy marks lines back-filled from the historical registry: no topology_hash, no DRC, never audited. Kept separate so historical data cannot be mistaken for evidence produced under the current contracts."
+    },
+    "audited": { "type": "boolean", "default": false, "description": "Artifact/DRC/topology/ranges have an authenticated approval binding. This does not alone attest personal human viewing; inspect the archived approval channel, authorization and human_reviewed fields." },
+    "error": { "type": "string", "description": "Present when the iteration failed. A failed iteration is still a line: the record of what was tried must not depend on it having worked." }
+  }
+}

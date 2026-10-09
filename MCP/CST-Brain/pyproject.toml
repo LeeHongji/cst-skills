@@ -1,0 +1,26 @@
+[project]
+name = "cst-second-brain"
+version = "0.1.0"
+description = "Local Markdown, Obsidian, BM25, and trace memory plane for CST Automation"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "jieba>=0.42,<1",
+    "mcp>=1.29,<2",
+    "pyyaml>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "jsonschema>=4.23,<5",
+    "pytest>=8.0,<9",
+]
+
+[project.scripts]
+cst-brain = "cst_brain.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

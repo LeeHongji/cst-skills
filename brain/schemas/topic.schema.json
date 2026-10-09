@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/topic.schema.json",
+  "title": "Topic contract (frontmatter of topic.md)",
+  "description": "A topic is a research theme, not a device. Its boundary is drawn by shared physics and shared synthesis theory: two devices belong to the same topic when knowledge about one transfers to the other. Naming similarity is not evidence of that, which is why a 'phase shifter' family can legitimately split across two topics. The prose body of topic.md carries the shared physical background; only the fields below are machine-read.",
+  "type": "object",
+  "required": ["schema_version", "topic_id", "title", "shared_physics", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "topic_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Directory name under projects/."
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "shared_physics": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "What actually transfers between designs in this topic: the synthesis theory, the governing mechanism, the design equations. This is the topic boundary made explicit and is the field to argue with when deciding whether a new design belongs here."
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["kind", "citation"],
+        "additionalProperties": false,
+        "properties": {
+          "kind": { "enum": ["paper", "book", "datasheet", "internal", "standard"] },
+          "citation": { "type": "string", "minLength": 1 },
+          "doi": { "type": "string" },
+          "local_path": { "type": "string", "description": "Path inside brain/raw/ when the source has been ingested." }
+        }
+      }
+    },
+    "status": { "enum": ["active", "dormant", "closed"], "default": "active" },
+    "created": { "type": "string", "format": "date" },
+    "notes_path": { "type": "string", "default": "notes.md" }
+  }
+}

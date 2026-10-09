@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "changes": [
+    {
+      "path": "MCP/CST/cst_guardian/function_execution.py",
+      "baseline_sha256": "fd4108d3048759c2958cec97d99d2295334d0e812a00a730cb81040ec95a8bc9",
+      "distribution_sha256": "74fca4d10d4a5761f5e650881724badd271553f1c1c3b5d31313e9bb9ab4e377",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST/README.md",
+      "baseline_sha256": "e005cb41b94daf259aa69a49407a57c9f309a62f52959a1f5ffb41200644aa1f",
+      "distribution_sha256": "733f50aa79cc80aca9fbfe3222778f8f4ac37bfd4f468f75abeb45fd2365696c",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST/README.zh-CN.md",
+      "baseline_sha256": "3b4a4407f7ca00d873aa6e14535b5268ab2e4db8d1e21f40b62535f2a10f123a",
+      "distribution_sha256": "76125d25c629efb5a03a079224efbbebaafc94f91d658a76919455ff59f9eb1d",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST/tests/test_repository_trial_scripts.py",
+      "baseline_sha256": "4c865c421a44692e33024a12b0f2671efc13514d7b1b6d1fbc1a8647c074b6b4",
+      "distribution_sha256": null,
+      "reason": "Historical direct-write scripts are not distributed; their three source-shape tests are excluded"
+    },
+    {
+      "path": "MCP/CST/tests/test_steps12_verification.py",
+      "baseline_sha256": "66e32dba71acf0ad8afe37c941d2bcc292d196edafa6d4361596f29f2e4c2fba",
+      "distribution_sha256": "7fd4517acee3f7c387628488c55ffea8b77ba5f7885b8f00bbfdf8a9eb1607c3",
+      "reason": "Replace personal historical evidence check with public fixture-equivalence test"
+    },
+    {
+      "path": "MCP/CST/tests/test_waveguide_verification.py",
+      "baseline_sha256": "188204822d531ccf188d70ddb05b9cf2c40dcfe7f6817fbd44409409004b74ff",
+      "distribution_sha256": "a8df42189ca5a1d2262e874ba430b3117552db11243ab46ed27d8378671ffdfe",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST/tests/test_workspace_routing.py",
+      "baseline_sha256": "40e6ef348ff5fc51eb456b98e6eaca10f78382c23d95dd27a131f87c7cb51489",
+      "distribution_sha256": "efda9c1caa1cf1f1fa1cc4b3e7a8e3efcb7888110b6c0c9eaa33d54a699596b7",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/topic_workspace.py",
+      "baseline_sha256": "f64caba6d41d8fd38703a3406f7f4527bc8f0994fb870a4e049a78ad93ee3e9e",
+      "distribution_sha256": "d306ea8b744654578ae5fab533bea08bc494a42e4c8a232a6120bf096e969c3e",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/attempts/a01-paper-ideal/attempt.json",
+      "baseline_sha256": "95e039cc2a0f7c01ee8d8cab265bf0077ca72ab995b372abc8054e227e80bf91",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/attempts/a01-paper-ideal/drc-report.json",
+      "baseline_sha256": "36ed7c1d4379436df25dcc5b9d8d92dfe76b126d1d39a24c91727f5316d40dac",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/attempts/a01-paper-ideal/geometry-ir.json",
+      "baseline_sha256": "20ec26c7dbda178a7fa30ff5f0fc36c53b1c766683223bb3e8a27909be8391a4",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/design.md",
+      "baseline_sha256": "8fa4ffceef25c8c689c77005681b3381d0589ebcf7f467e98718dd9e376e7a4a",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/geometry_manifest.json",
+      "baseline_sha256": "a656d01e693fdbf3c6a403b5b043e2d9575f07dc7d4c1e15f27a291f8e8f10bc",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/geometry_manifest.provenance.json",
+      "baseline_sha256": "dd51a24cc85509be95f8552f535ffdf7c5018b8e691ce8d0c6e43b87aa523661",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/model.py",
+      "baseline_sha256": "d5450d58bb13e3b1a3cefa073b3e1baea26be149914b6bff3db02775ff6f66ac",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/zero_regression.py",
+      "baseline_sha256": "ec889fe6f43d0fe86d8b67df2bd44478f5837c209f9d9f59093f61cfa01ae21c",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/notes.md",
+      "baseline_sha256": "ebf57c71ff9c5cfe74577f87fed19392dc061391ae93c374f26c087aa2dfd7ae",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/topic.md",
+      "baseline_sha256": "a127bfc7f2c273d9a88036a2959dcaa89ef35766833fbb655b04aaa52b560681",
+      "distribution_sha256": null,
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_contracts.py",
+      "baseline_sha256": "82d415cd5ddfbbd5e458a0cc9d57f7009de780f463834e49625ba1eb718f6c65",
+      "distribution_sha256": "27a06de5e58b35b64ee013cd4c6ba88116e126179f48b75f5016af600c662648",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/paths.py",
+      "baseline_sha256": "9a185962a814809801c3d5a28d0bcba40f8675174940b681603fd799163fd243",
+      "distribution_sha256": "f92b7561761e71034ab9bc95f50b657c88a063db31a751058e6153a499117fdf",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "MCP/CST-CAD/tests/test_visual_cases.py",
+      "baseline_sha256": "ac8d9af833e4ee85ecf119c3e11ce2c46a52b3b758aafd41c9f150ac282495da",
+      "distribution_sha256": "1d73358faec4ebba7f933a2368c7e9cc462432a2d4dcdfb2081f28834340851b",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    },
+    {
+      "path": "skills/cst-brain-ingest/references/evidence-policy.md",
+      "baseline_sha256": "8e94412a8443884d0b337d58efe1f08191e65ce9d339be8f64d625e01b2fb1f0",
+      "distribution_sha256": "ef47ee3cb7146dbf629b3878d20dff7dff29496f972883a34398769849118afa",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-brain-ingest/SKILL.md",
+      "baseline_sha256": "c5c4081c5cd7572cdc6f16f1f81adffaf6540a90c739730a1447b6b0444791aa",
+      "distribution_sha256": "2056eab694894034a451594de180b778d66d88e9363a46fc01129d0f8fc54918",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-brain-lint/references/lint-codes.md",
+      "baseline_sha256": "9636eee19b40d457bad891e7db85bc43fa3c85d4d2405b45827aceedad899dfd",
+      "distribution_sha256": "fd3f9ac96c89641b9c84c36d010db1bc217922baa3a848f147f46a02dd6a5375",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-brain-lint/SKILL.md",
+      "baseline_sha256": "8afac0a39d79c1d2f170da94c992475e5f20db8991f105cdff6d14bc4d85338e",
+      "distribution_sha256": "de15abb0a3c980fcfeeda3958b926a068e87a6499d52170d9248edbe674b6970",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-brain-query/references/retrieval-guide.md",
+      "baseline_sha256": "144c57c118439c7d04a84d9271990404065bca95724bf708fe5d18e192619ffc",
+      "distribution_sha256": "102af28383394010c07beeac4dd807b145c982837b480851e13630be7e7f016f",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-brain-query/SKILL.md",
+      "baseline_sha256": "095b258f315a647736966a73d50130d3451fc7654f1c0ea7d4f8ab74e37184c5",
+      "distribution_sha256": "64765b027fe260a9abbd6172597a4abf6f3ac600d8a9549a92ea73b68a60fe66",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-experiment-orchestration/references/experiment-contract.md",
+      "baseline_sha256": "d4141bb6c1823714a3e9f8b6aed787c5e5b3df391f6583336bb620bfccd6660c",
+      "distribution_sha256": "5c164eb6be286638d0a4a6eb8fef493c85cd133d2d084aa238751008d0ac6c67",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-experiment-orchestration/SKILL.md",
+      "baseline_sha256": "604e1b3d3ee8db1b8b12f0dca2549462f5a9857311135ac3b4bbc874c1e3930c",
+      "distribution_sha256": "7a0c86a14ace59e5f424d0a40ebf0733689f2585388b5817b9d9eae8465febae",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-result-plotting/SKILL.md",
+      "baseline_sha256": "40d0ff7ea82e0297bbdb8f77cd332134800cf822881bc5f7cf821e8006c0f3c4",
+      "distribution_sha256": "34ca17b5b15761f5b2816394fb9a570597ffc63d674ef50fec60c80c37e64812",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/cst-red-lines.md",
+      "baseline_sha256": "9614f0043f8e4df52c1f7cd75a53418af42cc1dea8189988eff60eb56b52e626",
+      "distribution_sha256": "587888d9b2e2485f738054a045ad0c9a4247e90107dbc4e911bc9acf130dd566",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/parameter-policy.md",
+      "baseline_sha256": "800687bcd2f9df6f23d9e9a9eec142bb0010267ff976ca2fb08788a1a7d03288",
+      "distribution_sha256": "245adca4c70653e9d94c24f7cb091466e30b4bb96380e785017248b352f2c7d0",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/result-validation.md",
+      "baseline_sha256": "ae11d476178b88d1c56d6198ed1e3ae8c09252a9d164c66c0cb0a9d216aaae3f",
+      "distribution_sha256": "6553e549f6d0bfb08b2094482f02cd7b8c152f6aaf8f29cdec7334d5f5f39882",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/templates.md",
+      "baseline_sha256": "459e520c4eb9f7bc530423730cabcd05b45b8b5c42f858897a359bafe0b60395",
+      "distribution_sha256": "b84700e7814eb2f53db6e31aff8b159c52915ea2db0a61d73c7ee152ef0863c6",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/workflow.md",
+      "baseline_sha256": "5f9382592b7316358597a40c1e92448613fd9c266cae5f29017e71affd4858ae",
+      "distribution_sha256": "fd343ecbab0a136e42d40670b629f10f634c87a60db46a7c8336eb8710f1d362",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/SKILL.md",
+      "baseline_sha256": "d744428909df586719a09631a384a302792b39464beec4bff8d6099f0e507255",
+      "distribution_sha256": "d21ee24cae75edb5321db8af606e47795d9ca7cc0de70cdbf9046b98d9a8aab7",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-strategy-learning/references/strategy-template.md",
+      "baseline_sha256": "f6ba9711d62af485ea664be810ec2ba3829433832a27308bd65af0a201f568a4",
+      "distribution_sha256": "83fa3ab75ea28c9f0189f071e7ef97ced1d2ffc1963d986a5fd311f425c6b815",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-strategy-learning/SKILL.md",
+      "baseline_sha256": "b6f8741035ae72a1a7744d0e43d30cbfcb349af4f909a0f906e9887b2a3ca826",
+      "distribution_sha256": "927a343f431cc4121f0b7cd0affe70e485966f98e6199b76f111da56b8c2711d",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-trace-compile/references/trace-contract.md",
+      "baseline_sha256": "94864f963ec92a0f7bb6692f656cc74fa2e8d1839154b04751cef48ec8ebd0c3",
+      "distribution_sha256": "0d3252cb3526f928a496fac7ccab151dc636914d7bf1ae56f4321bda33fa297c",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-trace-compile/SKILL.md",
+      "baseline_sha256": "c6264f75c79fdbc3d803847a8a4ea69dd36bbc41163a5ffef8f1bbbcd6d6f35a",
+      "distribution_sha256": "57db87a73d7f5bff703d0278425ab6fc4c91dadf70c129979a7c23320af5b760",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-vba-modeling/references/vba-patterns.md",
+      "baseline_sha256": "29dd6ef6d9238bf19182d8992f09dbbd6931bad49a6574d5a9d6702aa03c4ea9",
+      "distribution_sha256": "390c90ab4f13b655e69225cbae595a68d1c223b32090d99c3d66bc60356416a3",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "skills/cst-vba-modeling/SKILL.md",
+      "baseline_sha256": "72b6f614656ff8cca5d3f1111c87dcb8a74637441e3eed7269f6831922f4cd27",
+      "distribution_sha256": "905460578ca072bd9b0012c32c6ce44cac032172d7a3719d7033c62c949ae8cf",
+      "reason": "Portable Skill instructions and public licensing"
+    },
+    {
+      "path": "scripts/cstlab_data.py",
+      "baseline_sha256": "9b9351842f4097efe170aa2ebb5aeb16a4fb7143ea7c42990d67fb5c3f33a3d9",
+      "distribution_sha256": "f8ceaf14152a93dcec5d4d66148489eff973f77bc30ef4d7e71ff364e320c2c4",
+      "reason": "Packaging adaptation; see maintained source diff and tests"
+    }
+  ]
+}

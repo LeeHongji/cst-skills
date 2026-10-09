@@ -1,0 +1,91 @@
+{
+  "approved_ranges": {
+    "l3": [
+      13.0,
+      15.0
+    ]
+  },
+  "assumptions": [
+    {
+      "parameter": "sub_h",
+      "provenance": "assumption",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "cu_t",
+      "provenance": "assumption",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "sub_w",
+      "provenance": "assumption",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "lfeed",
+      "provenance": "assumption",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "w50",
+      "provenance": "assumption",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "wh",
+      "provenance": "assumption",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "wl",
+      "provenance": "strong_inference",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "l1",
+      "provenance": "strong_inference",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "l2",
+      "provenance": "strong_inference",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "l3",
+      "provenance": "strong_inference",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "l4",
+      "provenance": "strong_inference",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    },
+    {
+      "parameter": "l5",
+      "provenance": "strong_inference",
+      "statement": "Synthetic annotation to exercise provenance validation; no engineering conclusion."
+    }
+  ],
+  "attempt_id": "a01-test",
+  "baseline_parameters": {
+    "cu_t": 0.035,
+    "l1": 6.8538,
+    "l2": 8.2153,
+    "l3": 13.9312,
+    "l4": 8.2153,
+    "l5": 6.8538,
+    "lfeed": 5.0,
+    "sub_h": 0.813,
+    "sub_w": 15.0,
+    "w50": 1.8332,
+    "wh": 0.3543,
+    "wl": 5.1049
+  },
+  "design_id": "filter-fixture",
+  "max_iterations": 12,
+  "model_intent_id": "aa14098d89cfde12134bae68faba9aedc4a4a42ea8f5e987d6e19d465f78604a",
+  "schema_version": 1,
+  "topic_id": "public-contract-fixture",
+  "topology_hash": "63e7a616575850b01a2dacefb4f464a6e225e8725417029e7fd480dcddcfc6d3"
+}

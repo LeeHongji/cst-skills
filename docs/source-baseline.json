@@ -1,0 +1,1874 @@
+{
+  "schema_version": 1,
+  "source_revisions": {
+    "automation": "71e6ee3aa9e76c491c8229a341e1c4ac1406b195",
+    "portable": "8b6853e0bb4602d16895e6eb3967238ebfee35eb"
+  },
+  "notes": [
+    "Actual source bytes recorded; Git commit alone is not the baseline.",
+    "Personal workspaces, authorizations, databases and papers are excluded.",
+    "Portable baseline derives from CST Automation; only one executor is shipped."
+  ],
+  "files": [
+    {
+      "path": "MCP/CST/.env.example",
+      "portable_sha256": "94ae4b5f5da7fc203da1dac8b08918d155ff1757648ccb8eebc30c70990762f7",
+      "automation_sha256": "94ae4b5f5da7fc203da1dac8b08918d155ff1757648ccb8eebc30c70990762f7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/.gitignore",
+      "portable_sha256": "7cda3e318ba8be53264d636e480794e139f9350df7c44835595264cb0e9d7714",
+      "automation_sha256": "7cda3e318ba8be53264d636e480794e139f9350df7c44835595264cb0e9d7714",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/agent_mcp_server.py",
+      "portable_sha256": "e71426976408e7af9889ae55e67a86ee3b8774e8fbbe95de9639fee75dcf7516",
+      "automation_sha256": "e71426976408e7af9889ae55e67a86ee3b8774e8fbbe95de9639fee75dcf7516",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_agent_api.py",
+      "portable_sha256": "c7b16250c48dac723e75a910878db68a2948f48cb5d97a4f2cedd45b28c949ec",
+      "automation_sha256": "b9e19de50475734e4c45c9fa75a826094a9bd936bb1f5fdf079e91924704b51f",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST/cst_automation.py",
+      "portable_sha256": "3efd06bd9d240178f0bca176019fbd0dc0785a33629e5a8bc997fc6b6577eb0a",
+      "automation_sha256": "3efd06bd9d240178f0bca176019fbd0dc0785a33629e5a8bc997fc6b6577eb0a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_function_executor.py",
+      "portable_sha256": "7a89b034f74786f7a7cc9285b729cdf585314915294d43432934f7ddc8cea098",
+      "automation_sha256": "b15f3df7798aa4e33e54ab6fd3f0dc6332f8bc947a0a91c23f2b78b7dc137dae",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/__init__.py",
+      "portable_sha256": "1945a797041672430abfd028f191dc759942a47ba0e3195ecebc4dad054f17ed",
+      "automation_sha256": "1945a797041672430abfd028f191dc759942a47ba0e3195ecebc4dad054f17ed",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/function_execution.py",
+      "portable_sha256": "fd4108d3048759c2958cec97d99d2295334d0e812a00a730cb81040ec95a8bc9",
+      "automation_sha256": "fd4108d3048759c2958cec97d99d2295334d0e812a00a730cb81040ec95a8bc9",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/native_ports.py",
+      "portable_sha256": "0bc54b896cf746f6043eeae257347445a0d091044abd26b8f69eb2c40799a7b1",
+      "automation_sha256": "0bc54b896cf746f6043eeae257347445a0d091044abd26b8f69eb2c40799a7b1",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/paths.py",
+      "portable_sha256": "f4e568243237380739dd83d15e571d5778e46e090c52cc87c6f76bbeb28d66ea",
+      "automation_sha256": "f4e568243237380739dd83d15e571d5778e46e090c52cc87c6f76bbeb28d66ea",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/policy.py",
+      "portable_sha256": "73dbb17ee1588e0efddf197906b6d61a8da2166cb416463fc7225ccb1ceb8275",
+      "automation_sha256": "73dbb17ee1588e0efddf197906b6d61a8da2166cb416463fc7225ccb1ceb8275",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/preconditions.py",
+      "portable_sha256": "9026a6ec9ab9aad0989e8203953cb4ca2a104a497bcf3d1b686d6ca13db0f230",
+      "automation_sha256": "9026a6ec9ab9aad0989e8203953cb4ca2a104a497bcf3d1b686d6ca13db0f230",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/session.py",
+      "portable_sha256": "46fc29f2ab6bcb29a0492212f0f48fab51705675d34b9ce767fb37ca58a4f66c",
+      "automation_sha256": "46fc29f2ab6bcb29a0492212f0f48fab51705675d34b9ce767fb37ca58a4f66c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/solver_evidence.py",
+      "portable_sha256": "0fb95938d212cb1f62e6c6a5e46be4986204866d18faa0899fa834691038cc48",
+      "automation_sha256": "0fb95938d212cb1f62e6c6a5e46be4986204866d18faa0899fa834691038cc48",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/supervisor.py",
+      "portable_sha256": "69642a9d8fb7ca34b2414252332e005e96ecf9ced7dd204f65ce8da1b6c79f03",
+      "automation_sha256": "69642a9d8fb7ca34b2414252332e005e96ecf9ced7dd204f65ce8da1b6c79f03",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/win32_dialogs.py",
+      "portable_sha256": "7d9d9b09ae066808b2af922b664bd3dd5715bdc840fb25d5b9a4c616be52bc7c",
+      "automation_sha256": "7d9d9b09ae066808b2af922b664bd3dd5715bdc840fb25d5b9a4c616be52bc7c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_guardian/windows_job.py",
+      "portable_sha256": "15131d5d223f4137c6694484a81a7ae8153c9cec40ea089d897e657c555d2a1c",
+      "automation_sha256": "15131d5d223f4137c6694484a81a7ae8153c9cec40ea089d897e657c555d2a1c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_metrics.py",
+      "portable_sha256": "d6d01a12007ce39c34211de5bc702c71ef21547aba4148455cad170a619320f4",
+      "automation_sha256": "d6d01a12007ce39c34211de5bc702c71ef21547aba4148455cad170a619320f4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_parameter_sweep.py",
+      "portable_sha256": "62641210abf595a336182f6ebbc140431ce6473abadbf7c735c3572981589e11",
+      "automation_sha256": "62641210abf595a336182f6ebbc140431ce6473abadbf7c735c3572981589e11",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_review.py",
+      "portable_sha256": "bea5ddbd3483b0f482c3f053a8428d25089aca6cb6415f9cb92436d56c6d3bf1",
+      "automation_sha256": "bea5ddbd3483b0f482c3f053a8428d25089aca6cb6415f9cb92436d56c6d3bf1",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_runtime_cli_bridge.py",
+      "portable_sha256": "46dd2a6d87320b95146f616cf732ca4ad7113957043277f042717df1d2ea479d",
+      "automation_sha256": "46dd2a6d87320b95146f616cf732ca4ad7113957043277f042717df1d2ea479d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_schematic.py",
+      "portable_sha256": "9c505caa00350620d8fafabe9845ca3684fcea7e2f2de66b78d4ab201e38df3e",
+      "automation_sha256": "9c505caa00350620d8fafabe9845ca3684fcea7e2f2de66b78d4ab201e38df3e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_trace.py",
+      "portable_sha256": "7d39f1fb7f2c8a835ba629e40e006b5c0d9ef7f9c2917b095fbeb82b038eb102",
+      "automation_sha256": "7d39f1fb7f2c8a835ba629e40e006b5c0d9ef7f9c2917b095fbeb82b038eb102",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_typed_wrapper_generator.py",
+      "portable_sha256": "ecb1e1f0c3cf768953de2a99be7253553e9ff494ef7abc83d769e4668dd79947",
+      "automation_sha256": "ecb1e1f0c3cf768953de2a99be7253553e9ff494ef7abc83d769e4668dd79947",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/cst_workspace.py",
+      "portable_sha256": "3cb9423e5610c9f020cda098ec706c88bdf0d0f732273cf2f6a31ff94365f258",
+      "automation_sha256": "4cdb7eee47fbcd3a7680d9b69c61015266adef48f15c3302c9c0b504e1f514d2",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST/generated/cst_toolbox_wrappers.py",
+      "portable_sha256": "08149617bbe128d3afc97973c7bee8a7470856fc6540dd9dbaeb84b7eff76ff2",
+      "automation_sha256": "08149617bbe128d3afc97973c7bee8a7470856fc6540dd9dbaeb84b7eff76ff2",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/mcp_server.py",
+      "portable_sha256": "4b3c2da1d2c633ed75434aedf296ec7f47020e2e3b05e6abf82700425e3e40a5",
+      "automation_sha256": "4b3c2da1d2c633ed75434aedf296ec7f47020e2e3b05e6abf82700425e3e40a5",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/pyproject.toml",
+      "portable_sha256": "2d09f03d6fb77698cec387f223fed5ecbd4036dcbcc0a847ff8dd5b07935df2e",
+      "automation_sha256": "2d09f03d6fb77698cec387f223fed5ecbd4036dcbcc0a847ff8dd5b07935df2e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/README.md",
+      "portable_sha256": "e005cb41b94daf259aa69a49407a57c9f309a62f52959a1f5ffb41200644aa1f",
+      "automation_sha256": "e005cb41b94daf259aa69a49407a57c9f309a62f52959a1f5ffb41200644aa1f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/README.zh-CN.md",
+      "portable_sha256": "3b4a4407f7ca00d873aa6e14535b5268ab2e4db8d1e21f40b62535f2a10f123a",
+      "automation_sha256": "3b4a4407f7ca00d873aa6e14535b5268ab2e4db8d1e21f40b62535f2a10f123a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/stdio_smoke.py",
+      "portable_sha256": "fc003774828d9cbc3aa0283d51b3d93674e825412db96d32032d6ca59b59c196",
+      "automation_sha256": "fc003774828d9cbc3aa0283d51b3d93674e825412db96d32032d6ca59b59c196",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/fixtures/solver-evidence/fd-trial0003.log",
+      "portable_sha256": "44caefd4a9e94b71da48a19e13e4efc89eeddd02e139bc96dfe385966ef44bf3",
+      "automation_sha256": "44caefd4a9e94b71da48a19e13e4efc89eeddd02e139bc96dfe385966ef44bf3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/fixtures/solver-evidence/manifest.json",
+      "portable_sha256": "9c6d3e80d449337b62dea7bf0f42afe7bf2d2b70a8fe7a116b0db459d6f1b8db",
+      "automation_sha256": "9c6d3e80d449337b62dea7bf0f42afe7bf2d2b70a8fe7a116b0db459d6f1b8db",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/fixtures/solver-evidence/td-wr90.log",
+      "portable_sha256": "c0fe689dac2c3d35a97113e4697a58d923d7b20b6ceb71d6447cb4be1dd21912",
+      "automation_sha256": "c0fe689dac2c3d35a97113e4697a58d923d7b20b6ceb71d6447cb4be1dd21912",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/owned_job_process.py",
+      "portable_sha256": "c091e34410440deaabd3b2a33bf1bc8ac8c523365f38707df12c8f8ab2d6d33a",
+      "automation_sha256": "c091e34410440deaabd3b2a33bf1bc8ac8c523365f38707df12c8f8ab2d6d33a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_cst_automation.py",
+      "portable_sha256": "2ccaf7df43079613974d0100a1bb6a2d84ef4e83426bdeff8349a622d51fcf75",
+      "automation_sha256": "2ccaf7df43079613974d0100a1bb6a2d84ef4e83426bdeff8349a622d51fcf75",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_cst_metrics.py",
+      "portable_sha256": "7cfb68b1e5819ff9533432adf595c321b51ecbe1036e8f032096cc42a0f03089",
+      "automation_sha256": "7cfb68b1e5819ff9533432adf595c321b51ecbe1036e8f032096cc42a0f03089",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_cst_parameter_sweep.py",
+      "portable_sha256": "192dd2c785a8be3cd2889653d15cfe49c74f9e70a0c7b7a91a827bf990345de1",
+      "automation_sha256": "192dd2c785a8be3cd2889653d15cfe49c74f9e70a0c7b7a91a827bf990345de1",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_cst_runtime_cli_bridge.py",
+      "portable_sha256": "7fde829a32bdc8753fa4106773dd1bbc4b1c49dd3577b51164a789b34e0bd5f7",
+      "automation_sha256": "7fde829a32bdc8753fa4106773dd1bbc4b1c49dd3577b51164a789b34e0bd5f7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_cst_schematic.py",
+      "portable_sha256": "75f3211f516b824f1c4d50cbfc3da35da34e42b91f20626582da2e93d566b8f0",
+      "automation_sha256": "75f3211f516b824f1c4d50cbfc3da35da34e42b91f20626582da2e93d566b8f0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_cst_trace.py",
+      "portable_sha256": "8e8800a1b82662c440d0369e0a2b8e262be335e46939d94b1ed2a84b8e267ffd",
+      "automation_sha256": "8e8800a1b82662c440d0369e0a2b8e262be335e46939d94b1ed2a84b8e267ffd",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_cst_typed_wrapper_generator.py",
+      "portable_sha256": "ed24f118eaab44d44ad080d0b18cac8b5f7a57b011fa90ecb65f260106be3f6c",
+      "automation_sha256": "ed24f118eaab44d44ad080d0b18cac8b5f7a57b011fa90ecb65f260106be3f6c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_fourport_verification.py",
+      "portable_sha256": "f7f3ae4d537235ddd06dc9041136c696a78383a908bda153e204a2d40dbfea1e",
+      "automation_sha256": "f7f3ae4d537235ddd06dc9041136c696a78383a908bda153e204a2d40dbfea1e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_function_audit.py",
+      "portable_sha256": "9497da747011823fb55bd14844c44d12d3e049b4223a1c18a6d2b72cd0dac908",
+      "automation_sha256": "9497da747011823fb55bd14844c44d12d3e049b4223a1c18a6d2b72cd0dac908",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_function_dispatch.py",
+      "portable_sha256": "5a6b9188fb1ce7d2fafb1009bbd79e1f4609cb97bb94078ac7352091c90abf14",
+      "automation_sha256": "5a6b9188fb1ce7d2fafb1009bbd79e1f4609cb97bb94078ac7352091c90abf14",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_function_execution.py",
+      "portable_sha256": "c1374c234f3b1dde086b579a1388e72c5965a5683635d6a4c7552d5a599d7ea9",
+      "automation_sha256": "c1374c234f3b1dde086b579a1388e72c5965a5683635d6a4c7552d5a599d7ea9",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_function_facade.py",
+      "portable_sha256": "b587b58a3b08d0b48f34e69fa8427538918a0504715ce80d1ad43af67f8f483a",
+      "automation_sha256": "b587b58a3b08d0b48f34e69fa8427538918a0504715ce80d1ad43af67f8f483a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_function_learning_isolation.py",
+      "portable_sha256": "0911b01e12f7001953347d516139ca1db4687f08d4f8fa280bea41b6293274cc",
+      "automation_sha256": "0911b01e12f7001953347d516139ca1db4687f08d4f8fa280bea41b6293274cc",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_guardian_neutral_fixture.py",
+      "portable_sha256": "da6610c7c42e2da7b90be2a232238e1b286d0f15cd68f994aeb572e1fd33c467",
+      "automation_sha256": "da6610c7c42e2da7b90be2a232238e1b286d0f15cd68f994aeb572e1fd33c467",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_guardian_paths.py",
+      "portable_sha256": "e82e62ce217de4f13a0256d54604a0276fbbd1a6e0e308aa48190ac58a736af0",
+      "automation_sha256": "e82e62ce217de4f13a0256d54604a0276fbbd1a6e0e308aa48190ac58a736af0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_guardian_policy.py",
+      "portable_sha256": "fe389e2d88e671995c2558e0776b3982c32e5acd64e44efca63ba5e6f4e7d3ba",
+      "automation_sha256": "fe389e2d88e671995c2558e0776b3982c32e5acd64e44efca63ba5e6f4e7d3ba",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_guardian_preconditions.py",
+      "portable_sha256": "ade2e46b44de09cf1185cce33dc47596c959d65344135979e8994a072d9ad269",
+      "automation_sha256": "ade2e46b44de09cf1185cce33dc47596c959d65344135979e8994a072d9ad269",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_guardian_session.py",
+      "portable_sha256": "eab9023742c5b462c13b471ab45257cc5df69c917ba3f64e88858d94a6759cdc",
+      "automation_sha256": "eab9023742c5b462c13b471ab45257cc5df69c917ba3f64e88858d94a6759cdc",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_guardian_supervisor.py",
+      "portable_sha256": "6ccc7970d993fe46b5b303f783582e07161124679c020f711333ca7efb948a77",
+      "automation_sha256": "6ccc7970d993fe46b5b303f783582e07161124679c020f711333ca7efb948a77",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_mcp_guardian_enforcement.py",
+      "portable_sha256": "217759e02c63a5ac9965575aaa0fc12ccf419601f773bc822d64a472a86e8982",
+      "automation_sha256": "217759e02c63a5ac9965575aaa0fc12ccf419601f773bc822d64a472a86e8982",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_native_ports.py",
+      "portable_sha256": "e43af844101cd7d50427c492d359e49e97851c914728ada5146a38494236c726",
+      "automation_sha256": "e43af844101cd7d50427c492d359e49e97851c914728ada5146a38494236c726",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_repository_trial_scripts.py",
+      "portable_sha256": "4c865c421a44692e33024a12b0f2671efc13514d7b1b6d1fbc1a8647c074b6b4",
+      "automation_sha256": "4c865c421a44692e33024a12b0f2671efc13514d7b1b6d1fbc1a8647c074b6b4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_review_adapter.py",
+      "portable_sha256": "6c7510d29a54ed3f87d2aaf71bc6e96e0360056bd1bd66868d33263bed8865ad",
+      "automation_sha256": "6c7510d29a54ed3f87d2aaf71bc6e96e0360056bd1bd66868d33263bed8865ad",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_solver_evidence.py",
+      "portable_sha256": "814b69c9435b3ee691164573168701e0f860e72d917c43f09df178f58d7eae78",
+      "automation_sha256": "814b69c9435b3ee691164573168701e0f860e72d917c43f09df178f58d7eae78",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_standing_authorization.py",
+      "portable_sha256": "723667194518b9e88b1f4078d66d1e1537027b2bf62b043b24eaedd3a29a854b",
+      "automation_sha256": "723667194518b9e88b1f4078d66d1e1537027b2bf62b043b24eaedd3a29a854b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_steps12_verification.py",
+      "portable_sha256": "66e32dba71acf0ad8afe37c941d2bcc292d196edafa6d4361596f29f2e4c2fba",
+      "automation_sha256": "66e32dba71acf0ad8afe37c941d2bcc292d196edafa6d4361596f29f2e4c2fba",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_waveguide_verification.py",
+      "portable_sha256": "188204822d531ccf188d70ddb05b9cf2c40dcfe7f6817fbd44409409004b74ff",
+      "automation_sha256": "188204822d531ccf188d70ddb05b9cf2c40dcfe7f6817fbd44409409004b74ff",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_windows_job.py",
+      "portable_sha256": "8fe0117d0f11860dfe107b4d81cb0ce51c27589c9b009ed1e66990e4fbfd6396",
+      "automation_sha256": "8fe0117d0f11860dfe107b4d81cb0ce51c27589c9b009ed1e66990e4fbfd6396",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tests/test_workspace_routing.py",
+      "portable_sha256": "40e6ef348ff5fc51eb456b98e6eaca10f78382c23d95dd27a131f87c7cb51489",
+      "automation_sha256": "40e6ef348ff5fc51eb456b98e6eaca10f78382c23d95dd27a131f87c7cb51489",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/conflict_cases.py",
+      "portable_sha256": "42344b9dd39cb567eef69acee10c07d14c5e584666fb8867b8615fc9170180e5",
+      "automation_sha256": "42344b9dd39cb567eef69acee10c07d14c5e584666fb8867b8615fc9170180e5",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/dump_cst_windows.py",
+      "portable_sha256": "1748d7dc9e024b59a570ae0e3a2d6b55f1706d3ceea8ece16dc5663d70ec3854",
+      "automation_sha256": "1748d7dc9e024b59a570ae0e3a2d6b55f1706d3ceea8ece16dc5663d70ec3854",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/function_cst_worker.py",
+      "portable_sha256": "2556a418cdabdb7611e02d9259e95ebdf32830a0769255432ba2d3efc1c4de60",
+      "automation_sha256": "2556a418cdabdb7611e02d9259e95ebdf32830a0769255432ba2d3efc1c4de60",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/function_worker.py",
+      "portable_sha256": "65e2b91fc2478e86aa7a39e2db3cfdd4cccb64dcbf4eb2d83620e27c1b6694c9",
+      "automation_sha256": "65e2b91fc2478e86aa7a39e2db3cfdd4cccb64dcbf4eb2d83620e27c1b6694c9",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/guarded_solve.py",
+      "portable_sha256": "ecac7ca2a44a5898807938bb7ae2be70c3308567b876bb051162fcecfaf4a547",
+      "automation_sha256": "ecac7ca2a44a5898807938bb7ae2be70c3308567b876bb051162fcecfaf4a547",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/guardian_worker.py",
+      "portable_sha256": "c93ca038cd1b1bdf40294ba42aac1105b14e66d6c033ea19c8417a0328bdce4f",
+      "automation_sha256": "c93ca038cd1b1bdf40294ba42aac1105b14e66d6c033ea19c8417a0328bdce4f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/plot_waveguide_validation.py",
+      "portable_sha256": "4f8b377f945acb89af418ea9994226a4fbe53006567b63ec2408b1cbddaf9d0b",
+      "automation_sha256": "4f8b377f945acb89af418ea9994226a4fbe53006567b63ec2408b1cbddaf9d0b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/probe_conflict_matrix.py",
+      "portable_sha256": "12d4742b094a5c8771b15b20b1ccc76a92d61d3b33371cb702f57460793edaa1",
+      "automation_sha256": "12d4742b094a5c8771b15b20b1ccc76a92d61d3b33371cb702f57460793edaa1",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/probe_cst_dialog.py",
+      "portable_sha256": "d642d49e506c9b87b71f2c77c4c9db631c54a1bce83af1999373cafac2f59d04",
+      "automation_sha256": "d642d49e506c9b87b71f2c77c4c9db631c54a1bce83af1999373cafac2f59d04",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/probe_instance_recovery.py",
+      "portable_sha256": "e03aae616ca4c57cbdd9f92042f428af7f73265ef7fb7e429f9647143bd9501b",
+      "automation_sha256": "e03aae616ca4c57cbdd9f92042f428af7f73265ef7fb7e429f9647143bd9501b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/probe_parameter_apply.py",
+      "portable_sha256": "bda3f7455264998c64fbbd6ee0098af7315b863c72444022d55c1d7a515be810",
+      "automation_sha256": "bda3f7455264998c64fbbd6ee0098af7315b863c72444022d55c1d7a515be810",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/verification_lowpass.py",
+      "portable_sha256": "96d9fd438beaac57697f2df43f86b77393b5f74d5faa78df47167c35778524b7",
+      "automation_sha256": "96d9fd438beaac57697f2df43f86b77393b5f74d5faa78df47167c35778524b7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/verification_resonator.py",
+      "portable_sha256": "426cf49ee00b03b4ea1594ca060e536ccf560e4fffcd873286f4df9b23bdffe2",
+      "automation_sha256": "426cf49ee00b03b4ea1594ca060e536ccf560e4fffcd873286f4df9b23bdffe2",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/verification_waveguide.py",
+      "portable_sha256": "318716553b51f2f8009addcbed78dc2c536d74ddaf0219f4f451cb27a8d7c20a",
+      "automation_sha256": "318716553b51f2f8009addcbed78dc2c536d74ddaf0219f4f451cb27a8d7c20a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/verify_guardian_live.py",
+      "portable_sha256": "b466b1746d2864917002d860a2a6c5001277337ef02e81c9cd9cc3c36e3418ae",
+      "automation_sha256": "b466b1746d2864917002d860a2a6c5001277337ef02e81c9cd9cc3c36e3418ae",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/verify_steps12_live.py",
+      "portable_sha256": "839753e6f73d3195aecdda66bd3de9e3b0c086fe9a0ef0bb69908bd8ff27cd28",
+      "automation_sha256": "839753e6f73d3195aecdda66bd3de9e3b0c086fe9a0ef0bb69908bd8ff27cd28",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/tools/verify_waveguide_live.py",
+      "portable_sha256": "8296c8bf735d93f1619655dbeec78748c8807551ae2cbadfc0c60906bb7aae71",
+      "automation_sha256": "8296c8bf735d93f1619655dbeec78748c8807551ae2cbadfc0c60906bb7aae71",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/LICENSE",
+      "portable_sha256": "4a4bb504470255c58bbd23885c2dd6d2345264917f1c64c215e1c569dcff286b",
+      "automation_sha256": "4a4bb504470255c58bbd23885c2dd6d2345264917f1c64c215e1c569dcff286b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/bootstrap.py",
+      "portable_sha256": "0f45f2cceb68ea27abd0c7757f0b0f053867e5feae5b3639c48589fd9e7d1a43",
+      "automation_sha256": "0f45f2cceb68ea27abd0c7757f0b0f053867e5feae5b3639c48589fd9e7d1a43",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/__init__.py",
+      "portable_sha256": "758d40e355f778bab137982359eab5315d87e60ba52719bf21d0851b30638867",
+      "automation_sha256": "758d40e355f778bab137982359eab5315d87e60ba52719bf21d0851b30638867",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/__main__.py",
+      "portable_sha256": "203538580c4b44c6d6215d4116aa0f1d743aaf3472d104eb6f59ee81a7f65f4c",
+      "automation_sha256": "203538580c4b44c6d6215d4116aa0f1d743aaf3472d104eb6f59ee81a7f65f4c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/analysis/__init__.py",
+      "portable_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "automation_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/analysis/farfield/__init__.py",
+      "portable_sha256": "4b3cc704b4079790c11fcb07f0c1048704ec26d553e4f44241d759d7224012f3",
+      "automation_sha256": "4b3cc704b4079790c11fcb07f0c1048704ec26d553e4f44241d759d7224012f3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/analysis/farfield/flatness.py",
+      "portable_sha256": "823adfa776f74fde17d301ed22eef48202fad4c7a8dcc0d823ddc1164e45840f",
+      "automation_sha256": "823adfa776f74fde17d301ed22eef48202fad4c7a8dcc0d823ddc1164e45840f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/analysis/farfield/parser.py",
+      "portable_sha256": "8bd833e794ec6f7f13f843b7fabcbc80b09b2ee48176bf9ef9338472f43a6af6",
+      "automation_sha256": "8bd833e794ec6f7f13f843b7fabcbc80b09b2ee48176bf9ef9338472f43a6af6",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/__init__.py",
+      "portable_sha256": "81df7895e37548f7961252fd9aec42f2a3865aa821717416c5bd2ee42dca8eae",
+      "automation_sha256": "81df7895e37548f7961252fd9aec42f2a3865aa821717416c5bd2ee42dca8eae",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/dispatch.py",
+      "portable_sha256": "14665a84be6d42b021f2789634ee5dcc9322747f4b6ca97d06042a2ad899d2ea",
+      "automation_sha256": "14665a84be6d42b021f2789634ee5dcc9322747f4b6ca97d06042a2ad899d2ea",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/pipelines/__init__.py",
+      "portable_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "automation_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/pipelines/impl.py",
+      "portable_sha256": "2d23420f5a1e8347fcd162bf16334578aeaadb3ce13fc914b00af878fa2a46d1",
+      "automation_sha256": "2d23420f5a1e8347fcd162bf16334578aeaadb3ce13fc914b00af878fa2a46d1",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/pipelines/registry.py",
+      "portable_sha256": "08c6222f02bbeb61e869e8f8481a233d605423a28f60c8739227900dc21fce98",
+      "automation_sha256": "08c6222f02bbeb61e869e8f8481a233d605423a28f60c8739227900dc21fce98",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/__init__.py",
+      "portable_sha256": "dbc8460cdb080a9da00f6d7cfb47e2f3fe77ad7752748026c8c1200a74c1890f",
+      "automation_sha256": "dbc8460cdb080a9da00f6d7cfb47e2f3fe77ad7752748026c8c1200a74c1890f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/audit.py",
+      "portable_sha256": "a4f4079aeab6a07cd011afbecc6d254811531609bac4f34823dbad4ea4648f51",
+      "automation_sha256": "a4f4079aeab6a07cd011afbecc6d254811531609bac4f34823dbad4ea4648f51",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/capture.py",
+      "portable_sha256": "c67a4c5b3502f4c5f7345c3f67224faf509545ada324fb2ac16415691fa48a09",
+      "automation_sha256": "c67a4c5b3502f4c5f7345c3f67224faf509545ada324fb2ac16415691fa48a09",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/doe.py",
+      "portable_sha256": "54ace814265a8ad0297b2fcb496f3b49895664f654234f41e07c2889eed553c7",
+      "automation_sha256": "54ace814265a8ad0297b2fcb496f3b49895664f654234f41e07c2889eed553c7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/environment.py",
+      "portable_sha256": "7bda4dd86a18b7504a7c4ba783b5ed84bee9d0e1db870562fc418a6eed917b64",
+      "automation_sha256": "7bda4dd86a18b7504a7c4ba783b5ed84bee9d0e1db870562fc418a6eed917b64",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/errors.py",
+      "portable_sha256": "b89b066f846b7dc5e8762cc35c58daf6396cae64919f1fc40dc8bd453c2267be",
+      "automation_sha256": "b89b066f846b7dc5e8762cc35c58daf6396cae64919f1fc40dc8bd453c2267be",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/evidence.py",
+      "portable_sha256": "fc5ff195d3850a3009b6dc3049168f33812eb8152531faf26491fc968b264b12",
+      "automation_sha256": "fc5ff195d3850a3009b6dc3049168f33812eb8152531faf26491fc968b264b12",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/farfield.py",
+      "portable_sha256": "0b52d47b54dc9ab78cc67510fe96a78d24a70b5f61e421a314bf0f664ff7e2d4",
+      "automation_sha256": "0b52d47b54dc9ab78cc67510fe96a78d24a70b5f61e421a314bf0f664ff7e2d4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/gateway.py",
+      "portable_sha256": "162d0ec896da090ea9f0a475a5ce73de1e22cb86e7015d28308780aff389b03d",
+      "automation_sha256": "162d0ec896da090ea9f0a475a5ce73de1e22cb86e7015d28308780aff389b03d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/identity.py",
+      "portable_sha256": "accb91e2ae7102a97aeef075afe9049511dcc9e9d3cb3a3da79b1f3aff010376",
+      "automation_sha256": "accb91e2ae7102a97aeef075afe9049511dcc9e9d3cb3a3da79b1f3aff010376",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/modeling.py",
+      "portable_sha256": "edd58290403b0d0e5b4ef16d3cf0d084dc55efc5de5eb6ef9fbc00267300a0ff",
+      "automation_sha256": "edd58290403b0d0e5b4ef16d3cf0d084dc55efc5de5eb6ef9fbc00267300a0ff",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/objective.py",
+      "portable_sha256": "e64111d65daa6f04473a34baba79010e0fb824b525c2d833d932518ce04e946d",
+      "automation_sha256": "e64111d65daa6f04473a34baba79010e0fb824b525c2d833d932518ce04e946d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/optimizer.py",
+      "portable_sha256": "5212d0b10b7c8f027d67c649310cf31049bb149c133004b9f0ff12b3f663067b",
+      "automation_sha256": "5212d0b10b7c8f027d67c649310cf31049bb149c133004b9f0ff12b3f663067b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/process.py",
+      "portable_sha256": "18e215221f7730b1d9d57bf95806d557b00f6c3d0e7d2f99744310ccbebf5382",
+      "automation_sha256": "18e215221f7730b1d9d57bf95806d557b00f6c3d0e7d2f99744310ccbebf5382",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/project.py",
+      "portable_sha256": "365e5a6e4b21cc251f203a02f00e92a06cc3afa7b8f3c2eaa1d129a700bfa6ef",
+      "automation_sha256": "365e5a6e4b21cc251f203a02f00e92a06cc3afa7b8f3c2eaa1d129a700bfa6ef",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/results.py",
+      "portable_sha256": "6c0837a3c0a13af2f91793c5546e8089563c0ac5fd813f1a64b6a3acefed69d0",
+      "automation_sha256": "6c0837a3c0a13af2f91793c5546e8089563c0ac5fd813f1a64b6a3acefed69d0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/session.py",
+      "portable_sha256": "caba30644ba4fcb007f03d7f2d59c75a75738175354d77a1402fb94f04f68ef4",
+      "automation_sha256": "caba30644ba4fcb007f03d7f2d59c75a75738175354d77a1402fb94f04f68ef4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/simulation.py",
+      "portable_sha256": "8739b6dc951d55f7da8e7384b45eb7a053190f74bd5d2641c3ad72c895b2b6fe",
+      "automation_sha256": "8739b6dc951d55f7da8e7384b45eb7a053190f74bd5d2641c3ad72c895b2b6fe",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/utils.py",
+      "portable_sha256": "e2d61919a98e3c0e4611c7c82e6d8ff1cb71879eaf1f5978d9e55627d1e1e9a3",
+      "automation_sha256": "e2d61919a98e3c0e4611c7c82e6d8ff1cb71879eaf1f5978d9e55627d1e1e9a3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/workspace.py",
+      "portable_sha256": "30544e8562010c61cdb3e91789d7b52cf6e3c017c83d37ee73855979e28e80bb",
+      "automation_sha256": "30544e8562010c61cdb3e91789d7b52cf6e3c017c83d37ee73855979e28e80bb",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/__init__.py",
+      "portable_sha256": "cd819f97b58e21bcfebe6083fe34647d4d674d0d32e462309f26d368dbb7bb54",
+      "automation_sha256": "cd819f97b58e21bcfebe6083fe34647d4d674d0d32e462309f26d368dbb7bb54",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/canvas_3d.py",
+      "portable_sha256": "047f60bc0af9af5e4692793aa3222e9f44519db3a763439f1102ebbac1303462",
+      "automation_sha256": "047f60bc0af9af5e4692793aa3222e9f44519db3a763439f1102ebbac1303462",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/components.py",
+      "portable_sha256": "237db5baa12d613783515b1e2bf91e87b022af301f6a8f55d0d6124eb45b616d",
+      "automation_sha256": "237db5baa12d613783515b1e2bf91e87b022af301f6a8f55d0d6124eb45b616d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/dashboard.py",
+      "portable_sha256": "4a8934d721b7a0ffe6fd468726c28252662c022cfb1ac0891ef694cb363583d0",
+      "automation_sha256": "4a8934d721b7a0ffe6fd468726c28252662c022cfb1ac0891ef694cb363583d0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/svg_heatmap.py",
+      "portable_sha256": "8e77b6a09bd9fd05464c1e135614ea8633db6e2949a9aeca36c82c73a04e85de",
+      "automation_sha256": "8e77b6a09bd9fd05464c1e135614ea8633db6e2949a9aeca36c82c73a04e85de",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/svg_linechart.py",
+      "portable_sha256": "62a4f2e58d2a5681687c1d6dabd6d7061c05b92c6f0bb0087d3621b840b45dbb",
+      "automation_sha256": "62a4f2e58d2a5681687c1d6dabd6d7061c05b92c6f0bb0087d3621b840b45dbb",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/svg_page.py",
+      "portable_sha256": "777bf2277b750d610a589d1e9b1d7cfcc6fe6140e9f6e6cd9ea1214e468a49fb",
+      "automation_sha256": "777bf2277b750d610a589d1e9b1d7cfcc6fe6140e9f6e6cd9ea1214e468a49fb",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/__init__.py",
+      "portable_sha256": "4785369c33d534e079971646e5acdc70cbc424ab8bfe8dbecb1e08998398ebd7",
+      "automation_sha256": "4785369c33d534e079971646e5acdc70cbc424ab8bfe8dbecb1e08998398ebd7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/audit.py",
+      "portable_sha256": "4fcd263e5a1b707b7db520e3208ded5b4730abecaaa186efb2e3c9d90beb31d5",
+      "automation_sha256": "4fcd263e5a1b707b7db520e3208ded5b4730abecaaa186efb2e3c9d90beb31d5",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/doe.py",
+      "portable_sha256": "1f425288ed0f52c528ae5db6843ee22d9c750ec5d2f79e9dec3b12a6c97c614a",
+      "automation_sha256": "1f425288ed0f52c528ae5db6843ee22d9c750ec5d2f79e9dec3b12a6c97c614a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/farfield.py",
+      "portable_sha256": "96f962a76ace564c3cd321a52eb0b6d377d05e8702086f851064111206b70d4a",
+      "automation_sha256": "96f962a76ace564c3cd321a52eb0b6d377d05e8702086f851064111206b70d4a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/modeling.py",
+      "portable_sha256": "fca4592dcc452fa3a1c0bb37c9edd37296382c64e5597216d84d6d26002abe99",
+      "automation_sha256": "fca4592dcc452fa3a1c0bb37c9edd37296382c64e5597216d84d6d26002abe99",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/optimization.py",
+      "portable_sha256": "4300c9bf39003908787abd9c47ba1a13de1855e5d1180f10ed027b2e7fbac89c",
+      "automation_sha256": "4300c9bf39003908787abd9c47ba1a13de1855e5d1180f10ed027b2e7fbac89c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/project.py",
+      "portable_sha256": "5cad8d74944acabe8ae25caf83e02f35eee327b6850739d7b3f2ab3494b4b65b",
+      "automation_sha256": "5cad8d74944acabe8ae25caf83e02f35eee327b6850739d7b3f2ab3494b4b65b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/results.py",
+      "portable_sha256": "68a98f4d964754c92128018f2a044b22c86e7d1f8aaa776a564bb8f4ebcc0520",
+      "automation_sha256": "68a98f4d964754c92128018f2a044b22c86e7d1f8aaa776a564bb8f4ebcc0520",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/session.py",
+      "portable_sha256": "87865069a94c3dc170d2ab59e68631b0fe13a99ab7872af9cf58ebb43fd40e35",
+      "automation_sha256": "87865069a94c3dc170d2ab59e68631b0fe13a99ab7872af9cf58ebb43fd40e35",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/simulation.py",
+      "portable_sha256": "e1aeaa489728da07f0fa7d7ebc37764985ca09643842b8f48d91057c0246341f",
+      "automation_sha256": "e1aeaa489728da07f0fa7d7ebc37764985ca09643842b8f48d91057c0246341f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/workspace.py",
+      "portable_sha256": "790831bc7af311102b3b94859760de24b2cf9379f21b8110adf48a80fcd0b8d2",
+      "automation_sha256": "790831bc7af311102b3b94859760de24b2cf9379f21b8110adf48a80fcd0b8d2",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/pyproject.toml",
+      "portable_sha256": "f6fa8c45db14407ad74e5a37705278782ba8445e6cbff65f1c72df99832bbb7e",
+      "automation_sha256": "f6fa8c45db14407ad74e5a37705278782ba8445e6cbff65f1c72df99832bbb7e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/README.md",
+      "portable_sha256": "fd2894f7730cb7911c8910c708e4b7748299e2d6f4cf38c2cb1412538af0467a",
+      "automation_sha256": "fd2894f7730cb7911c8910c708e4b7748299e2d6f4cf38c2cb1412538af0467a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/mcp_server.py",
+      "portable_sha256": "57c93544cb1f8625085dbc2f7cc683b046d28d0ed79d542921e5a3fcc5c7edf0",
+      "automation_sha256": "57c93544cb1f8625085dbc2f7cc683b046d28d0ed79d542921e5a3fcc5c7edf0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/pyproject.toml",
+      "portable_sha256": "10f6767f036be03c80654fb6abe6e5d246e42ea098dcbe99675bfca174b20e8e",
+      "automation_sha256": "10f6767f036be03c80654fb6abe6e5d246e42ea098dcbe99675bfca174b20e8e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/__init__.py",
+      "portable_sha256": "6e71385562058fc7c29e4ee97bb317da8dc64808c17fdff73877af2b2ee0b483",
+      "automation_sha256": "6e71385562058fc7c29e4ee97bb317da8dc64808c17fdff73877af2b2ee0b483",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/__main__.py",
+      "portable_sha256": "d7815f9da17bcd8e79d1d47170e5795e29cc5837f97d1049664813068a9e563f",
+      "automation_sha256": "d7815f9da17bcd8e79d1d47170e5795e29cc5837f97d1049664813068a9e563f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/approval.py",
+      "portable_sha256": "f6fd1489aa042aa4b60ab4b212d18f054b592a3547582a7e3fea5480e3c46d8c",
+      "automation_sha256": "f6fd1489aa042aa4b60ab4b212d18f054b592a3547582a7e3fea5480e3c46d8c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/artifacts.py",
+      "portable_sha256": "b942f60d37f4672246a1d375b25ecd8aad3e8abc8f4ddbc41a8c1a267dc190ce",
+      "automation_sha256": "b942f60d37f4672246a1d375b25ecd8aad3e8abc8f4ddbc41a8c1a267dc190ce",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/atomic.py",
+      "portable_sha256": "e4a1741ced9797bb1343c22105e53e1501fc1a22528ae725efb72f6d498c23af",
+      "automation_sha256": "e4a1741ced9797bb1343c22105e53e1501fc1a22528ae725efb72f6d498c23af",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/cli.py",
+      "portable_sha256": "2e2a6df21dc1c1b55be9b3159fd261850631ca0bf33d46323c90ffc3ac2d6bec",
+      "automation_sha256": "2e2a6df21dc1c1b55be9b3159fd261850631ca0bf33d46323c90ffc3ac2d6bec",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/collector.py",
+      "portable_sha256": "6585b7412fb5a8b4d42bc42cdf4cc8302d34ed736d98d7ee7c96c99e71df9778",
+      "automation_sha256": "6585b7412fb5a8b4d42bc42cdf4cc8302d34ed736d98d7ee7c96c99e71df9778",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/contracts/__init__.py",
+      "portable_sha256": "d8fc42851c8a3bc2a242e2941ad8b3e92eb34b4d3d81ca1eff37448d9d0b7cab",
+      "automation_sha256": "d8fc42851c8a3bc2a242e2941ad8b3e92eb34b4d3d81ca1eff37448d9d0b7cab",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/contracts/attempt.py",
+      "portable_sha256": "fed358cf9c6fb2428343977f7f7e93acd9cfd910c82f52112c25d0e64d386d19",
+      "automation_sha256": "fed358cf9c6fb2428343977f7f7e93acd9cfd910c82f52112c25d0e64d386d19",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/contracts/design.py",
+      "portable_sha256": "6092f30ce26b2ffecd19c9777565b264f319828b45e1792d943335f9e6bdd58d",
+      "automation_sha256": "6092f30ce26b2ffecd19c9777565b264f319828b45e1792d943335f9e6bdd58d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/contracts/frontmatter.py",
+      "portable_sha256": "7de49438e2df4e779ae188022e6c386173d44c2451f9b8b8ac1b0888c28a0410",
+      "automation_sha256": "7de49438e2df4e779ae188022e6c386173d44c2451f9b8b8ac1b0888c28a0410",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/contracts/gates.py",
+      "portable_sha256": "730da95183f6fb1b98ab53c5af5a379d56145ffe54466d74b8b5be5f1365de61",
+      "automation_sha256": "730da95183f6fb1b98ab53c5af5a379d56145ffe54466d74b8b5be5f1365de61",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/contracts/iterations.py",
+      "portable_sha256": "dd8bec4d34921289e028fa11d5eb810d14af1d9f8c62f7076872e226bd7869cf",
+      "automation_sha256": "dd8bec4d34921289e028fa11d5eb810d14af1d9f8c62f7076872e226bd7869cf",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/contracts/topic.py",
+      "portable_sha256": "8d6cee2210cc5d65c9816676afcbf69e339178bc4c11b66c29e1295f19a5adc7",
+      "automation_sha256": "8d6cee2210cc5d65c9816676afcbf69e339178bc4c11b66c29e1295f19a5adc7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/contracts/touchstone.py",
+      "portable_sha256": "a0242b7f0a6e0672bec326ad4a1620188d1cb5bf595a2134952301ebfd1f67ea",
+      "automation_sha256": "a0242b7f0a6e0672bec326ad4a1620188d1cb5bf595a2134952301ebfd1f67ea",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/diagnostics.py",
+      "portable_sha256": "9259b566e010babec7bc2b8dede5987ed541b49ed566766fd5977f77a22b049a",
+      "automation_sha256": "9259b566e010babec7bc2b8dede5987ed541b49ed566766fd5977f77a22b049a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/files.py",
+      "portable_sha256": "6bc6ee2154f7943eca24d4fe3619dc44ba47fa6bf73f1ab2efcc0adbc208358c",
+      "automation_sha256": "6bc6ee2154f7943eca24d4fe3619dc44ba47fa6bf73f1ab2efcc0adbc208358c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_audit.py",
+      "portable_sha256": "46b251d3b3ec23e2e7d306eb35a7a425a48f5d4d1de970c378154d05f92b51be",
+      "automation_sha256": "46b251d3b3ec23e2e7d306eb35a7a425a48f5d4d1de970c378154d05f92b51be",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_cache.py",
+      "portable_sha256": "a13d80dda0a030935c9d9769f9e8b9148dbdcc27059267c3f39ee6862c58337e",
+      "automation_sha256": "a13d80dda0a030935c9d9769f9e8b9148dbdcc27059267c3f39ee6862c58337e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_contract.py",
+      "portable_sha256": "077e906dfac406e11f6a0753248df5e366c444d8e13bd97a218b8a5a1df33212",
+      "automation_sha256": "077e906dfac406e11f6a0753248df5e366c444d8e13bd97a218b8a5a1df33212",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_evidence.py",
+      "portable_sha256": "95f54e984ad5d35b5053e6c256c4d5d27118128615559ee4d4b38b466e84cf7a",
+      "automation_sha256": "708ddea2404791cec22ce49e44bdbc6977aec1be183d39f0bfd7712597a46fe0",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_incremental.py",
+      "portable_sha256": "d65c73a473243a4e9c0bc3222d6d3e6c59db377bb97ba8e602f7fef53847f9b9",
+      "automation_sha256": "d65c73a473243a4e9c0bc3222d6d3e6c59db377bb97ba8e602f7fef53847f9b9",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_model.py",
+      "portable_sha256": "2b8cdfbf9ad3a3b61da28d0ef2c7aaf6c53743f3f2844d1eec2f049f9673adf2",
+      "automation_sha256": "2b8cdfbf9ad3a3b61da28d0ef2c7aaf6c53743f3f2844d1eec2f049f9673adf2",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_offline.py",
+      "portable_sha256": "735aa205a5a437da1f9a1cf76777e5fb5354b0440f326e393ef95a62ca7268c5",
+      "automation_sha256": "d20eec50b73ab70269f7cda50c410a2c190824d4ad6d16ad16c4c085a78a60e7",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_readback.py",
+      "portable_sha256": "3c564396d38814eb700e6fb20c3683f37b4b5b74c6998cd271c46bcbae88eea9",
+      "automation_sha256": "3c564396d38814eb700e6fb20c3683f37b4b5b74c6998cd271c46bcbae88eea9",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_setup.py",
+      "portable_sha256": "8d40d7af95ae9f7f799e12974ff1753c9ced3e7f5d898d0ec1a4d23b7b28cd9f",
+      "automation_sha256": "8d40d7af95ae9f7f799e12974ff1753c9ced3e7f5d898d0ec1a4d23b7b28cd9f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/function_simulation.py",
+      "portable_sha256": "751f5d53d2bb0ec22d6dfeddf7da07b8aee92bda42514825a92faa7226b85121",
+      "automation_sha256": "751f5d53d2bb0ec22d6dfeddf7da07b8aee92bda42514825a92faa7226b85121",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/inventory.py",
+      "portable_sha256": "1775d097ad9cda3cf130504924785305ef684f5285409fc5929a296a264fb5ff",
+      "automation_sha256": "1775d097ad9cda3cf130504924785305ef684f5285409fc5929a296a264fb5ff",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/jobs.py",
+      "portable_sha256": "78602e98b4ada088c89adba869200846b9adce9df0bc5410fc1a3a2453424e51",
+      "automation_sha256": "732b520d3d8c44db561408819d404c623e6691a6c2e54ed245d899f8af993ce2",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/operations.py",
+      "portable_sha256": "7e6e15ac2be9c3e58019d200f27e04b3955962b7a0beea91a0d2d7aaca589fb3",
+      "automation_sha256": "b84258b35bb338dc6fe0ab112afbbffde295d50b34a7d58ed815cca6b825692f",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/paths.py",
+      "portable_sha256": "848bba36c2665fb5d6fdc0b9ccdc9150c85b88e7c2080f7aec8536edb4014c48",
+      "automation_sha256": "6fc1f294f669fc383d6b5cdb5e09e9076178e08d0cca3d739012c7fb27bbcd6b",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/project_package.py",
+      "portable_sha256": "1ba593fff9ad72d37b1eb5c44299a9e393219519e1737ff9d552cda5e0a651f5",
+      "automation_sha256": "dd2d93b20cd5c195ea3fc705b1a5023907e7fa5b77c8b4d1d7b0108295fa8f32",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/registry.py",
+      "portable_sha256": "a1b7dd4b6670a43c6c8e6d5f07dcf8dfc44c0daea2bc272a160393eae09080a3",
+      "automation_sha256": "a1b7dd4b6670a43c6c8e6d5f07dcf8dfc44c0daea2bc272a160393eae09080a3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/retention.py",
+      "portable_sha256": "d2695e66609fea8fa9a53870b7f2917ab168ba8a4368e36a3747bde056c01d48",
+      "automation_sha256": "d2695e66609fea8fa9a53870b7f2917ab168ba8a4368e36a3747bde056c01d48",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/standing_authorization.py",
+      "portable_sha256": "0cbadecc29b9f0c093ce4492127f5431a3d060dda5cd9d931912184f392d9335",
+      "automation_sha256": "0cbadecc29b9f0c093ce4492127f5431a3d060dda5cd9d931912184f392d9335",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/topic_workspace.py",
+      "portable_sha256": "f64caba6d41d8fd38703a3406f7f4527bc8f0994fb870a4e049a78ad93ee3e9e",
+      "automation_sha256": "f64caba6d41d8fd38703a3406f7f4527bc8f0994fb870a4e049a78ad93ee3e9e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/validation.py",
+      "portable_sha256": "a0aa19b6abbdd13713360181626ba331a239dda8d1b57d9ace5444abd9ee20eb",
+      "automation_sha256": "a0aa19b6abbdd13713360181626ba331a239dda8d1b57d9ace5444abd9ee20eb",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/src/cst_lab/workspace.py",
+      "portable_sha256": "bf6462973cb9af370c5181ee4cb4a947510c601988d6fd22c2078e8c7f51127a",
+      "automation_sha256": null,
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/stdio_smoke.py",
+      "portable_sha256": "8ec9da2751841d327d7c3217d770767dadac52fe4021dbf319585d84e590b4b0",
+      "automation_sha256": "8ec9da2751841d327d7c3217d770767dadac52fe4021dbf319585d84e590b4b0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/attempts/a01-paper-ideal/attempt.json",
+      "portable_sha256": "95e039cc2a0f7c01ee8d8cab265bf0077ca72ab995b372abc8054e227e80bf91",
+      "automation_sha256": "95e039cc2a0f7c01ee8d8cab265bf0077ca72ab995b372abc8054e227e80bf91",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/attempts/a01-paper-ideal/drc-report.json",
+      "portable_sha256": "36ed7c1d4379436df25dcc5b9d8d92dfe76b126d1d39a24c91727f5316d40dac",
+      "automation_sha256": "36ed7c1d4379436df25dcc5b9d8d92dfe76b126d1d39a24c91727f5316d40dac",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/attempts/a01-paper-ideal/geometry-ir.json",
+      "portable_sha256": "20ec26c7dbda178a7fa30ff5f0fc36c53b1c766683223bb3e8a27909be8391a4",
+      "automation_sha256": "20ec26c7dbda178a7fa30ff5f0fc36c53b1c766683223bb3e8a27909be8391a4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/design.md",
+      "portable_sha256": "8fa4ffceef25c8c689c77005681b3381d0589ebcf7f467e98718dd9e376e7a4a",
+      "automation_sha256": "8fa4ffceef25c8c689c77005681b3381d0589ebcf7f467e98718dd9e376e7a4a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/geometry_manifest.json",
+      "portable_sha256": "a656d01e693fdbf3c6a403b5b043e2d9575f07dc7d4c1e15f27a291f8e8f10bc",
+      "automation_sha256": null,
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/geometry_manifest.provenance.json",
+      "portable_sha256": "dd51a24cc85509be95f8552f535ffdf7c5018b8e691ce8d0c6e43b87aa523661",
+      "automation_sha256": null,
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/model.py",
+      "portable_sha256": "d5450d58bb13e3b1a3cefa073b3e1baea26be149914b6bff3db02775ff6f66ac",
+      "automation_sha256": "d5450d58bb13e3b1a3cefa073b3e1baea26be149914b6bff3db02775ff6f66ac",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/designs/fig15-filter-d/zero_regression.py",
+      "portable_sha256": "ec889fe6f43d0fe86d8b67df2bd44478f5837c209f9d9f59093f61cfa01ae21c",
+      "automation_sha256": "3254a6d0c8a3df10ebce6e5d34de6d3655bab1344eb8bc101b1641443404df06",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/notes.md",
+      "portable_sha256": "ebf57c71ff9c5cfe74577f87fed19392dc061391ae93c374f26c087aa2dfd7ae",
+      "automation_sha256": "ebf57c71ff9c5cfe74577f87fed19392dc061391ae93c374f26c087aa2dfd7ae",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/fixtures/dual-mode-open-loop-filters/topic.md",
+      "portable_sha256": "a127bfc7f2c273d9a88036a2959dcaa89ef35766833fbb655b04aaa52b560681",
+      "automation_sha256": "a127bfc7f2c273d9a88036a2959dcaa89ef35766833fbb655b04aaa52b560681",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/job_process.py",
+      "portable_sha256": "6d7e2d9897e4fdd3914e8808384ecede278959222a82ff3e5f155996ad0a127e",
+      "automation_sha256": "6d7e2d9897e4fdd3914e8808384ecede278959222a82ff3e5f155996ad0a127e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_approval.py",
+      "portable_sha256": "9f1bc95a5dcb8d42362098fc761c57e4adb9645dcd023bc551de968c321c6f12",
+      "automation_sha256": "9f1bc95a5dcb8d42362098fc761c57e4adb9645dcd023bc551de968c321c6f12",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_atomic_json.py",
+      "portable_sha256": "28a354ac6a0ac5a889dd7ba0f9457d2d286ee37ff542f4fb5365b6f909611f34",
+      "automation_sha256": "28a354ac6a0ac5a889dd7ba0f9457d2d286ee37ff542f4fb5365b6f909611f34",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_atomic_read.py",
+      "portable_sha256": "ad47c84cf749bf0efd9aeab8bfa4719799f6bebffbfca29cd6228c87abfe457c",
+      "automation_sha256": "ad47c84cf749bf0efd9aeab8bfa4719799f6bebffbfca29cd6228c87abfe457c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_contracts.py",
+      "portable_sha256": "82d415cd5ddfbbd5e458a0cc9d57f7009de780f463834e49625ba1eb718f6c65",
+      "automation_sha256": "82d415cd5ddfbbd5e458a0cc9d57f7009de780f463834e49625ba1eb718f6c65",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_function_cache.py",
+      "portable_sha256": "18242e9d76099b1eb8fcaa84f620d7962612c89ba8a39a27fe8234c4590e5577",
+      "automation_sha256": "18242e9d76099b1eb8fcaa84f620d7962612c89ba8a39a27fe8234c4590e5577",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_function_diagnostics.py",
+      "portable_sha256": "57ee56edffd0a4c40d3930796a830f5bf857212f6f6bfe5e0882d1d455cb8e07",
+      "automation_sha256": "57ee56edffd0a4c40d3930796a830f5bf857212f6f6bfe5e0882d1d455cb8e07",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_function_evidence.py",
+      "portable_sha256": "9d63bfd440f0403a59654de62176270ba6bccc5d78e698b481c90d939366b15e",
+      "automation_sha256": "9d63bfd440f0403a59654de62176270ba6bccc5d78e698b481c90d939366b15e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_function_jobs.py",
+      "portable_sha256": "71cc4f0e0d974582ebd3e3bafa44c9c94ae6557edd9e4ea4194a343baf635f6c",
+      "automation_sha256": "71cc4f0e0d974582ebd3e3bafa44c9c94ae6557edd9e4ea4194a343baf635f6c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_function_model.py",
+      "portable_sha256": "a13a085a651da2113a62d9d8f42c0a44122ad9445a64fc7653b8ab488e395133",
+      "automation_sha256": "a13a085a651da2113a62d9d8f42c0a44122ad9445a64fc7653b8ab488e395133",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_function_publication.py",
+      "portable_sha256": "72b96df0b375de8c225a4e082d6ed237b6c48e773d69fd8963552cbd470ccc15",
+      "automation_sha256": "72b96df0b375de8c225a4e082d6ed237b6c48e773d69fd8963552cbd470ccc15",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_function_setup.py",
+      "portable_sha256": "1bad1a42b5ed13f766f7acde0b010001414ab2d6fb3e1394120819db5bad9819",
+      "automation_sha256": "1bad1a42b5ed13f766f7acde0b010001414ab2d6fb3e1394120819db5bad9819",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_function_simulation.py",
+      "portable_sha256": "49328039a4f98b386233806df4dcaef811aa6c0db1c44d339e93f07a55a2059a",
+      "automation_sha256": "49328039a4f98b386233806df4dcaef811aa6c0db1c44d339e93f07a55a2059a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_lab.py",
+      "portable_sha256": "9a6dab3702886c9ff40214e88f199f218c8a4ea066abb03e1a527cf824be3d21",
+      "automation_sha256": "a4e900e18e73b67dc85b087921e6be2e7d0aa62dfd4188866fddd241d7af1572",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_phase_convention.py",
+      "portable_sha256": "36c899fd00aacfc3c2b4d9ed735be173457a3647210c5c7306e3c634caa1f47f",
+      "automation_sha256": "36c899fd00aacfc3c2b4d9ed735be173457a3647210c5c7306e3c634caa1f47f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_project_package.py",
+      "portable_sha256": "b3212f0e2ba0f0a4bc424acdcad9f591ce447a4f2bad014e166b002ee81a5eae",
+      "automation_sha256": "b3212f0e2ba0f0a4bc424acdcad9f591ce447a4f2bad014e166b002ee81a5eae",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_retention.py",
+      "portable_sha256": "037d6a44323331bb55d15c0381c041a501bbf0d78a8e135b7d5d202dfe2a8ff7",
+      "automation_sha256": "037d6a44323331bb55d15c0381c041a501bbf0d78a8e135b7d5d202dfe2a8ff7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_topic_integrity.py",
+      "portable_sha256": "bcfcfaaf6002ab61b86f7c0f4197f8d544c29f8fe84fce2b7f780ab8c1deeb0b",
+      "automation_sha256": "bcfcfaaf6002ab61b86f7c0f4197f8d544c29f8fe84fce2b7f780ab8c1deeb0b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tests/test_topic_workspace.py",
+      "portable_sha256": "6cc7d8cbcf6e4a8579f7f773f83193621246f73088ab86c3c0fb4cb2ac769ef0",
+      "automation_sha256": "6cc7d8cbcf6e4a8579f7f773f83193621246f73088ab86c3c0fb4cb2ac769ef0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tools/make_attempt.py",
+      "portable_sha256": "4e31e1b951d62b3accf341418fd6773d0894810809a1d150de1fe86262ae0bb2",
+      "automation_sha256": "4e31e1b951d62b3accf341418fd6773d0894810809a1d150de1fe86262ae0bb2",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tools/verify_contracts_live.py",
+      "portable_sha256": "aa078d972521c5bee64fecf078439a66fe6c9de8a0c651650cbf54ad05e748c2",
+      "automation_sha256": "aa078d972521c5bee64fecf078439a66fe6c9de8a0c651650cbf54ad05e748c2",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tools/verify_gates_offline.py",
+      "portable_sha256": "d2ad25835be374cacfc068f85062e498f96892341aaeb7c999eadfba895282f2",
+      "automation_sha256": "d2ad25835be374cacfc068f85062e498f96892341aaeb7c999eadfba895282f2",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Lab/tools/verify_mmr_synthesis.py",
+      "portable_sha256": "e18c0d8e5ef656e7f9a2273ba2ae7ef74dac41b2b6f4696787d180ee02d2988c",
+      "automation_sha256": "e18c0d8e5ef656e7f9a2273ba2ae7ef74dac41b2b6f4696787d180ee02d2988c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/mcp_server.py",
+      "portable_sha256": "3b6bc0a248e54165514e02d93ccb81d8a63300d7ac42c75b76e5d9717ec0797c",
+      "automation_sha256": "3b6bc0a248e54165514e02d93ccb81d8a63300d7ac42c75b76e5d9717ec0797c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/pyproject.toml",
+      "portable_sha256": "8193195ff082b5aafb455a65407e87a8fe06a06e3bda015d8dd4a7953f8b7ea8",
+      "automation_sha256": "8193195ff082b5aafb455a65407e87a8fe06a06e3bda015d8dd4a7953f8b7ea8",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/__init__.py",
+      "portable_sha256": "dce9df69a687d039db30ce942cbf0d9494ff99eb37dc66d516563a7d1f6a7280",
+      "automation_sha256": "dce9df69a687d039db30ce942cbf0d9494ff99eb37dc66d516563a7d1f6a7280",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/__main__.py",
+      "portable_sha256": "bbcd327f6aceff0ebf32ec8e7e8d92112efdbbf17ab50522c05c0c7b12a91854",
+      "automation_sha256": "bbcd327f6aceff0ebf32ec8e7e8d92112efdbbf17ab50522c05c0c7b12a91854",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/assets/THREE-LICENSE.txt",
+      "portable_sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "automation_sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/assets/viewer.js",
+      "portable_sha256": "0c3e8ddbe8d60bba4a52a4c2d6e30b4f493d97156345605f4bc1a1614102d3d2",
+      "automation_sha256": "0c3e8ddbe8d60bba4a52a4c2d6e30b4f493d97156345605f4bc1a1614102d3d2",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/audit.py",
+      "portable_sha256": "8a73f9bb30417f95deee89ee1d633784717e21cd29e2552ee4f8b84ffbeb867d",
+      "automation_sha256": "8a73f9bb30417f95deee89ee1d633784717e21cd29e2552ee4f8b84ffbeb867d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/audit_ui.py",
+      "portable_sha256": "e8a872c2da5911559040323c37216ae39ef0434ba3be2de55ba6203b24de0341",
+      "automation_sha256": "e8a872c2da5911559040323c37216ae39ef0434ba3be2de55ba6203b24de0341",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/cli.py",
+      "portable_sha256": "19606c906ae79cbe844f05ba023f46ef45d887072069f8ebc397f5e69e7ad2dd",
+      "automation_sha256": "19606c906ae79cbe844f05ba023f46ef45d887072069f8ebc397f5e69e7ad2dd",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/drc.py",
+      "portable_sha256": "e3b60e471e7db2a8774c13d4f96ac272d5a2d2a7bca3bc17637ada2911a4c2e3",
+      "automation_sha256": "e3b60e471e7db2a8774c13d4f96ac272d5a2d2a7bca3bc17637ada2911a4c2e3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/dsl.py",
+      "portable_sha256": "78076391ab134da2f02c5af9e676e2c4084df3e43e6536c1c262d24257d7847a",
+      "automation_sha256": "78076391ab134da2f02c5af9e676e2c4084df3e43e6536c1c262d24257d7847a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/emit_step.py",
+      "portable_sha256": "6cd59aaecac202e56f76f9e58bbf55b0a707857e9c8889b3c15b83dd3ec3a5a3",
+      "automation_sha256": "6cd59aaecac202e56f76f9e58bbf55b0a707857e9c8889b3c15b83dd3ec3a5a3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/emit_vba.py",
+      "portable_sha256": "8a1d39b398d0a4b60483258c76ae4fc1afe801731aa9d04b1d09270ddb8c7f59",
+      "automation_sha256": "8a1d39b398d0a4b60483258c76ae4fc1afe801731aa9d04b1d09270ddb8c7f59",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/expressions.py",
+      "portable_sha256": "99d2014f1d85b4ba06b56549578d4655cb6de1e8d4101898f35a9a6d3ed3480d",
+      "automation_sha256": "99d2014f1d85b4ba06b56549578d4655cb6de1e8d4101898f35a9a6d3ed3480d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/ir.py",
+      "portable_sha256": "a692a8eed231e520f7e9c22261632799f170511832f854262856c5ad12a660e6",
+      "automation_sha256": "a692a8eed231e520f7e9c22261632799f170511832f854262856c5ad12a660e6",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/observation.py",
+      "portable_sha256": "9ecd996d80794bcdbbae6b929f86c76b76852d9cf22dab3a609220a332e4415a",
+      "automation_sha256": "9ecd996d80794bcdbbae6b929f86c76b76852d9cf22dab3a609220a332e4415a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/paths.py",
+      "portable_sha256": "9a185962a814809801c3d5a28d0bcba40f8675174940b681603fd799163fd243",
+      "automation_sha256": "9a185962a814809801c3d5a28d0bcba40f8675174940b681603fd799163fd243",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/verify.py",
+      "portable_sha256": "1ef01858b9bb568f95c76892aba62237b06efde5a207ce16f1044b7b230bdf17",
+      "automation_sha256": "1ef01858b9bb568f95c76892aba62237b06efde5a207ce16f1044b7b230bdf17",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/workbench.py",
+      "portable_sha256": "9ab2b9b16b7beba1e9cbed0e1d480a9ce4f1e91f37cd448ab7f6a02c664cee58",
+      "automation_sha256": "9ab2b9b16b7beba1e9cbed0e1d480a9ce4f1e91f37cd448ab7f6a02c664cee58",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/workbench_style.py",
+      "portable_sha256": "ebee954a7f7427dcf9c4a37ffa7077897cd7f0182e8c70a7fd2cc36c6fd8ffc8",
+      "automation_sha256": "ebee954a7f7427dcf9c4a37ffa7077897cd7f0182e8c70a7fd2cc36c6fd8ffc8",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/src/cst_cad/workbench_ui.py",
+      "portable_sha256": "6ad204229d12590336228a1fa45bdbe7ce6040dcd46acaf472f717d6af8e73ce",
+      "automation_sha256": "6ad204229d12590336228a1fa45bdbe7ce6040dcd46acaf472f717d6af8e73ce",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tests/test_audit.py",
+      "portable_sha256": "5b55cae20b3b4c0c3bbfa76811be9312b0d5c14ba486ff69f2ae5c99646fc285",
+      "automation_sha256": "5b55cae20b3b4c0c3bbfa76811be9312b0d5c14ba486ff69f2ae5c99646fc285",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tests/test_cad.py",
+      "portable_sha256": "04f18c53eaa2a211bb68f12f17654074b748e750f96f1e56e4552b2d6bd8e9be",
+      "automation_sha256": "04f18c53eaa2a211bb68f12f17654074b748e750f96f1e56e4552b2d6bd8e9be",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tests/test_resonator_fixture.py",
+      "portable_sha256": "40e51405263a149d0185439fc3e5bd6514b3c1aec502880ed817c8696f252a16",
+      "automation_sha256": "40e51405263a149d0185439fc3e5bd6514b3c1aec502880ed817c8696f252a16",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tests/test_visual_cases.py",
+      "portable_sha256": "ac8d9af833e4ee85ecf119c3e11ce2c46a52b3b758aafd41c9f150ac282495da",
+      "automation_sha256": "ac8d9af833e4ee85ecf119c3e11ce2c46a52b3b758aafd41c9f150ac282495da",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/compare_reference_params.py",
+      "portable_sha256": "4a7db11b29449f7008491c553d426729f207e697bf1924a39190f6582139fbe4",
+      "automation_sha256": "4a7db11b29449f7008491c553d426729f207e697bf1924a39190f6582139fbe4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/compare_sparams.py",
+      "portable_sha256": "fd768c256f3c7e3ab1fffb04983ac424d290bcf34a365d877defd05ba0b5089d",
+      "automation_sha256": "fd768c256f3c7e3ab1fffb04983ac424d290bcf34a365d877defd05ba0b5089d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/cst_build.py",
+      "portable_sha256": "559a3b320b2a83e5d4ddd239233e1e3d4d320b10046e15f94a3efdf625d829c5",
+      "automation_sha256": "559a3b320b2a83e5d4ddd239233e1e3d4d320b10046e15f94a3efdf625d829c5",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/cst_observe.py",
+      "portable_sha256": "6bbf9e74fc5bd8265b8b39a7f83bd258330b6e68576b2240d03e7f6d17a355ff",
+      "automation_sha256": "6bbf9e74fc5bd8265b8b39a7f83bd258330b6e68576b2240d03e7f6d17a355ff",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/cst_probe.py",
+      "portable_sha256": "5407c643254971c24919311d8236fa789f4f9f506fcc9116a9417f7f427baf68",
+      "automation_sha256": "5407c643254971c24919311d8236fa789f4f9f506fcc9116a9417f7f427baf68",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/cst_solve.py",
+      "portable_sha256": "59251fb2c9b8af74fc208b49d38c1f38c2f72bf1d2c16fc508790a695dd3d748",
+      "automation_sha256": "59251fb2c9b8af74fc208b49d38c1f38c2f72bf1d2c16fc508790a695dd3d748",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/dump_history.py",
+      "portable_sha256": "6d2aee1a6be1a3c63066ac448702461e16570fe52264877f21b97c630a6659fd",
+      "automation_sha256": "6d2aee1a6be1a3c63066ac448702461e16570fe52264877f21b97c630a6659fd",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/emit_fast_solver.py",
+      "portable_sha256": "f79cb7155775afb33686aa71bde66ae99fb5706f5a198e56fda488aa3badaada",
+      "automation_sha256": "f79cb7155775afb33686aa71bde66ae99fb5706f5a198e56fda488aa3badaada",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/locate_delta.py",
+      "portable_sha256": "d11f64bf849c1d83bc7b632e7530a330e5ba27fd107589b293d69fb2d4055112",
+      "automation_sha256": "d11f64bf849c1d83bc7b632e7530a330e5ba27fd107589b293d69fb2d4055112",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/offline_results.py",
+      "portable_sha256": "b8b444e1c9954dc595831cd2931bd0cd47e159ea788a03241bf27f02c3cafba7",
+      "automation_sha256": "b8b444e1c9954dc595831cd2931bd0cd47e159ea788a03241bf27f02c3cafba7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-CAD/tools/show_report.py",
+      "portable_sha256": "ee17f472c3423a0b89e4135bae941152d96ed2577774a58225e86d92afb0270d",
+      "automation_sha256": "ee17f472c3423a0b89e4135bae941152d96ed2577774a58225e86d92afb0270d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/mcp_server.py",
+      "portable_sha256": "7aba01e879c2a4eab8eda0b9863c8cfd7015c8e68d34af82c32b431714bb5940",
+      "automation_sha256": "7aba01e879c2a4eab8eda0b9863c8cfd7015c8e68d34af82c32b431714bb5940",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/pyproject.toml",
+      "portable_sha256": "53ba83e14507068143eccdb6a0d9a5a3276bc6bc110564d62e33f3096d2d39e7",
+      "automation_sha256": "53ba83e14507068143eccdb6a0d9a5a3276bc6bc110564d62e33f3096d2d39e7",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/__init__.py",
+      "portable_sha256": "7a95f8fd7bf19deebd751bcd243a7e424551220fb0151915b80800d618718624",
+      "automation_sha256": "7a95f8fd7bf19deebd751bcd243a7e424551220fb0151915b80800d618718624",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/__main__.py",
+      "portable_sha256": "d7815f9da17bcd8e79d1d47170e5795e29cc5837f97d1049664813068a9e563f",
+      "automation_sha256": "d7815f9da17bcd8e79d1d47170e5795e29cc5837f97d1049664813068a9e563f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/cli.py",
+      "portable_sha256": "cabead43dd907002bdf6aabf7d15fd83ebbc55efe6c75e5a191c0cbaf037cf41",
+      "automation_sha256": "cabead43dd907002bdf6aabf7d15fd83ebbc55efe6c75e5a191c0cbaf037cf41",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/function_iterations.py",
+      "portable_sha256": "1d13e7d9e8c94492920312f833c93701612b299f8d8179760486a68e9cace51b",
+      "automation_sha256": "1d13e7d9e8c94492920312f833c93701612b299f8d8179760486a68e9cace51b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/index.py",
+      "portable_sha256": "762f5f1885a2ab193e4b43da307ae3c0595ff20e3e2917b11001be7751b5069f",
+      "automation_sha256": "762f5f1885a2ab193e4b43da307ae3c0595ff20e3e2917b11001be7751b5069f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/locking.py",
+      "portable_sha256": "6511865ae40761b583be7e99e8096cbb5151eb67118f6b51ae83a7287298b5f0",
+      "automation_sha256": "6511865ae40761b583be7e99e8096cbb5151eb67118f6b51ae83a7287298b5f0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/markdown.py",
+      "portable_sha256": "f2935b430dfc40795e1ff1552f9c0adf1cfd8191bf7b91973d7bc7bb3ca11cdf",
+      "automation_sha256": "f2935b430dfc40795e1ff1552f9c0adf1cfd8191bf7b91973d7bc7bb3ca11cdf",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/operations.py",
+      "portable_sha256": "1d4d6794e4eaa483b42d932d4ee3d3d041d9bdc017cc1175fdd665b33b426154",
+      "automation_sha256": "1d4d6794e4eaa483b42d932d4ee3d3d041d9bdc017cc1175fdd665b33b426154",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/src/cst_brain/paths.py",
+      "portable_sha256": "7d3a9314ab4eea1d2c83bbdde0992b8293cfed846ec31402e4ca0455d72619c7",
+      "automation_sha256": "d429d00791d5d4207982445c3ade7d031750508210ee83b1816e875e7782d881",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "MCP/CST-Brain/stdio_smoke.py",
+      "portable_sha256": "c436221134ecda7e68aeb0e930d19ba8024c8698ec33e7d423822eed74d33e39",
+      "automation_sha256": "c436221134ecda7e68aeb0e930d19ba8024c8698ec33e7d423822eed74d33e39",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/tests/test_brain.py",
+      "portable_sha256": "97dd7dc35c6b6e3478fd31f042706e6e3a26edf3a5ded61e5cfebe56a1130ee4",
+      "automation_sha256": "97dd7dc35c6b6e3478fd31f042706e6e3a26edf3a5ded61e5cfebe56a1130ee4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/tests/test_function_iterations.py",
+      "portable_sha256": "25ac9bec64ee7f23a644c1ed162e2c2b8fcd83a5a7c7ca953bedc797fb526bef",
+      "automation_sha256": "25ac9bec64ee7f23a644c1ed162e2c2b8fcd83a5a7c7ca953bedc797fb526bef",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "MCP/CST-Brain/tests/test_manifest_contracts.py",
+      "portable_sha256": "efd383e92fe15a7215c4e7658d21a12a4dec1dbbfb919c7a9faf4139371e94de",
+      "automation_sha256": "efd383e92fe15a7215c4e7658d21a12a4dec1dbbfb919c7a9faf4139371e94de",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/attempt.schema.json",
+      "portable_sha256": "ec29bd00e007f5f1faa85ce874224f738140fca60d4a7a70282a32c1454654da",
+      "automation_sha256": "ec29bd00e007f5f1faa85ce874224f738140fca60d4a7a70282a32c1454654da",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/design.schema.json",
+      "portable_sha256": "8e22db9b49c4879b94951b4ac4f33eeded10d2e6487f0947503bef8b45712365",
+      "automation_sha256": "8e22db9b49c4879b94951b4ac4f33eeded10d2e6487f0947503bef8b45712365",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/experiment.schema.json",
+      "portable_sha256": "b60fd3420c39e428143fac8bc929ccbe6740baa18b0a9f5b7037c0a8cd9e6eeb",
+      "automation_sha256": "b60fd3420c39e428143fac8bc929ccbe6740baa18b0a9f5b7037c0a8cd9e6eeb",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/function-iteration-manifest.schema.json",
+      "portable_sha256": "52e19d73e8e2caa3d843d8ea0da0fce2c3782a325c0bde9ab25e789e787c8e6d",
+      "automation_sha256": "52e19d73e8e2caa3d843d8ea0da0fce2c3782a325c0bde9ab25e789e787c8e6d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/geometry-ir.schema.json",
+      "portable_sha256": "394210cb1fe77a2eee70e9247b5ea142aa7b5877550094dc97fd133ff41f58aa",
+      "automation_sha256": "394210cb1fe77a2eee70e9247b5ea142aa7b5877550094dc97fd133ff41f58aa",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/iteration.schema.json",
+      "portable_sha256": "47513b424f8de66809881b3b5c3fa2d978891cebe36a6b3d697c036bf56db7f3",
+      "automation_sha256": "47513b424f8de66809881b3b5c3fa2d978891cebe36a6b3d697c036bf56db7f3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/metric-definition.schema.json",
+      "portable_sha256": "927bccf7d3121e40a883700b26b77f370d02f2ca1717131b9f875f3758d1cd5a",
+      "automation_sha256": "927bccf7d3121e40a883700b26b77f370d02f2ca1717131b9f875f3758d1cd5a",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/model-revision.schema.json",
+      "portable_sha256": "86b551c8d68036e662da4e2e1f41f464199183fd06f8241dbbcc8213d21a16d3",
+      "automation_sha256": "86b551c8d68036e662da4e2e1f41f464199183fd06f8241dbbcc8213d21a16d3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/project-manifest.schema.json",
+      "portable_sha256": "6188ef962944a3e020b9c064c26a3ea50efaf8641ab5243f08957099bd5de5d5",
+      "automation_sha256": "6188ef962944a3e020b9c064c26a3ea50efaf8641ab5243f08957099bd5de5d5",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/run-manifest.schema.json",
+      "portable_sha256": "488f538780b8cdfd5ce2044823aa54a4b74e2d92dd69751f9eedc2ccdab1500e",
+      "automation_sha256": "488f538780b8cdfd5ce2044823aa54a4b74e2d92dd69751f9eedc2ccdab1500e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/topic.schema.json",
+      "portable_sha256": "b87d408f9c3165bb5cbfe57367f87b857a7d20ab684d97f0217b62d4286bf06e",
+      "automation_sha256": "b87d408f9c3165bb5cbfe57367f87b857a7d20ab684d97f0217b62d4286bf06e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/trace-event.schema.json",
+      "portable_sha256": "f19752e942113cdd7f3658fc3f6bb28b516468f70668fc9ebcec7008c0d8b124",
+      "automation_sha256": "f19752e942113cdd7f3658fc3f6bb28b516468f70668fc9ebcec7008c0d8b124",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/trial.schema.json",
+      "portable_sha256": "842b7d41822f24f6b7f1672ae3156d8f44c56d7ed89af47a00d6735edf3f3d7d",
+      "automation_sha256": "842b7d41822f24f6b7f1672ae3156d8f44c56d7ed89af47a00d6735edf3f3d7d",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/schemas/validation-report.schema.json",
+      "portable_sha256": "70dbd9e58fc4ed4bec488c8b9e2a0ba4307b01580c7c0db4d27e98f5895adf68",
+      "automation_sha256": "70dbd9e58fc4ed4bec488c8b9e2a0ba4307b01580c7c0db4d27e98f5895adf68",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/templates/case-page.md",
+      "portable_sha256": "c1e7302e23f0e317754581723dba1b1d867842bf40ec0bb21296c43aa47fbad3",
+      "automation_sha256": "c1e7302e23f0e317754581723dba1b1d867842bf40ec0bb21296c43aa47fbad3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "brain/templates/knowledge-page.md",
+      "portable_sha256": "23e3711cec52c2e53c5f48bac1c80dde4b86d4fabcf12918361f9dd901da7d00",
+      "automation_sha256": "23e3711cec52c2e53c5f48bac1c80dde4b86d4fabcf12918361f9dd901da7d00",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-brain-ingest/agents/openai.yaml",
+      "portable_sha256": "341bff74c330afa67d546d0ce951caeff333620de288c5d65941d89742c89676",
+      "automation_sha256": "341bff74c330afa67d546d0ce951caeff333620de288c5d65941d89742c89676",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-brain-ingest/references/evidence-policy.md",
+      "portable_sha256": "8e94412a8443884d0b337d58efe1f08191e65ce9d339be8f64d625e01b2fb1f0",
+      "automation_sha256": "8e94412a8443884d0b337d58efe1f08191e65ce9d339be8f64d625e01b2fb1f0",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-brain-ingest/SKILL.md",
+      "portable_sha256": "c5c4081c5cd7572cdc6f16f1f81adffaf6540a90c739730a1447b6b0444791aa",
+      "automation_sha256": "83838e49291c4a2fbd7f363c03cde9784b699f2f68b2f44f6feb7fddf2536e97",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "skills/cst-brain-lint/agents/openai.yaml",
+      "portable_sha256": "e62f7bf993e57a2df65eba216b4df2a52e77645006e81f5105b75f4cdda4d8d1",
+      "automation_sha256": "e62f7bf993e57a2df65eba216b4df2a52e77645006e81f5105b75f4cdda4d8d1",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-brain-lint/references/lint-codes.md",
+      "portable_sha256": "9636eee19b40d457bad891e7db85bc43fa3c85d4d2405b45827aceedad899dfd",
+      "automation_sha256": "9636eee19b40d457bad891e7db85bc43fa3c85d4d2405b45827aceedad899dfd",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-brain-lint/SKILL.md",
+      "portable_sha256": "8afac0a39d79c1d2f170da94c992475e5f20db8991f105cdff6d14bc4d85338e",
+      "automation_sha256": "c9c9eec20adc0c64f6cbe70842381f4b917daa4f47298abbee8d27f19c502207",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "skills/cst-brain-query/agents/openai.yaml",
+      "portable_sha256": "9622d81db5be2a52465d48d9673c29b2e2ac52f0eac6a8c2c794e5469a41839e",
+      "automation_sha256": "9622d81db5be2a52465d48d9673c29b2e2ac52f0eac6a8c2c794e5469a41839e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-brain-query/references/retrieval-guide.md",
+      "portable_sha256": "144c57c118439c7d04a84d9271990404065bca95724bf708fe5d18e192619ffc",
+      "automation_sha256": "144c57c118439c7d04a84d9271990404065bca95724bf708fe5d18e192619ffc",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-brain-query/SKILL.md",
+      "portable_sha256": "095b258f315a647736966a73d50130d3451fc7654f1c0ea7d4f8ab74e37184c5",
+      "automation_sha256": "871093a8f6afe257f2add62c287a62b5f201dfc655dabed1ae2ed366cd2312fd",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "skills/cst-experiment-orchestration/agents/openai.yaml",
+      "portable_sha256": "8102b410813d0c8d40d3cf85f7bd4849ec76e11a80305d8d8c84d6ab642b04d5",
+      "automation_sha256": "8102b410813d0c8d40d3cf85f7bd4849ec76e11a80305d8d8c84d6ab642b04d5",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-experiment-orchestration/references/experiment-contract.md",
+      "portable_sha256": "d4141bb6c1823714a3e9f8b6aed787c5e5b3df391f6583336bb620bfccd6660c",
+      "automation_sha256": "d4141bb6c1823714a3e9f8b6aed787c5e5b3df391f6583336bb620bfccd6660c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-experiment-orchestration/SKILL.md",
+      "portable_sha256": "604e1b3d3ee8db1b8b12f0dca2549462f5a9857311135ac3b4bbc874c1e3930c",
+      "automation_sha256": "604e1b3d3ee8db1b8b12f0dca2549462f5a9857311135ac3b4bbc874c1e3930c",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-result-plotting/agents/openai.yaml",
+      "portable_sha256": "e024c115c87b6b7c175c544ffb510ab2726aa14cb834df34051d8409315d2dea",
+      "automation_sha256": "e024c115c87b6b7c175c544ffb510ab2726aa14cb834df34051d8409315d2dea",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-result-plotting/SKILL.md",
+      "portable_sha256": "40d0ff7ea82e0297bbdb8f77cd332134800cf822881bc5f7cf821e8006c0f3c4",
+      "automation_sha256": "40d0ff7ea82e0297bbdb8f77cd332134800cf822881bc5f7cf821e8006c0f3c4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/agents/openai.yaml",
+      "portable_sha256": "d0a3707cc5ea8e89f301cb51dd624e77a696c7a27c3769494784ac5f5745f629",
+      "automation_sha256": "d0a3707cc5ea8e89f301cb51dd624e77a696c7a27c3769494784ac5f5745f629",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/metadata.json",
+      "portable_sha256": "33e6b44f3074d07cd232bc559b4be38657044d1e0fa42d1f43c95de616efdfa1",
+      "automation_sha256": "33e6b44f3074d07cd232bc559b4be38657044d1e0fa42d1f43c95de616efdfa1",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/cst-red-lines.md",
+      "portable_sha256": "9614f0043f8e4df52c1f7cd75a53418af42cc1dea8189988eff60eb56b52e626",
+      "automation_sha256": "9614f0043f8e4df52c1f7cd75a53418af42cc1dea8189988eff60eb56b52e626",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/mcp-tool-map.md",
+      "portable_sha256": "e61e06453a93080c6d62945906a2e43ae5d05ca4c1146d6088c13cebf85a1392",
+      "automation_sha256": "e61e06453a93080c6d62945906a2e43ae5d05ca4c1146d6088c13cebf85a1392",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/parameter-policy.md",
+      "portable_sha256": "800687bcd2f9df6f23d9e9a9eec142bb0010267ff976ca2fb08788a1a7d03288",
+      "automation_sha256": "800687bcd2f9df6f23d9e9a9eec142bb0010267ff976ca2fb08788a1a7d03288",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/result-validation.md",
+      "portable_sha256": "ae11d476178b88d1c56d6198ed1e3ae8c09252a9d164c66c0cb0a9d216aaae3f",
+      "automation_sha256": "ae11d476178b88d1c56d6198ed1e3ae8c09252a9d164c66c0cb0a9d216aaae3f",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/templates.md",
+      "portable_sha256": "459e520c4eb9f7bc530423730cabcd05b45b8b5c42f858897a359bafe0b60395",
+      "automation_sha256": "459e520c4eb9f7bc530423730cabcd05b45b8b5c42f858897a359bafe0b60395",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/references/workflow.md",
+      "portable_sha256": "5f9382592b7316358597a40c1e92448613fd9c266cae5f29017e71affd4858ae",
+      "automation_sha256": "c255d4b8b319f08d01b1fcb36ad1e2a057eac1a5304213cf14b208a043da9921",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "skills/cst-simulation-workflow/SKILL.md",
+      "portable_sha256": "d744428909df586719a09631a384a302792b39464beec4bff8d6099f0e507255",
+      "automation_sha256": "f37b6424bcc76dd193d3ec545ec4a2e5d908077372e98889d90a40066e525da8",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "skills/cst-strategy-learning/agents/openai.yaml",
+      "portable_sha256": "ccdc50cc089661891887f3c838abac329dc63379718cd0a6f377c7b58165cf9b",
+      "automation_sha256": "ccdc50cc089661891887f3c838abac329dc63379718cd0a6f377c7b58165cf9b",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-strategy-learning/references/strategy-template.md",
+      "portable_sha256": "f6ba9711d62af485ea664be810ec2ba3829433832a27308bd65af0a201f568a4",
+      "automation_sha256": "f6ba9711d62af485ea664be810ec2ba3829433832a27308bd65af0a201f568a4",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-strategy-learning/SKILL.md",
+      "portable_sha256": "b6f8741035ae72a1a7744d0e43d30cbfcb349af4f909a0f906e9887b2a3ca826",
+      "automation_sha256": "b96b996774f2fe0d510dfe0c648c8115254444323fe6cd90e4368f49edb1146b",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "skills/cst-trace-compile/agents/openai.yaml",
+      "portable_sha256": "21534fa95230ae7def7bfd49c97de549ef3e19992f97c35574719b70c8979345",
+      "automation_sha256": "21534fa95230ae7def7bfd49c97de549ef3e19992f97c35574719b70c8979345",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-trace-compile/references/trace-contract.md",
+      "portable_sha256": "94864f963ec92a0f7bb6692f656cc74fa2e8d1839154b04751cef48ec8ebd0c3",
+      "automation_sha256": "94864f963ec92a0f7bb6692f656cc74fa2e8d1839154b04751cef48ec8ebd0c3",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-trace-compile/SKILL.md",
+      "portable_sha256": "c6264f75c79fdbc3d803847a8a4ea69dd36bbc41163a5ffef8f1bbbcd6d6f35a",
+      "automation_sha256": "f0d2c4b5252f0da28e1d7fd54aa4db888e3a322753fc6b014edd4dfe2ca93ab1",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "skills/cst-vba-modeling/agents/openai.yaml",
+      "portable_sha256": "e6c33fc4eb65ab98e07d1863416a33804e74720c0cd6800171ab846df2ef762e",
+      "automation_sha256": "e6c33fc4eb65ab98e07d1863416a33804e74720c0cd6800171ab846df2ef762e",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-vba-modeling/references/vba-patterns.md",
+      "portable_sha256": "29dd6ef6d9238bf19182d8992f09dbbd6931bad49a6574d5a9d6702aa03c4ea9",
+      "automation_sha256": "29dd6ef6d9238bf19182d8992f09dbbd6931bad49a6574d5a9d6702aa03c4ea9",
+      "source_kind": "automation-identical"
+    },
+    {
+      "path": "skills/cst-vba-modeling/SKILL.md",
+      "portable_sha256": "72b6f614656ff8cca5d3f1111c87dcb8a74637441e3eed7269f6831922f4cd27",
+      "automation_sha256": "2fdad507e697780e21e76d2df8dc9b973e0fe6e5084454e8145bbe71183ccbf1",
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "scripts/cst-task.py",
+      "portable_sha256": "ac9d015bd40b71d1bc758ad4021019045b931400841d50f49c129e598da7a56f",
+      "automation_sha256": null,
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "scripts/cstlab_data.py",
+      "portable_sha256": "9b9351842f4097efe170aa2ebb5aeb16a4fb7143ea7c42990d67fb5c3f33a3d9",
+      "automation_sha256": null,
+      "source_kind": "portable-adaptation"
+    },
+    {
+      "path": "examples/lowpass/model.py",
+      "portable_sha256": "96d9fd438beaac57697f2df43f86b77393b5f74d5faa78df47167c35778524b7",
+      "automation_sha256": null,
+      "source_kind": "internal-neutral-fixture"
+    }
+  ]
+}

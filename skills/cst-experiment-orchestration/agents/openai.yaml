@@ -1,0 +1,4 @@
+interface:
+  display_name: "CST Experiment Orchestration"
+  short_description: "Plan, run, validate, and preserve CST experiments"
+  default_prompt: "Use $cst-experiment-orchestration to design and execute a validated CST experiment."

@@ -1,0 +1,7 @@
+# The runtime manifest fingerprints exact source bytes. Preserve those bytes
+# across clones; do not let local core.autocrlf silently invalidate the bundle.
+* -text
+*.zip binary
+*.png binary
+*.jpg binary
+*.pdf binary

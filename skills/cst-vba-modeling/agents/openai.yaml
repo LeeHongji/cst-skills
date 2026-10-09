@@ -1,0 +1,13 @@
+interface:
+  display_name: "CST VBA Modeling"
+  short_description: "Build CST models safely with auditable VBA history commands."
+  default_prompt: "Use $cst-vba-modeling to create or modify this CST model with safe VBA history steps."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "cst-studio-suite"
+      description: "Local CST Studio Suite automation MCP server"
+
+policy:
+  allow_implicit_invocation: true

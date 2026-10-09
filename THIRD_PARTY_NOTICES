@@ -1,0 +1,20 @@
+# Third-party notices
+
+The CST Automation-derived code and original Skills are distributed under the
+root MIT license. Source byte provenance is in docs/source-baseline.json.
+
+- cst-runtime-cli: Copyright (c) 2026 bbl21, MIT.
+  Source: https://github.com/bbl21/cst-runtime-cli
+  Preserved license: MCP/CST/vendor/cst-runtime-cli/LICENSE.
+  Only necessary runtime scripts are included; these are internal dependencies.
+- Three.js: Copyright 2010-2025 three.js authors, MIT.
+  Source: https://github.com/mrdoob/three.js
+  Preserved license: MCP/CST-CAD/src/cst_cad/assets/THREE-LICENSE.txt.
+- Python packages are installed separately from requirements-lock.txt and retain
+  their respective licenses; Python and Node runtimes are not redistributed.
+- CST Studio Suite, its binaries, proprietary Python APIs and licenses are not
+  included. Users supply their own working CST installation.
+
+No private papers, historical research packages, approval keys or databases
+are part of this release. The lowpass example is an internally specified
+verification fixture; it is not a reproduced paper figure or paper result.

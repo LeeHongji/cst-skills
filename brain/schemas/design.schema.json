@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/design.schema.json",
+  "title": "Design contract (frontmatter of design.md)",
+  "description": "A design is one device inside a topic. Its frontmatter carries the acceptance gates in machine-readable form because the iteration loop fills in the `acceptance` field of every iteration automatically; a gate written as prose cannot be regression-tested and invites a different verdict every time an agent re-reads it. The prose body carries the goal, the interpretation decisions, and the design-specific facts.",
+  "type": "object",
+  "required": ["schema_version", "design_id", "topic_id", "title", "model", "acceptance"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "design_id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "topic_id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "model": {
+      "type": "string",
+      "description": "Path to the parametric model script, relative to the design directory. The IR it builds is the only supported iteration starting point: a model hand-edited in the CST GUI has no IR and therefore no topology_hash."
+    },
+    "reference_figure": {
+      "type": "string",
+      "description": "Figure in the source paper this design reconstructs, e.g. 'Fig. 15 / Filter D'."
+    },
+    "ports": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Expected port count. Checked against exported Touchstone data so a two-port export cannot be silently judged against four-port gates."
+    },
+    "acceptance": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Every gate is evaluated against exported curve data. A gate whose band is not covered by the data fails; it never passes vacuously.",
+      "items": {
+        "type": "object",
+        "required": ["id", "metric", "band_ghz", "comparator", "threshold", "mode"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$" },
+          "metric": {
+            "type": "string",
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^s[0-9]+_[0-9]+_(db|deg)$",
+                "description": "Typed curve name: s<out>_<in>_db is 20*log10(abs(S)), s<out>_<in>_deg is the unwrapped phase in degrees. Indices are underscore-separated so ports past 9 stay unambiguous."
+              },
+              {
+                "enum": ["phase_shift_deg", "phase_deviation_deg", "amplitude_imbalance_db"],
+                "description": "Derived metric: a relation between two S-parameters rather than one curve. phase_shift_deg is angle(S_main) - angle(S_ref), phase_deviation_deg is its absolute distance from `target`, amplitude_imbalance_db is abs(|S_main|dB - |S_ref|dB). These exist because a multi-branch device's headline specification, such as '180 degrees plus or minus 3.4 degrees', is not a property of any single S-parameter."
+              }
+            ]
+          },
+          "main": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "integer", "minimum": 1 },
+            "description": "[out, in] port pair of the branch under test, for a derived metric. Required for every derived metric and rejected for single-curve metrics, so a declaration is never silently ignored."
+          },
+          "reference": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "integer", "minimum": 1 },
+            "description": "[out, in] port pair of the branch the main branch is measured against."
+          },
+          "phase_convention": {
+            "enum": ["main-minus-reference", "reference-minus-main"],
+            "default": "main-minus-reference",
+            "description": "Explicit product order for phase metrics. Legacy default is angle(S_main * conj(S_reference)); reference-minus-main is angle(S_reference * conj(S_main)). It does not rename physical main/reference ports."
+          },
+          "target": {
+            "type": "number",
+            "description": "Nominal value expected at `anchor_ghz`. Required for both phase metrics: a phase difference is only defined up to a multiple of 360 degrees, and this is what selects the branch. phase_deviation_deg additionally measures its distance from it."
+          },
+          "anchor_ghz": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Frequency at which `target` is expected, used to pin the 360 degree branch of a phase difference. Must lie inside the swept range; a gate whose anchor is outside it errors rather than guessing."
+          },
+          "band_ghz": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "number", "minimum": 0 },
+            "description": "Inclusive [low, high] frequency window in GHz. Use the same value twice for a single-frequency gate."
+          },
+          "comparator": { "enum": ["<", "<=", ">", ">="] },
+          "threshold": { "type": "number" },
+          "mode": {
+            "enum": ["pointwise", "aggregate"],
+            "description": "pointwise: every sample in the band, including interpolated band edges, must satisfy the comparator. aggregate: reduce the band to one number first."
+          },
+          "aggregate": {
+            "enum": ["min", "max", "mean", "ripple"],
+            "description": "Required when mode is aggregate. ripple is max minus min."
+          },
+          "severity": {
+            "enum": ["required", "desired"],
+            "default": "required",
+            "description": "A failed 'desired' gate does not make the iteration fail overall, but is still recorded per gate."
+          },
+          "min_samples": {
+            "type": "integer",
+            "minimum": 2,
+            "default": 5,
+            "description": "Smallest number of real (non-interpolated) samples inside the band for the verdict to be trusted. Below this the gate errors rather than passing on a curve too coarse to judge."
+          },
+          "note": { "type": "string" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "mode": { "const": "aggregate" } }, "required": ["mode"] },
+            "then": { "required": ["aggregate"] }
+          }
+        ]
+      }
+    },
+    "best": {
+      "type": "object",
+      "description": "Pointer to the best iteration seen so far, maintained by the iteration loop.",
+      "additionalProperties": false,
+      "properties": {
+        "attempt_id": { "type": "string" },
+        "iter": { "type": "integer", "minimum": 0 },
+        "metrics": { "type": "object" }
+      }
+    },
+    "status": { "enum": ["open", "met", "abandoned"], "default": "open" },
+    "created": { "type": "string", "format": "date" }
+  }
+}

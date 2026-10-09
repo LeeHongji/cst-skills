@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "historical-native-solver-log-fixtures",
+  "new_cst_execution": false,
+  "files": [
+    {
+      "path": "fd-trial0003.log",
+      "source": "cst_runs/3-ghz-filtering-phase-shifter-full-band-90-degre_20260828_99578e1b62a2/trials/0003/working/cases/case_001/filtering_phase_shifter_final/Result/Model.log",
+      "sha256": "44caefd4a9e94b71da48a19e13e4efc89eeddd02e139bc96dfe385966ef44bf3",
+      "bytes": 47034
+    },
+    {
+      "path": "td-wr90.log",
+      "source": "cst_runs/step-1-classic-wr90-te10-end-to-end-verification_20260914_0bd216462447/trials/0002/working/wr90/Result/Model.log",
+      "sha256": "c0fe689dac2c3d35a97113e4697a58d923d7b20b6ceb71d6447cb4be1dd21912",
+      "bytes": 13366
+    }
+  ]
+}

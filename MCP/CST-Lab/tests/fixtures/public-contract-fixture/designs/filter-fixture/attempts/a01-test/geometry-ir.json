@@ -1,0 +1,484 @@
+{
+  "boundaries": {
+    "xmax": "electric",
+    "xmin": "electric",
+    "ymax": "electric",
+    "ymin": "electric",
+    "zmax": "expanded open",
+    "zmin": "electric"
+  },
+  "design_rules": [
+    {
+      "id": "width",
+      "params": {
+        "min_width": 0.28
+      },
+      "rule": "min_width",
+      "scope": "layer:top",
+      "severity": "error"
+    },
+    {
+      "id": "spacing",
+      "params": {
+        "min_spacing": 0.15
+      },
+      "rule": "min_spacing",
+      "scope": "layer:top",
+      "severity": "error"
+    },
+    {
+      "id": "connected",
+      "params": {
+        "max_components": 1
+      },
+      "rule": "net_connectivity",
+      "scope": "net:FILTER",
+      "severity": "error"
+    },
+    {
+      "id": "no_short",
+      "rule": "no_cross_net_short",
+      "scope": "layer:top",
+      "severity": "error"
+    },
+    {
+      "id": "containment",
+      "params": {
+        "reference_net": "BOARD"
+      },
+      "rule": "board_containment",
+      "scope": "layer:top",
+      "severity": "error"
+    },
+    {
+      "id": "ports",
+      "params": {
+        "tolerance": 1e-06
+      },
+      "rule": "port_attachment",
+      "scope": "port:*",
+      "severity": "error"
+    }
+  ],
+  "materials": [
+    {
+      "epsilon": 3.55,
+      "kind": "normal",
+      "mu": 1.0,
+      "name": "RO4003C",
+      "tan_delta": 0.0027
+    },
+    {
+      "conductivity": 58000000.0,
+      "kind": "lossy_metal",
+      "name": "TraceCopper"
+    }
+  ],
+  "mesh_hints": {
+    "kind": "hexahedral",
+    "steps_per_wavelength_near": 20.0
+  },
+  "model_id": "guardian-lowpass",
+  "model_intent_id": "aa14098d89cfde12134bae68faba9aedc4a4a42ea8f5e987d6e19d465f78604a",
+  "nets": [
+    {
+      "layer": "substrate",
+      "name": "BOARD",
+      "net_class": "reference",
+      "solids": [
+        {
+          "box": {
+            "x0": 0.0,
+            "x1": 54.069399999999995,
+            "y0": -7.5,
+            "y1": 15.0,
+            "z0": -0.813,
+            "z1": 0.0
+          },
+          "expressions": {
+            "x0": "0.0",
+            "x1": "2.0*lfeed+0.0+l1+l2+l3+l4+l5",
+            "y0": "(-sub_w)/2.0",
+            "y1": "sub_w",
+            "z0": "-sub_h",
+            "z1": "0.0"
+          },
+          "id": "s001",
+          "kind": "box"
+        }
+      ]
+    },
+    {
+      "layer": "bottom",
+      "name": "GROUND",
+      "net_class": "reference",
+      "solids": [
+        {
+          "box": {
+            "x0": 0.0,
+            "x1": 54.069399999999995,
+            "y0": -7.5,
+            "y1": 15.0,
+            "z0": -0.848,
+            "z1": -0.813
+          },
+          "expressions": {
+            "x0": "0.0",
+            "x1": "2.0*lfeed+0.0+l1+l2+l3+l4+l5",
+            "y0": "(-sub_w)/2.0",
+            "y1": "sub_w",
+            "z0": "(-sub_h)-cu_t",
+            "z1": "-sub_h"
+          },
+          "id": "s001",
+          "kind": "box"
+        }
+      ]
+    },
+    {
+      "layer": "top",
+      "name": "FILTER",
+      "net_class": "signal",
+      "solids": [
+        {
+          "box": {
+            "x0": 0.0,
+            "x1": 5.0,
+            "y0": -0.9166,
+            "y1": 0.9166,
+            "z0": 0.0,
+            "z1": 0.035
+          },
+          "expressions": {
+            "x0": "0.0",
+            "x1": "0.0+lfeed",
+            "y0": "(-w50)/2.0",
+            "y1": "(-w50)/2.0+w50",
+            "z0": "0.0",
+            "z1": "cu_t"
+          },
+          "id": "section_0",
+          "kind": "box"
+        },
+        {
+          "box": {
+            "x0": 5.0,
+            "x1": 11.8538,
+            "y0": -0.17715,
+            "y1": 0.17715,
+            "z0": 0.0,
+            "z1": 0.035
+          },
+          "expressions": {
+            "x0": "0.0+lfeed",
+            "x1": "0.0+lfeed+l1",
+            "y0": "(-wh)/2.0",
+            "y1": "(-wh)/2.0+wh",
+            "z0": "0.0",
+            "z1": "cu_t"
+          },
+          "id": "section_1",
+          "kind": "box"
+        },
+        {
+          "box": {
+            "x0": 11.8538,
+            "x1": 20.0691,
+            "y0": -2.55245,
+            "y1": 2.55245,
+            "z0": 0.0,
+            "z1": 0.035
+          },
+          "expressions": {
+            "x0": "0.0+lfeed+l1",
+            "x1": "0.0+lfeed+l1+l2",
+            "y0": "(-wl)/2.0",
+            "y1": "(-wl)/2.0+wl",
+            "z0": "0.0",
+            "z1": "cu_t"
+          },
+          "id": "section_2",
+          "kind": "box"
+        },
+        {
+          "box": {
+            "x0": 20.0691,
+            "x1": 34.000299999999996,
+            "y0": -0.17715,
+            "y1": 0.17715,
+            "z0": 0.0,
+            "z1": 0.035
+          },
+          "expressions": {
+            "x0": "0.0+lfeed+l1+l2",
+            "x1": "0.0+lfeed+l1+l2+l3",
+            "y0": "(-wh)/2.0",
+            "y1": "(-wh)/2.0+wh",
+            "z0": "0.0",
+            "z1": "cu_t"
+          },
+          "id": "section_3",
+          "kind": "box"
+        },
+        {
+          "box": {
+            "x0": 34.000299999999996,
+            "x1": 42.215599999999995,
+            "y0": -2.55245,
+            "y1": 2.55245,
+            "z0": 0.0,
+            "z1": 0.035
+          },
+          "expressions": {
+            "x0": "0.0+lfeed+l1+l2+l3",
+            "x1": "0.0+lfeed+l1+l2+l3+l4",
+            "y0": "(-wl)/2.0",
+            "y1": "(-wl)/2.0+wl",
+            "z0": "0.0",
+            "z1": "cu_t"
+          },
+          "id": "section_4",
+          "kind": "box"
+        },
+        {
+          "box": {
+            "x0": 42.215599999999995,
+            "x1": 49.069399999999995,
+            "y0": -0.17715,
+            "y1": 0.17715,
+            "z0": 0.0,
+            "z1": 0.035
+          },
+          "expressions": {
+            "x0": "0.0+lfeed+l1+l2+l3+l4",
+            "x1": "0.0+lfeed+l1+l2+l3+l4+l5",
+            "y0": "(-wh)/2.0",
+            "y1": "(-wh)/2.0+wh",
+            "z0": "0.0",
+            "z1": "cu_t"
+          },
+          "id": "section_5",
+          "kind": "box"
+        },
+        {
+          "box": {
+            "x0": 49.069399999999995,
+            "x1": 54.069399999999995,
+            "y0": -0.9166,
+            "y1": 0.9166,
+            "z0": 0.0,
+            "z1": 0.035
+          },
+          "expressions": {
+            "x0": "0.0+lfeed+l1+l2+l3+l4+l5",
+            "x1": "0.0+lfeed+l1+l2+l3+l4+l5+lfeed",
+            "y0": "(-w50)/2.0",
+            "y1": "(-w50)/2.0+w50",
+            "z0": "0.0",
+            "z1": "cu_t"
+          },
+          "id": "section_6",
+          "kind": "box"
+        }
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "name": "sub_h",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 0.813
+    },
+    {
+      "name": "cu_t",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 0.035
+    },
+    {
+      "name": "sub_w",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 15.0
+    },
+    {
+      "name": "lfeed",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 5.0
+    },
+    {
+      "name": "w50",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 1.8332
+    },
+    {
+      "name": "wh",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 0.3543
+    },
+    {
+      "name": "wl",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 5.1049
+    },
+    {
+      "name": "l1",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 6.8538
+    },
+    {
+      "name": "l2",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 8.2153
+    },
+    {
+      "name": "l3",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": true,
+      "unit": "mm",
+      "value": 13.9312
+    },
+    {
+      "name": "l4",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 8.2153
+    },
+    {
+      "name": "l5",
+      "provenance": "synthesized",
+      "source": "Archived internal stepped-impedance smoke synthesis",
+      "tunable": false,
+      "unit": "mm",
+      "value": 6.8538
+    }
+  ],
+  "ports": [
+    {
+      "expressions": {
+        "x0": "0.0",
+        "x1": "0.0",
+        "y0": "(-sub_w)/2.0",
+        "y1": "sub_w/2.0",
+        "z0": "(-sub_h)-cu_t",
+        "z1": "4.0*sub_h"
+      },
+      "extent": {
+        "x0": 0.0,
+        "x1": 0.0,
+        "y0": -7.5,
+        "y1": 7.5,
+        "z0": -0.848,
+        "z1": 3.252
+      },
+      "impedance": 50.0,
+      "kind": "waveguide",
+      "modes": 1,
+      "name": "P1",
+      "net": "FILTER",
+      "number": 1,
+      "on_boundary": true,
+      "orientation": "xmin",
+      "reference_net": "GROUND"
+    },
+    {
+      "expressions": {
+        "x0": "2.0*lfeed+0.0+l1+l2+l3+l4+l5",
+        "x1": "2.0*lfeed+0.0+l1+l2+l3+l4+l5",
+        "y0": "(-sub_w)/2.0",
+        "y1": "sub_w/2.0",
+        "z0": "(-sub_h)-cu_t",
+        "z1": "4.0*sub_h"
+      },
+      "extent": {
+        "x0": 54.069399999999995,
+        "x1": 54.069399999999995,
+        "y0": -7.5,
+        "y1": 7.5,
+        "z0": -0.848,
+        "z1": 3.252
+      },
+      "impedance": 50.0,
+      "kind": "waveguide",
+      "modes": 1,
+      "name": "P2",
+      "net": "FILTER",
+      "number": 2,
+      "on_boundary": true,
+      "orientation": "xmax",
+      "reference_net": "GROUND"
+    }
+  ],
+  "schema_version": 1,
+  "simulation": {
+    "frequency": {
+      "max": 7.2,
+      "min": 0.0
+    },
+    "settings": {
+      "accuracy_db": "-40",
+      "norming_impedance": 50
+    },
+    "solver": "time_domain"
+  },
+  "source": {
+    "kind": "internal",
+    "reference": "20260914-step1-step2-verification"
+  },
+  "stackup": [
+    {
+      "material": "RO4003C",
+      "name": "substrate",
+      "role": "substrate",
+      "z0": -0.813,
+      "z1": 0.0
+    },
+    {
+      "material": "TraceCopper",
+      "name": "bottom",
+      "role": "ground",
+      "z0": -0.848,
+      "z1": -0.813
+    },
+    {
+      "material": "TraceCopper",
+      "name": "top",
+      "role": "signal",
+      "z0": 0.0,
+      "z1": 0.035
+    }
+  ],
+  "title": "Guardian low-pass verification",
+  "units": {
+    "frequency": "GHz",
+    "length": "mm"
+  }
+}

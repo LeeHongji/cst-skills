@@ -1,0 +1,4 @@
+interface:
+  display_name: "CST Strategy Learning"
+  short_description: "Learn reusable optimization strategies from CST trials."
+  default_prompt: "Use $cst-strategy-learning to extract evidence-bounded strategy lessons from these CST runs."

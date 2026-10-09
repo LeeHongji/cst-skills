@@ -1,0 +1,4 @@
+interface:
+  display_name: "CST Brain Lint"
+  short_description: "Audit CST brain links, schemas, and evidence."
+  default_prompt: "Use $cst-brain-lint to audit and repair the CST second brain."

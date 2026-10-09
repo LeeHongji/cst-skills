@@ -1,0 +1,58 @@
+name: Verify distribution
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned Python dependencies and local components
+        shell: pwsh
+        run: |
+          python -m pip install -r requirements-lock.txt
+          foreach ($component in @('CST', 'CST-Lab', 'CST-CAD', 'CST-Brain')) {
+            python -m pip install --no-deps -e "MCP/$component"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          python -m pip check
+      - name: Distribution and execution-core regression
+        shell: pwsh
+        env:
+          PYTHONUTF8: '1'
+        run: |
+          python -m pytest tests -q --junitxml=reports/distribution.xml
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/run-core-tests.py --output reports/core
+      - name: Verify bundled runtime matches maintained source
+        shell: pwsh
+        run: |
+          $releaseBefore = (Get-Content skills/cst-research/assets/runtime-release.json -Raw | ConvertFrom-Json).archive_sha256
+          python scripts/build-release.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $releaseAfter = (Get-Content skills/cst-research/assets/runtime-release.json -Raw | ConvertFrom-Json).archive_sha256
+          if ($releaseBefore -ne $releaseAfter) { throw 'Runtime bundle is stale' }
+      - name: Official Skills CLI discovery and copy installation
+        shell: pwsh
+        env:
+          DO_NOT_TRACK: '1'
+        run: |
+          $sourceRoot = (Get-Location).Path
+          New-Item -ItemType Directory -Path 'verification workspace' | Out-Null
+          Set-Location 'verification workspace'
+          npx --yes skills@1.7.1 add $sourceRoot --skill '*' --agent codex claude-code --copy --yes
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $installed = @(Get-ChildItem .agents/skills -Directory)
+          if ($installed.Count -ne 10) { throw 'Expected ten installed Skills' }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regression-reports
+          path: reports/
+
+# Hardware acceptance is deliberately separate: CI cannot create human approval
+# or claim a real CST solve/client acceptance on a hosted Windows runner.

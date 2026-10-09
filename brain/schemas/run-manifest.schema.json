@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.cst-automation/schemas/run-manifest.schema.json",
+  "title": "CST run manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "run_id",
+    "run_path",
+    "status",
+    "artifacts"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "case_id": {"type": "string", "minLength": 1},
+    "task_id": {"type": "string"},
+    "run_id": {"type": "string", "minLength": 1},
+    "run_path": {"type": "string"},
+    "source_project": {"type": ["string", "null"]},
+    "working_project": {"type": ["string", "null"]},
+    "objective": {"type": "object"},
+    "constraints": {"type": "array"},
+    "parameters": {"type": "array"},
+    "solver": {"type": "object"},
+    "metrics": {"type": "object"},
+    "status": {
+      "enum": [
+        "prepared",
+        "running",
+        "validated",
+        "needs_validation",
+        "partial",
+        "blocked",
+        "error"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["uri", "sha256"],
+        "properties": {
+          "uri": {"type": "string"},
+          "sha256": {"type": "string"},
+          "size": {"type": "integer", "minimum": 0},
+          "kind": {"type": "string"}
+        }
+      }
+    },
+    "knowledge_used": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "skills_used": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "reproducibility": {
+      "enum": ["unknown", "partial", "replayable", "reproduced"]
+    }
+  },
+  "additionalProperties": true,
+  "x-superseded-by": "iterations.jsonl",
+  "x-supersession-note": "Superseded by the four contracts of the topic-driven architecture. Still present because its writer is still live; the file is removed together with the code that produces it, not before, so the running plane does not break in between."
+}
+

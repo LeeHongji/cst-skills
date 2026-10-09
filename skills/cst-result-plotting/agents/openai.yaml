@@ -1,0 +1,4 @@
+interface:
+  display_name: "CST Result Plotting"
+  short_description: "Plot and validate CST filter responses"
+  default_prompt: "Use $cst-result-plotting to plot and validate this CST filter run."

@@ -1,0 +1,402 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/geometry-ir.schema.json",
+  "title": "CST Geometry Intermediate Representation",
+  "description": "Declarative, design-first source of truth for a CST model. The .cst binary is a regenerable solver input derived from this document. model_intent_id is the SHA-256 of the canonical serialization defined in x-model-intent-id-algorithm.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "model_intent_id", "model_id", "units", "parameters", "materials", "stackup", "nets"],
+  "x-model-intent-id-algorithm": {
+    "digest": "sha256",
+    "encoding": "utf-8",
+    "output": "lowercase hexadecimal, 64 characters",
+    "included_sections": ["schema_version", "units", "parameters", "materials", "stackup", "nets", "ports", "boundaries", "mesh_hints", "design_rules"],
+    "excluded_sections": ["model_intent_id", "model_id", "title", "description", "source", "simulation", "derived", "notes"],
+    "steps": [
+      "1. Deep-copy the IR document and drop every excluded section plus any key whose name starts with an underscore.",
+      "2. Drop keys whose value is null so that an absent optional field and an explicit null hash identically.",
+      "3. Sort identity-bearing collections by their natural key so declaration order cannot change identity: parameters by name, materials by name, stackup by name, nets by name, solids by id within each net, ports by number then name, design_rules by id, mesh_hints.local_refinements by target. Point lists inside extrude_polygon/revolve/loft keep their declared order because winding is semantic.",
+      "4. Normalize every number to a canonical decimal string: reject non-finite values, round to 9 decimal places, map -0.0 to 0.0, and render with Python repr of the rounded float (so 15.299999999999999 and 15.3 both become '15.3'). Booleans are not numbers and stay true/false.",
+      "5. Serialize deterministically: object keys sorted ascending by Unicode code point, no insignificant whitespace, ensure_ascii disabled, arrays in the order fixed by step 3.",
+      "6. model_intent_id = sha256(canonical_text.encode('utf-8')).hexdigest()."
+    ],
+    "rationale": "Geometry, materials, nets, ports, boundaries, mesh hints and design rules define the physical model intent. Solver band, monitors and derived read-only values are analysis setup and must not change model identity, otherwise a re-solve at a different accuracy would fork the revision lineage."
+  },
+  "$defs": {
+    "identifier": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"},
+    "netName": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+    "solidId": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "expression": {"type": "string", "minLength": 1},
+    "color": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "integer", "minimum": 0, "maximum": 255}
+    },
+    "point2d": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"type": "number"}
+    },
+    "extent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x0", "y0", "z0", "x1", "y1", "z1"],
+      "properties": {
+        "x0": {"type": "number"},
+        "y0": {"type": "number"},
+        "z0": {"type": "number"},
+        "x1": {"type": "number"},
+        "y1": {"type": "number"},
+        "z1": {"type": "number"}
+      }
+    },
+    "solid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind"],
+      "properties": {
+        "id": {"$ref": "#/$defs/solidId"},
+        "kind": {"enum": ["box", "extrude_polygon", "cylinder", "revolve", "loft"]},
+        "operation": {"enum": ["add", "subtract"], "default": "add"},
+        "material": {"type": ["string", "null"]},
+        "note": {"type": ["string", "null"]},
+        "expressions": {
+          "type": "object",
+          "description": "Optional CST parameter expressions mirroring the numeric coordinates. emit_vba prefers these so the generated model stays sweepable; DRC and geometry comparison always use the numeric values.",
+          "additionalProperties": {"$ref": "#/$defs/expression"}
+        },
+        "box": {"$ref": "#/$defs/extent"},
+        "extrude_polygon": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["points", "z0", "z1"],
+          "properties": {
+            "points": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/point2d"}},
+            "z0": {"type": "number"},
+            "z1": {"type": "number"}
+          }
+        },
+        "cylinder": {
+          "type": "object",
+          "description": "Reserved for Phase 1+; not emitted by the Phase 1 VBA backend.",
+          "additionalProperties": false,
+          "required": ["axis", "outer_radius", "center", "from", "to"],
+          "properties": {
+            "axis": {"enum": ["x", "y", "z"]},
+            "outer_radius": {"type": "number", "exclusiveMinimum": 0},
+            "inner_radius": {"type": ["number", "null"], "minimum": 0},
+            "center": {"$ref": "#/$defs/point2d"},
+            "from": {"type": "number"},
+            "to": {"type": "number"},
+            "segments": {"type": ["integer", "null"], "minimum": 0}
+          }
+        },
+        "revolve": {
+          "type": "object",
+          "description": "Reserved for Phase 1+; not emitted by the Phase 1 VBA backend.",
+          "additionalProperties": false,
+          "required": ["points", "axis", "angle"],
+          "properties": {
+            "points": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/point2d"}},
+            "axis": {"enum": ["x", "y", "z"]},
+            "angle": {"type": "number"},
+            "origin": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}
+          }
+        },
+        "loft": {
+          "type": "object",
+          "description": "Reserved for Phase 1+; not emitted by the Phase 1 VBA backend.",
+          "additionalProperties": false,
+          "required": ["profiles"],
+          "properties": {
+            "profiles": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["z", "points"],
+                "properties": {
+                  "z": {"type": "number"},
+                  "points": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/point2d"}}
+                }
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "box"}}, "required": ["kind"]}, "then": {"required": ["box"]}},
+        {"if": {"properties": {"kind": {"const": "extrude_polygon"}}, "required": ["kind"]}, "then": {"required": ["extrude_polygon"]}},
+        {"if": {"properties": {"kind": {"const": "cylinder"}}, "required": ["kind"]}, "then": {"required": ["cylinder"]}},
+        {"if": {"properties": {"kind": {"const": "revolve"}}, "required": ["kind"]}, "then": {"required": ["revolve"]}},
+        {"if": {"properties": {"kind": {"const": "loft"}}, "required": ["kind"]}, "then": {"required": ["loft"]}}
+      ]
+    }
+  },
+  "properties": {
+    "schema_version": {"const": 1},
+    "model_intent_id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "model_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "title": {"type": ["string", "null"]},
+    "description": {"type": ["string", "null"]},
+    "source": {
+      "type": "object",
+      "description": "Where the design intent came from. Excluded from model_intent_id because it is prose provenance, not physics.",
+      "additionalProperties": true
+    },
+    "units": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["length", "frequency"],
+      "properties": {
+        "length": {"enum": ["m", "cm", "mm", "um", "nm", "ft", "in", "mil"]},
+        "frequency": {"enum": ["Hz", "kHz", "MHz", "GHz", "THz", "PHz"]},
+        "time": {"enum": ["s", "ms", "us", "ns", "ps", "fs"]},
+        "temperature": {"enum": ["Kelvin", "Celsius", "Fahrenheit"]}
+      }
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "value", "provenance", "tunable"],
+        "properties": {
+          "name": {"$ref": "#/$defs/identifier"},
+          "value": {"type": "number"},
+          "unit": {"type": ["string", "null"]},
+          "provenance": {
+            "enum": ["paper_explicit", "strong_inference", "assumption", "synthesized", "optimized"],
+            "description": "paper_explicit: printed in the source figure or text. strong_inference: not labelled but supported by raster scale or companion figures; needs review. assumption: preview/fixture choice not supplied by the source. synthesized: produced by a design procedure. optimized: produced by a solver-driven search."
+          },
+          "source": {"type": ["string", "null"], "description": "Citation, source:// URI or evidence path backing the provenance claim."},
+          "min": {"type": ["number", "null"]},
+          "max": {"type": ["number", "null"]},
+          "tunable": {"type": "boolean"},
+          "expression": {"type": ["string", "null"], "description": "CST parameter expression over other parameters. When present, value must equal the evaluated expression."},
+          "description": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "kind"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["normal", "pec", "lossy_metal", "anisotropic"]},
+          "epsilon": {"type": ["number", "string", "null"]},
+          "mu": {"type": ["number", "string", "null"]},
+          "tan_delta": {"type": ["number", "string", "null"]},
+          "conductivity": {"type": ["number", "string", "null"]},
+          "color": {"oneOf": [{"$ref": "#/$defs/color"}, {"type": "null"}]},
+          "note": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "stackup": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "z0", "z1", "material", "role"],
+        "properties": {
+          "name": {"$ref": "#/$defs/identifier"},
+          "z0": {"type": "number"},
+          "z1": {"type": "number"},
+          "material": {"type": "string", "minLength": 1},
+          "role": {"enum": ["ground", "substrate", "signal", "dielectric", "cover", "other"]},
+          "note": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "nets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "layer", "net_class", "solids"],
+        "properties": {
+          "name": {"$ref": "#/$defs/netName"},
+          "layer": {"$ref": "#/$defs/identifier"},
+          "material": {"type": ["string", "null"], "description": "Overrides the layer material for every solid in this net."},
+          "net_class": {"enum": ["signal", "ground", "floating", "reference"]},
+          "color": {"oneOf": [{"$ref": "#/$defs/color"}, {"type": "null"}]},
+          "solids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/solid"}},
+          "note": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "number", "kind", "net", "orientation", "extent"],
+        "properties": {
+          "name": {"$ref": "#/$defs/identifier"},
+          "number": {"type": "integer", "minimum": 1},
+          "kind": {"enum": ["waveguide", "discrete", "lumped"]},
+          "net": {"$ref": "#/$defs/netName"},
+          "reference_net": {"oneOf": [{"$ref": "#/$defs/netName"}, {"type": "null"}]},
+          "orientation": {"enum": ["xmin", "xmax", "ymin", "ymax", "zmin", "zmax"]},
+          "on_boundary": {"type": "boolean", "default": true},
+          "impedance": {"type": ["number", "null"]},
+          "modes": {"type": "integer", "minimum": 1, "default": 1},
+          "extent": {"$ref": "#/$defs/extent"},
+          "expressions": {"type": "object", "additionalProperties": {"$ref": "#/$defs/expression"}},
+          "label": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "xmin": {"$ref": "#/properties/boundaries/$defs/condition"},
+        "xmax": {"$ref": "#/properties/boundaries/$defs/condition"},
+        "ymin": {"$ref": "#/properties/boundaries/$defs/condition"},
+        "ymax": {"$ref": "#/properties/boundaries/$defs/condition"},
+        "zmin": {"$ref": "#/properties/boundaries/$defs/condition"},
+        "zmax": {"$ref": "#/properties/boundaries/$defs/condition"},
+        "symmetry": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "x": {"enum": ["none", "electric", "magnetic"]},
+            "y": {"enum": ["none", "electric", "magnetic"]},
+            "z": {"enum": ["none", "electric", "magnetic"]}
+          }
+        },
+        "open_space": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "xmin": {"type": ["number", "string"]},
+            "xmax": {"type": ["number", "string"]},
+            "ymin": {"type": ["number", "string"]},
+            "ymax": {"type": ["number", "string"]},
+            "zmin": {"type": ["number", "string"]},
+            "zmax": {"type": ["number", "string"]}
+          }
+        },
+        "background": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {"enum": ["normal", "pec", "vacuum"]},
+            "epsilon": {"type": ["number", "string", "null"]},
+            "mu": {"type": ["number", "string", "null"]}
+          }
+        }
+      },
+      "$defs": {
+        "condition": {"enum": ["open", "expanded open", "electric", "magnetic", "periodic", "conducting wall", "unit cell"]}
+      }
+    },
+    "mesh_hints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {"enum": ["hexahedral", "tetrahedral", "surface"]},
+        "steps_per_wavelength_near": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "cells_per_max_cell_near": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "min_cell_fraction": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "local_refinements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["target", "max_step"],
+            "properties": {
+              "target": {"type": "string", "pattern": "^(net|solid|layer):[A-Za-z0-9_]+$"},
+              "max_step": {"type": "number", "exclusiveMinimum": 0}
+            }
+          }
+        }
+      }
+    },
+    "design_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "rule", "scope"],
+        "properties": {
+          "id": {"$ref": "#/$defs/solidId"},
+          "rule": {
+            "enum": [
+              "min_spacing",
+              "min_width",
+              "net_connectivity",
+              "no_cross_net_short",
+              "board_containment",
+              "port_attachment",
+              "symmetry"
+            ]
+          },
+          "scope": {"type": "string", "minLength": 1, "description": "layer:<name>, net:<name>, port:<name>, or * for every applicable subject."},
+          "severity": {"enum": ["error", "warning", "info"], "default": "error"},
+          "params": {"type": "object", "additionalProperties": true},
+          "note": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "simulation": {
+      "type": "object",
+      "description": "Analysis setup. Excluded from model_intent_id so that re-solving the same geometry at a different band or accuracy does not fork the revision lineage. Adaptive mesh refinement lives here rather than in mesh_hints because pass count and delta-S are convergence controls, not statements about the geometry.",
+      "additionalProperties": false,
+      "properties": {
+        "solver": {"enum": ["frequency_domain", "time_domain", "eigenmode", "integral"]},
+        "convergence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "adaptive_mesh": {"type": "boolean"},
+            "min_passes": {"type": "integer", "minimum": 1},
+            "max_passes": {"type": "integer", "minimum": 1},
+            "max_delta_s": {"type": "number", "exclusiveMinimum": 0},
+            "increment_percent": {"type": "number", "exclusiveMinimum": 0},
+            "checks": {"type": "integer", "minimum": 1}
+          }
+        },
+        "frequency": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "min": {"type": ["number", "string"]},
+            "max": {"type": ["number", "string"]},
+            "center": {"type": ["number", "string", "null"]}
+          }
+        },
+        "settings": {"type": "object", "additionalProperties": true},
+        "monitors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "kind"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "kind": {"enum": ["Efield", "Hfield", "Farfield", "Powerflow", "Current", "Temperature"]},
+              "frequency": {"type": ["number", "string", "null"]}
+            }
+          }
+        }
+      }
+    },
+    "derived": {
+      "type": "object",
+      "description": "Read-only convenience values recomputed from parameters. Never an input, always excluded from model_intent_id.",
+      "additionalProperties": true
+    },
+    "notes": {"type": ["string", "null"]}
+  }
+}

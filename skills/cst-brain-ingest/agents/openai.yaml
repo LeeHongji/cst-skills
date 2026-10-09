@@ -1,0 +1,4 @@
+interface:
+  display_name: "CST Brain Ingest"
+  short_description: "Ingest CST sources and runs into the evidence-backed brain."
+  default_prompt: "Use $cst-brain-ingest to ingest this CST source into the local second brain."

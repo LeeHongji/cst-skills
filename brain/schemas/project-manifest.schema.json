@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/project-manifest.schema.json",
+  "title": "CST Project Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "name", "source_path", "source_sha256", "registered_at"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "project_id": {"type": "string", "pattern": "^project-[a-f0-9]{12}$"},
+    "name": {"type": "string", "minLength": 1},
+    "source_path": {"type": "string", "minLength": 1},
+    "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "companion_path": {"type": ["string", "null"]},
+    "companion": {
+      "type": ["object", "null"],
+      "required": ["file_count", "total_size", "sha256", "files", "skipped"],
+      "properties": {
+        "file_count": {"type": "integer", "minimum": 0},
+        "total_size": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "files": {"type": "array", "items": {"$ref": "#/$defs/file"}},
+        "skipped": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "reason"],
+            "properties": {
+              "path": {"type": "string"},
+              "reason": {"type": "string"}
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "registered_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "size", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "size": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    }
+  },
+  "x-superseded-by": "attempt.schema.json",
+  "x-supersession-note": "Superseded by the four contracts of the topic-driven architecture. Still present because its writer is still live; the file is removed together with the code that produces it, not before, so the running plane does not break in between."
+}

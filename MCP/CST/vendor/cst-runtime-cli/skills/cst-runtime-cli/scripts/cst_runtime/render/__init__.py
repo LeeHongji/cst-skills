@@ -1,0 +1,27 @@
+from __future__ import annotations
+
+from .svg_linechart import (
+    _SVG_W, _SVG_H, _SVG_MARGIN, _COLORS,
+    _DARK_BG, _DARK_TEXT, _LIGHT_BG, _LIGHT_TEXT,
+    _svg_axes, svg_linechart, svg_mini_trend,
+    complex_components, safe_log_db, scalar_series,
+)
+from .svg_heatmap import svg_heatmap
+from .svg_page import svg_page, metric_cards_html
+from .canvas_3d import render_3d_farfield
+from .components import (
+    section_header, foldable_panel, iteration_header_html,
+    step_card_html, data_table, badge, empty_state, s11_snippet, audit_foldable,
+)
+from .dashboard import (
+    _TIMELINE_TOOLS, _SECTION_LABELS,
+    _parse_cli_filename, _build_timeline,
+    _categorize_step, _step_summary, _rationale_from_step,
+    _load_s11_exports, load_s11_series,
+    _optimization_s11_chart, _s11_table_html,
+    _optimization_metrics_html, _param_changes_table_html,
+    _step_card_html, _load_exported_payload, _try_parse_cst_farfield_ascii,
+    _plot_output_path, _auto_detect_modules,
+    _build_iterations, _report_module_narrative,
+    plot_exported_file, generate_report,
+)

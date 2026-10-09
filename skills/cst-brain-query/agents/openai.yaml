@@ -1,0 +1,4 @@
+interface:
+  display_name: "CST Brain Query"
+  short_description: "Retrieve grounded CST knowledge and context packs."
+  default_prompt: "Use $cst-brain-query to answer this CST question from the local second brain."

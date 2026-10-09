@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Function iteration Brain projection",
+  "type": "object",
+  "required": ["schema_version", "kind", "case_id", "title", "published_at", "source", "request", "fact", "evidence"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "function-iteration"},
+    "case_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "published_at": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object", "required": ["history_uri", "history_sha256", "iteration", "job_id"], "additionalProperties": false,
+      "properties": {
+        "history_uri": {"type": "string", "minLength": 1},
+        "history_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "iteration": {"type": "integer", "minimum": 0},
+        "job_id": {"type": "string", "pattern": "^job://[0-9a-f]{64}/[0-9a-f]{32}$"}
+      }
+    },
+    "request": {
+      "type": "object", "required": ["topic", "design", "attempt", "request_id", "operation", "why"],
+      "properties": {
+        "topic": {"type": "string", "minLength": 1},
+        "design": {"type": "string", "minLength": 1},
+        "attempt": {"type": "string", "minLength": 1},
+        "request_id": {"type": "string", "minLength": 1},
+        "operation": {"enum": ["audit", "analyze", "compare", "simulate"]},
+        "why": {"type": "string", "minLength": 1}
+      }
+    },
+    "fact": {
+      "type": "object", "required": ["iter", "job_id", "status", "artifacts"],
+      "properties": {
+        "iter": {"type": "integer", "minimum": 0},
+        "job_id": {"type": "string", "pattern": "^job://[0-9a-f]{64}/[0-9a-f]{32}$"},
+        "status": {"enum": ["completed", "failed", "blocked"]},
+        "artifacts": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^artifact://"}}
+      }
+    },
+    "evidence": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^artifact://"}}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/metric-definition.schema.json",
+  "title": "CST Metric Definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "signal", "representation", "unit", "domain", "aggregation", "direction", "missing_data_policy", "quality_gates"],
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "signal": {"type": "string", "minLength": 1},
+    "representation": {"enum": ["complex", "magnitude", "power", "db20", "db10", "phase_deg", "real", "imaginary"]},
+    "unit": {"type": "string"},
+    "domain": {"enum": ["frequency", "time", "angle", "mode", "scalar"]},
+    "frequency_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "stop", "unit"],
+      "properties": {
+        "start": {"type": "number"},
+        "stop": {"type": "number"},
+        "unit": {"enum": ["Hz", "kHz", "MHz", "GHz", "THz"]}
+      }
+    },
+    "aggregation": {"enum": ["min", "max", "mean", "median", "integral", "at", "argmin_x", "argmax_x", "bandwidth", "ripple", "custom"]},
+    "direction": {"enum": ["minimize", "maximize", "target", "constraint", "observe"]},
+    "target": {"type": ["number", "null"]},
+    "target_x": {"type": "number"},
+    "coverage_tolerance": {"type": "number", "minimum": 0},
+    "missing_data_policy": {"enum": ["invalid", "fail", "prune", "retry"]},
+    "quality_gates": {"type": "array", "items": {"type": "string"}}
+  },
+  "x-superseded-by": "design.schema.json",
+  "x-supersession-note": "Superseded by the four contracts of the topic-driven architecture. Still present because its writer is still live; the file is removed together with the code that produces it, not before, so the running plane does not break in between."
+}

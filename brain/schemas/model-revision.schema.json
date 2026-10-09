@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/model-revision.schema.json",
+  "title": "CST Model Revision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "revision_id", "project_id", "snapshot_sha256", "source_sha256", "snapshot", "created_at"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "revision_id": {"type": "string", "pattern": "^revision-[a-f0-9]{12}$"},
+    "project_id": {"type": "string", "pattern": "^project-[a-f0-9]{12}$"},
+    "snapshot_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "snapshot": {
+      "type": "object",
+      "required": ["parameters", "simulation_properties", "history", "evidence"],
+      "properties": {
+        "parameters": {},
+        "simulation_properties": {},
+        "history": {},
+        "evidence": {"type": "array", "items": {"type": "object"}}
+      },
+      "additionalProperties": true
+    },
+    "created_at": {"type": "string", "format": "date-time"}
+  },
+  "x-superseded-by": "attempt.schema.json",
+  "x-supersession-note": "Superseded by the four contracts of the topic-driven architecture. Still present because its writer is still live; the file is removed together with the code that produces it, not before, so the running plane does not break in between."
+}
+

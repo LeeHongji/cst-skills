@@ -1,0 +1,11 @@
+{
+  "name": "cst-simulation-workflow",
+  "dir_name": "cst-simulation-workflow",
+  "category": "electromagnetic-simulation",
+  "status": "public",
+  "source": "github",
+  "source_url": "https://github.com/LeeHongji/cst-skills",
+  "license": "MIT",
+  "distribution": "public",
+  "description": "Workflow and decision-layer skill for driving CST Studio Suite through the repository CST MCP."
+}

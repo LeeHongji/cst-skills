@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cst-cad"
+version = "0.1.0"
+description = "Design-first parametric geometry plane for CST Automation"
+requires-python = ">=3.13"
+dependencies = [
+  "jsonschema>=4.23,<5",
+  "mcp>=1.29,<2",
+]
+
+[project.optional-dependencies]
+cad = [
+  "cadquery>=2.8,<3",
+  "ezdxf>=1.4,<2",
+  "matplotlib>=3.9",
+]
+dev = [
+  "pytest>=8.3,<9",
+]
+
+[project.scripts]
+cst-cad = "cst_cad.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cst_cad = ["assets/*.js", "assets/*LICENSE*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

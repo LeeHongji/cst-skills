@@ -1,0 +1,4 @@
+interface:
+  display_name: "CST Trace Compile"
+  short_description: "Compile CST run traces into reusable case memory."
+  default_prompt: "Use $cst-trace-compile to compile this completed CST run into a case dossier."

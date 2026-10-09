@@ -1,0 +1,1215 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0",
+  "archive_sha256": "f021c600abd32bb0a5886ccd7010ab24baaaeb5629624540d642fb82c21cb407",
+  "files": {
+    "brain/AGENTS.md": {
+      "bytes": 454,
+      "sha256": "13476575b12f5859b3d7626b318a6d89de4a1a8923a5488c44e5974be23bd947"
+    },
+    "brain/meta/index.md": {
+      "bytes": 224,
+      "sha256": "13de64a333d59aa9e37a8f11519bd45f6c18bdb15e759f91618691b1050f650e"
+    },
+    "brain/meta/log.md": {
+      "bytes": 165,
+      "sha256": "a9532227629382bf212245ebebf9f7162b237b986136219e4821fbde24595881"
+    },
+    "brain/raw/manifest.json": {
+      "bytes": 73,
+      "sha256": "acefdec1be9e292fa1c2b99163bccdaa99d235062b05466a2a370a0d48d04240"
+    },
+    "brain/schemas/attempt.schema.json": {
+      "bytes": 8224,
+      "sha256": "ec29bd00e007f5f1faa85ce874224f738140fca60d4a7a70282a32c1454654da"
+    },
+    "brain/schemas/design.schema.json": {
+      "bytes": 7059,
+      "sha256": "8e22db9b49c4879b94951b4ac4f33eeded10d2e6487f0947503bef8b45712365"
+    },
+    "brain/schemas/experiment.schema.json": {
+      "bytes": 2723,
+      "sha256": "b60fd3420c39e428143fac8bc929ccbe6740baa18b0a9f5b7037c0a8cd9e6eeb"
+    },
+    "brain/schemas/function-iteration-manifest.schema.json": {
+      "bytes": 2054,
+      "sha256": "52e19d73e8e2caa3d843d8ea0da0fce2c3782a325c0bde9ab25e789e787c8e6d"
+    },
+    "brain/schemas/geometry-ir.schema.json": {
+      "bytes": 18389,
+      "sha256": "394210cb1fe77a2eee70e9247b5ea142aa7b5877550094dc97fd133ff41f58aa"
+    },
+    "brain/schemas/iteration.schema.json": {
+      "bytes": 9548,
+      "sha256": "47513b424f8de66809881b3b5c3fa2d978891cebe36a6b3d697c036bf56db7f3"
+    },
+    "brain/schemas/metric-definition.schema.json": {
+      "bytes": 1834,
+      "sha256": "927bccf7d3121e40a883700b26b77f370d02f2ca1717131b9f875f3758d1cd5a"
+    },
+    "brain/schemas/model-revision.schema.json": {
+      "bytes": 1423,
+      "sha256": "86b551c8d68036e662da4e2e1f41f464199183fd06f8241dbbcc8213d21a16d3"
+    },
+    "brain/schemas/project-manifest.schema.json": {
+      "bytes": 2185,
+      "sha256": "6188ef962944a3e020b9c064c26a3ea50efaf8641ab5243f08957099bd5de5d5"
+    },
+    "brain/schemas/run-manifest.schema.json": {
+      "bytes": 1960,
+      "sha256": "488f538780b8cdfd5ce2044823aa54a4b74e2d92dd69751f9eedc2ccdab1500e"
+    },
+    "brain/schemas/topic.schema.json": {
+      "bytes": 2165,
+      "sha256": "b87d408f9c3165bb5cbfe57367f87b857a7d20ab684d97f0217b62d4286bf06e"
+    },
+    "brain/schemas/trace-event.schema.json": {
+      "bytes": 1658,
+      "sha256": "f19752e942113cdd7f3658fc3f6bb28b516468f70668fc9ebcec7008c0d8b124"
+    },
+    "brain/schemas/trial.schema.json": {
+      "bytes": 1400,
+      "sha256": "842b7d41822f24f6b7f1672ae3156d8f44c56d7ed89af47a00d6735edf3f3d7d"
+    },
+    "brain/schemas/validation-report.schema.json": {
+      "bytes": 1400,
+      "sha256": "70dbd9e58fc4ed4bec488c8b9e2a0ba4307b01580c7c0db4d27e98f5895adf68"
+    },
+    "brain/templates/case-page.md": {
+      "bytes": 335,
+      "sha256": "c1e7302e23f0e317754581723dba1b1d867842bf40ec0bb21296c43aa47fbad3"
+    },
+    "brain/templates/knowledge-page.md": {
+      "bytes": 313,
+      "sha256": "23e3711cec52c2e53c5f48bac1c80dde4b86d4fabcf12918361f9dd901da7d00"
+    },
+    "brain/wiki/foundations/complex-s-parameters.md": {
+      "bytes": 635,
+      "sha256": "32a965135bd3620e0c5cb04ce271a6b2aae2e0c19a626e63c034cffd398f03f6"
+    },
+    "brain/wiki/foundations/execution-boundary.md": {
+      "bytes": 688,
+      "sha256": "f181ca22e9f4146371061d75e665369e425c16d3e4d02194051771696118beb8"
+    },
+    "brain/wiki/foundations/microwave-research-stages.md": {
+      "bytes": 687,
+      "sha256": "30f0adee462d7d3431be9ed4465512826d09f17c696e335959142b025d957294"
+    },
+    "docs/source-adaptations.json": {
+      "bytes": 14653,
+      "sha256": "04a68b0c37ed6ba7ff3b63901f760bf03312cbc43affebf483cae3185dc72b93"
+    },
+    "docs/source-baseline.json": {
+      "bytes": 98440,
+      "sha256": "22dae1c0b55685c7400e53381d6b258c56f60737850f98f368c8f1806ee7684c"
+    },
+    "docs/verification-helper-origins.json": {
+      "bytes": 1362,
+      "sha256": "993a6ef6b5f5eaa07ba8310f641180bfc16b05e8c69897d16850b3c8bd61772f"
+    },
+    "examples/lowpass/model.py": {
+      "bytes": 2961,
+      "sha256": "96d9fd438beaac57697f2df43f86b77393b5f74d5faa78df47167c35778524b7"
+    },
+    "examples/lowpass/README.md": {
+      "bytes": 736,
+      "sha256": "d4a344001cca017dde6cc5a4d40011d40c0186d1e460147926e7ba386f190550"
+    },
+    "LICENSE": {
+      "bytes": 1101,
+      "sha256": "9482e63ac2dd2b81d1168808933d6c57dfad0865f05c392edf9c2fa45e3989c5"
+    },
+    "MCP/CST/.env.example": {
+      "bytes": 106,
+      "sha256": "94ae4b5f5da7fc203da1dac8b08918d155ff1757648ccb8eebc30c70990762f7"
+    },
+    "MCP/CST/.gitignore": {
+      "bytes": 91,
+      "sha256": "7cda3e318ba8be53264d636e480794e139f9350df7c44835595264cb0e9d7714"
+    },
+    "MCP/CST/agent_mcp_server.py": {
+      "bytes": 2687,
+      "sha256": "e71426976408e7af9889ae55e67a86ee3b8774e8fbbe95de9639fee75dcf7516"
+    },
+    "MCP/CST/cst_agent_api.py": {
+      "bytes": 19864,
+      "sha256": "c7b16250c48dac723e75a910878db68a2948f48cb5d97a4f2cedd45b28c949ec"
+    },
+    "MCP/CST/cst_automation.py": {
+      "bytes": 17382,
+      "sha256": "3efd06bd9d240178f0bca176019fbd0dc0785a33629e5a8bc997fc6b6577eb0a"
+    },
+    "MCP/CST/cst_function_executor.py": {
+      "bytes": 13332,
+      "sha256": "7a89b034f74786f7a7cc9285b729cdf585314915294d43432934f7ddc8cea098"
+    },
+    "MCP/CST/cst_guardian/__init__.py": {
+      "bytes": 3440,
+      "sha256": "1945a797041672430abfd028f191dc759942a47ba0e3195ecebc4dad054f17ed"
+    },
+    "MCP/CST/cst_guardian/function_execution.py": {
+      "bytes": 20700,
+      "sha256": "74fca4d10d4a5761f5e650881724badd271553f1c1c3b5d31313e9bb9ab4e377"
+    },
+    "MCP/CST/cst_guardian/native_ports.py": {
+      "bytes": 3964,
+      "sha256": "0bc54b896cf746f6043eeae257347445a0d091044abd26b8f69eb2c40799a7b1"
+    },
+    "MCP/CST/cst_guardian/paths.py": {
+      "bytes": 9602,
+      "sha256": "f4e568243237380739dd83d15e571d5778e46e090c52cc87c6f76bbeb28d66ea"
+    },
+    "MCP/CST/cst_guardian/policy.py": {
+      "bytes": 10445,
+      "sha256": "73dbb17ee1588e0efddf197906b6d61a8da2166cb416463fc7225ccb1ceb8275"
+    },
+    "MCP/CST/cst_guardian/preconditions.py": {
+      "bytes": 12927,
+      "sha256": "9026a6ec9ab9aad0989e8203953cb4ca2a104a497bcf3d1b686d6ca13db0f230"
+    },
+    "MCP/CST/cst_guardian/session.py": {
+      "bytes": 7592,
+      "sha256": "46fc29f2ab6bcb29a0492212f0f48fab51705675d34b9ce767fb37ca58a4f66c"
+    },
+    "MCP/CST/cst_guardian/solver_evidence.py": {
+      "bytes": 10345,
+      "sha256": "0fb95938d212cb1f62e6c6a5e46be4986204866d18faa0899fa834691038cc48"
+    },
+    "MCP/CST/cst_guardian/supervisor.py": {
+      "bytes": 21607,
+      "sha256": "69642a9d8fb7ca34b2414252332e005e96ecf9ced7dd204f65ce8da1b6c79f03"
+    },
+    "MCP/CST/cst_guardian/win32_dialogs.py": {
+      "bytes": 17577,
+      "sha256": "7d9d9b09ae066808b2af922b664bd3dd5715bdc840fb25d5b9a4c616be52bc7c"
+    },
+    "MCP/CST/cst_guardian/windows_job.py": {
+      "bytes": 10583,
+      "sha256": "15131d5d223f4137c6694484a81a7ae8153c9cec40ea089d897e657c555d2a1c"
+    },
+    "MCP/CST/cst_metrics.py": {
+      "bytes": 9214,
+      "sha256": "d6d01a12007ce39c34211de5bc702c71ef21547aba4148455cad170a619320f4"
+    },
+    "MCP/CST/cst_parameter_sweep.py": {
+      "bytes": 13268,
+      "sha256": "62641210abf595a336182f6ebbc140431ce6473abadbf7c735c3572981589e11"
+    },
+    "MCP/CST/cst_review.py": {
+      "bytes": 2969,
+      "sha256": "bea5ddbd3483b0f482c3f053a8428d25089aca6cb6415f9cb92436d56c6d3bf1"
+    },
+    "MCP/CST/cst_runtime_cli_bridge.py": {
+      "bytes": 6186,
+      "sha256": "46dd2a6d87320b95146f616cf732ca4ad7113957043277f042717df1d2ea479d"
+    },
+    "MCP/CST/cst_schematic.py": {
+      "bytes": 13263,
+      "sha256": "9c505caa00350620d8fafabe9845ca3684fcea7e2f2de66b78d4ab201e38df3e"
+    },
+    "MCP/CST/cst_trace.py": {
+      "bytes": 6998,
+      "sha256": "7d39f1fb7f2c8a835ba629e40e006b5c0d9ef7f9c2917b095fbeb82b038eb102"
+    },
+    "MCP/CST/cst_typed_wrapper_generator.py": {
+      "bytes": 6158,
+      "sha256": "ecb1e1f0c3cf768953de2a99be7253553e9ff494ef7abc83d769e4668dd79947"
+    },
+    "MCP/CST/cst_workspace.py": {
+      "bytes": 4278,
+      "sha256": "3cb9423e5610c9f020cda098ec706c88bdf0d0f732273cf2f6a31ff94365f258"
+    },
+    "MCP/CST/generated/cst_toolbox_wrappers.py": {
+      "bytes": 70574,
+      "sha256": "08149617bbe128d3afc97973c7bee8a7470856fc6540dd9dbaeb84b7eff76ff2"
+    },
+    "MCP/CST/mcp_server.py": {
+      "bytes": 23773,
+      "sha256": "4b3c2da1d2c633ed75434aedf296ec7f47020e2e3b05e6abf82700425e3e40a5"
+    },
+    "MCP/CST/pyproject.toml": {
+      "bytes": 1100,
+      "sha256": "2d09f03d6fb77698cec387f223fed5ecbd4036dcbcc0a847ff8dd5b07935df2e"
+    },
+    "MCP/CST/README.md": {
+      "bytes": 571,
+      "sha256": "733f50aa79cc80aca9fbfe3222778f8f4ac37bfd4f468f75abeb45fd2365696c"
+    },
+    "MCP/CST/README.zh-CN.md": {
+      "bytes": 387,
+      "sha256": "76125d25c629efb5a03a079224efbbebaafc94f91d658a76919455ff59f9eb1d"
+    },
+    "MCP/CST/stdio_smoke.py": {
+      "bytes": 1700,
+      "sha256": "fc003774828d9cbc3aa0283d51b3d93674e825412db96d32032d6ca59b59c196"
+    },
+    "MCP/CST/tests/fixtures/solver-evidence/fd-trial0003.log": {
+      "bytes": 47034,
+      "sha256": "44caefd4a9e94b71da48a19e13e4efc89eeddd02e139bc96dfe385966ef44bf3"
+    },
+    "MCP/CST/tests/fixtures/solver-evidence/manifest.json": {
+      "bytes": 764,
+      "sha256": "9c6d3e80d449337b62dea7bf0f42afe7bf2d2b70a8fe7a116b0db459d6f1b8db"
+    },
+    "MCP/CST/tests/fixtures/solver-evidence/td-wr90.log": {
+      "bytes": 13366,
+      "sha256": "c0fe689dac2c3d35a97113e4697a58d923d7b20b6ceb71d6447cb4be1dd21912"
+    },
+    "MCP/CST/tests/owned_job_process.py": {
+      "bytes": 1197,
+      "sha256": "c091e34410440deaabd3b2a33bf1bc8ac8c523365f38707df12c8f8ab2d6d33a"
+    },
+    "MCP/CST/tests/test_cst_automation.py": {
+      "bytes": 4684,
+      "sha256": "2ccaf7df43079613974d0100a1bb6a2d84ef4e83426bdeff8349a622d51fcf75"
+    },
+    "MCP/CST/tests/test_cst_metrics.py": {
+      "bytes": 4082,
+      "sha256": "7cfb68b1e5819ff9533432adf595c321b51ecbe1036e8f032096cc42a0f03089"
+    },
+    "MCP/CST/tests/test_cst_parameter_sweep.py": {
+      "bytes": 5234,
+      "sha256": "192dd2c785a8be3cd2889653d15cfe49c74f9e70a0c7b7a91a827bf990345de1"
+    },
+    "MCP/CST/tests/test_cst_runtime_cli_bridge.py": {
+      "bytes": 1721,
+      "sha256": "7fde829a32bdc8753fa4106773dd1bbc4b1c49dd3577b51164a789b34e0bd5f7"
+    },
+    "MCP/CST/tests/test_cst_schematic.py": {
+      "bytes": 2157,
+      "sha256": "75f3211f516b824f1c4d50cbfc3da35da34e42b91f20626582da2e93d566b8f0"
+    },
+    "MCP/CST/tests/test_cst_trace.py": {
+      "bytes": 2954,
+      "sha256": "8e8800a1b82662c440d0369e0a2b8e262be335e46939d94b1ed2a84b8e267ffd"
+    },
+    "MCP/CST/tests/test_cst_typed_wrapper_generator.py": {
+      "bytes": 1028,
+      "sha256": "ed24f118eaab44d44ad080d0b18cac8b5f7a57b011fa90ecb65f260106be3f6c"
+    },
+    "MCP/CST/tests/test_fourport_verification.py": {
+      "bytes": 1763,
+      "sha256": "f7f3ae4d537235ddd06dc9041136c696a78383a908bda153e204a2d40dbfea1e"
+    },
+    "MCP/CST/tests/test_function_audit.py": {
+      "bytes": 8591,
+      "sha256": "9497da747011823fb55bd14844c44d12d3e049b4223a1c18a6d2b72cd0dac908"
+    },
+    "MCP/CST/tests/test_function_dispatch.py": {
+      "bytes": 3740,
+      "sha256": "5a6b9188fb1ce7d2fafb1009bbd79e1f4609cb97bb94078ac7352091c90abf14"
+    },
+    "MCP/CST/tests/test_function_execution.py": {
+      "bytes": 10215,
+      "sha256": "c1374c234f3b1dde086b579a1388e72c5965a5683635d6a4c7552d5a599d7ea9"
+    },
+    "MCP/CST/tests/test_function_facade.py": {
+      "bytes": 9010,
+      "sha256": "b587b58a3b08d0b48f34e69fa8427538918a0504715ce80d1ad43af67f8f483a"
+    },
+    "MCP/CST/tests/test_function_learning_isolation.py": {
+      "bytes": 3065,
+      "sha256": "0911b01e12f7001953347d516139ca1db4687f08d4f8fa280bea41b6293274cc"
+    },
+    "MCP/CST/tests/test_function_owned_save.py": {
+      "bytes": 1175,
+      "sha256": "587a9e94b8ce024d9c9db182fede6adbf21be86464b2b32978fbba3b9e419989"
+    },
+    "MCP/CST/tests/test_guardian_neutral_fixture.py": {
+      "bytes": 1186,
+      "sha256": "da6610c7c42e2da7b90be2a232238e1b286d0f15cd68f994aeb572e1fd33c467"
+    },
+    "MCP/CST/tests/test_guardian_paths.py": {
+      "bytes": 7147,
+      "sha256": "e82e62ce217de4f13a0256d54604a0276fbbd1a6e0e308aa48190ac58a736af0"
+    },
+    "MCP/CST/tests/test_guardian_policy.py": {
+      "bytes": 9000,
+      "sha256": "fe389e2d88e671995c2558e0776b3982c32e5acd64e44efca63ba5e6f4e7d3ba"
+    },
+    "MCP/CST/tests/test_guardian_preconditions.py": {
+      "bytes": 12111,
+      "sha256": "ade2e46b44de09cf1185cce33dc47596c959d65344135979e8994a072d9ad269"
+    },
+    "MCP/CST/tests/test_guardian_session.py": {
+      "bytes": 7932,
+      "sha256": "eab9023742c5b462c13b471ab45257cc5df69c917ba3f64e88858d94a6759cdc"
+    },
+    "MCP/CST/tests/test_guardian_supervisor.py": {
+      "bytes": 19936,
+      "sha256": "6ccc7970d993fe46b5b303f783582e07161124679c020f711333ca7efb948a77"
+    },
+    "MCP/CST/tests/test_mcp_guardian_enforcement.py": {
+      "bytes": 2154,
+      "sha256": "217759e02c63a5ac9965575aaa0fc12ccf419601f773bc822d64a472a86e8982"
+    },
+    "MCP/CST/tests/test_native_ports.py": {
+      "bytes": 4760,
+      "sha256": "e43af844101cd7d50427c492d359e49e97851c914728ada5146a38494236c726"
+    },
+    "MCP/CST/tests/test_review_adapter.py": {
+      "bytes": 1669,
+      "sha256": "6c7510d29a54ed3f87d2aaf71bc6e96e0360056bd1bd66868d33263bed8865ad"
+    },
+    "MCP/CST/tests/test_solver_evidence.py": {
+      "bytes": 5792,
+      "sha256": "814b69c9435b3ee691164573168701e0f860e72d917c43f09df178f58d7eae78"
+    },
+    "MCP/CST/tests/test_standing_authorization.py": {
+      "bytes": 4259,
+      "sha256": "723667194518b9e88b1f4078d66d1e1537027b2bf62b043b24eaedd3a29a854b"
+    },
+    "MCP/CST/tests/test_steps12_verification.py": {
+      "bytes": 2128,
+      "sha256": "7fd4517acee3f7c387628488c55ffea8b77ba5f7885b8f00bbfdf8a9eb1607c3"
+    },
+    "MCP/CST/tests/test_waveguide_verification.py": {
+      "bytes": 2558,
+      "sha256": "a8df42189ca5a1d2262e874ba430b3117552db11243ab46ed27d8378671ffdfe"
+    },
+    "MCP/CST/tests/test_windows_job.py": {
+      "bytes": 5864,
+      "sha256": "8fe0117d0f11860dfe107b4d81cb0ce51c27589c9b009ed1e66990e4fbfd6396"
+    },
+    "MCP/CST/tests/test_workspace_routing.py": {
+      "bytes": 3382,
+      "sha256": "efda9c1caa1cf1f1fa1cc4b3e7a8e3efcb7888110b6c0c9eaa33d54a699596b7"
+    },
+    "MCP/CST/tools/conflict_cases.py": {
+      "bytes": 12241,
+      "sha256": "42344b9dd39cb567eef69acee10c07d14c5e584666fb8867b8615fc9170180e5"
+    },
+    "MCP/CST/tools/dump_cst_windows.py": {
+      "bytes": 5479,
+      "sha256": "1748d7dc9e024b59a570ae0e3a2d6b55f1706d3ceea8ece16dc5663d70ec3854"
+    },
+    "MCP/CST/tools/function_cst_worker.py": {
+      "bytes": 1281,
+      "sha256": "2556a418cdabdb7611e02d9259e95ebdf32830a0769255432ba2d3efc1c4de60"
+    },
+    "MCP/CST/tools/function_worker.py": {
+      "bytes": 521,
+      "sha256": "65e2b91fc2478e86aa7a39e2db3cfdd4cccb64dcbf4eb2d83620e27c1b6694c9"
+    },
+    "MCP/CST/tools/guarded_solve.py": {
+      "bytes": 2958,
+      "sha256": "ecac7ca2a44a5898807938bb7ae2be70c3308567b876bb051162fcecfaf4a547"
+    },
+    "MCP/CST/tools/guardian_worker.py": {
+      "bytes": 29385,
+      "sha256": "c93ca038cd1b1bdf40294ba42aac1105b14e66d6c033ea19c8417a0328bdce4f"
+    },
+    "MCP/CST/tools/plot_waveguide_validation.py": {
+      "bytes": 2973,
+      "sha256": "4f8b377f945acb89af418ea9994226a4fbe53006567b63ec2408b1cbddaf9d0b"
+    },
+    "MCP/CST/tools/probe_conflict_matrix.py": {
+      "bytes": 7117,
+      "sha256": "12d4742b094a5c8771b15b20b1ccc76a92d61d3b33371cb702f57460793edaa1"
+    },
+    "MCP/CST/tools/probe_cst_dialog.py": {
+      "bytes": 4301,
+      "sha256": "d642d49e506c9b87b71f2c77c4c9db631c54a1bce83af1999373cafac2f59d04"
+    },
+    "MCP/CST/tools/probe_instance_recovery.py": {
+      "bytes": 8614,
+      "sha256": "e03aae616ca4c57cbdd9f92042f428af7f73265ef7fb7e429f9647143bd9501b"
+    },
+    "MCP/CST/tools/probe_parameter_apply.py": {
+      "bytes": 10316,
+      "sha256": "bda3f7455264998c64fbbd6ee0098af7315b863c72444022d55c1d7a515be810"
+    },
+    "MCP/CST/tools/verification_lowpass.py": {
+      "bytes": 2961,
+      "sha256": "96d9fd438beaac57697f2df43f86b77393b5f74d5faa78df47167c35778524b7"
+    },
+    "MCP/CST/tools/verification_resonator.py": {
+      "bytes": 2947,
+      "sha256": "426cf49ee00b03b4ea1594ca060e536ccf560e4fffcd873286f4df9b23bdffe2"
+    },
+    "MCP/CST/tools/verification_waveguide.py": {
+      "bytes": 2221,
+      "sha256": "318716553b51f2f8009addcbed78dc2c536d74ddaf0219f4f451cb27a8d7c20a"
+    },
+    "MCP/CST/tools/verify_guardian_live.py": {
+      "bytes": 25906,
+      "sha256": "b466b1746d2864917002d860a2a6c5001277337ef02e81c9cd9cc3c36e3418ae"
+    },
+    "MCP/CST/tools/verify_steps12_live.py": {
+      "bytes": 11386,
+      "sha256": "839753e6f73d3195aecdda66bd3de9e3b0c086fe9a0ef0bb69908bd8ff27cd28"
+    },
+    "MCP/CST/tools/verify_waveguide_live.py": {
+      "bytes": 10576,
+      "sha256": "8296c8bf735d93f1619655dbeec78748c8807551ae2cbadfc0c60906bb7aae71"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/LICENSE": {
+      "bytes": 1083,
+      "sha256": "4a4bb504470255c58bbd23885c2dd6d2345264917f1c64c215e1c569dcff286b"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/bootstrap.py": {
+      "bytes": 3740,
+      "sha256": "0f45f2cceb68ea27abd0c7757f0b0f053867e5feae5b3639c48589fd9e7d1a43"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/__init__.py": {
+      "bytes": 479,
+      "sha256": "758d40e355f778bab137982359eab5315d87e60ba52719bf21d0851b30638867"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/__main__.py": {
+      "bytes": 134,
+      "sha256": "203538580c4b44c6d6215d4116aa0f1d743aaf3472d104eb6f59ee81a7f65f4c"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/analysis/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/analysis/farfield/__init__.py": {
+      "bytes": 366,
+      "sha256": "4b3cc704b4079790c11fcb07f0c1048704ec26d553e4f44241d759d7224012f3"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/analysis/farfield/flatness.py": {
+      "bytes": 6096,
+      "sha256": "823adfa776f74fde17d301ed22eef48202fad4c7a8dcc0d823ddc1164e45840f"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/analysis/farfield/parser.py": {
+      "bytes": 3304,
+      "sha256": "8bd833e794ec6f7f13f843b7fabcbc80b09b2ee48176bf9ef9338472f43a6af6"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/__init__.py": {
+      "bytes": 89,
+      "sha256": "81df7895e37548f7961252fd9aec42f2a3865aa821717416c5bd2ee42dca8eae"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/dispatch.py": {
+      "bytes": 59145,
+      "sha256": "14665a84be6d42b021f2789634ee5dcc9322747f4b6ca97d06042a2ad899d2ea"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/pipelines/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/pipelines/impl.py": {
+      "bytes": 32134,
+      "sha256": "2d23420f5a1e8347fcd162bf16334578aeaadb3ce13fc914b00af878fa2a46d1"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/cli/pipelines/registry.py": {
+      "bytes": 16393,
+      "sha256": "08c6222f02bbeb61e869e8f8481a233d605423a28f60c8739227900dc21fce98"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/__init__.py": {
+      "bytes": 2160,
+      "sha256": "dbc8460cdb080a9da00f6d7cfb47e2f3fe77ad7752748026c8c1200a74c1890f"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/audit.py": {
+      "bytes": 6970,
+      "sha256": "a4f4079aeab6a07cd011afbecc6d254811531609bac4f34823dbad4ea4648f51"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/capture.py": {
+      "bytes": 11034,
+      "sha256": "c67a4c5b3502f4c5f7345c3f67224faf509545ada324fb2ac16415691fa48a09"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/doe.py": {
+      "bytes": 6932,
+      "sha256": "54ace814265a8ad0297b2fcb496f3b49895664f654234f41e07c2889eed553c7"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/environment.py": {
+      "bytes": 19892,
+      "sha256": "7bda4dd86a18b7504a7c4ba783b5ed84bee9d0e1db870562fc418a6eed917b64"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/errors.py": {
+      "bytes": 456,
+      "sha256": "b89b066f846b7dc5e8762cc35c58daf6396cae64919f1fc40dc8bd453c2267be"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/evidence.py": {
+      "bytes": 10162,
+      "sha256": "fc5ff195d3850a3009b6dc3049168f33812eb8152531faf26491fc968b264b12"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/farfield.py": {
+      "bytes": 27632,
+      "sha256": "0b52d47b54dc9ab78cc67510fe96a78d24a70b5f61e421a314bf0f664ff7e2d4"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/gateway.py": {
+      "bytes": 14791,
+      "sha256": "162d0ec896da090ea9f0a475a5ce73de1e22cb86e7015d28308780aff389b03d"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/identity.py": {
+      "bytes": 10039,
+      "sha256": "accb91e2ae7102a97aeef075afe9049511dcc9e9d3cb3a3da79b1f3aff010376"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/modeling.py": {
+      "bytes": 41769,
+      "sha256": "edd58290403b0d0e5b4ef16d3cf0d084dc55efc5de5eb6ef9fbc00267300a0ff"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/objective.py": {
+      "bytes": 6641,
+      "sha256": "e64111d65daa6f04473a34baba79010e0fb824b525c2d833d932518ce04e946d"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/optimizer.py": {
+      "bytes": 17935,
+      "sha256": "5212d0b10b7c8f027d67c649310cf31049bb149c133004b9f0ff12b3f663067b"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/process.py": {
+      "bytes": 13381,
+      "sha256": "18e215221f7730b1d9d57bf95806d557b00f6c3d0e7d2f99744310ccbebf5382"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/project.py": {
+      "bytes": 8430,
+      "sha256": "365e5a6e4b21cc251f203a02f00e92a06cc3afa7b8f3c2eaa1d129a700bfa6ef"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/results.py": {
+      "bytes": 22484,
+      "sha256": "6c0837a3c0a13af2f91793c5546e8089563c0ac5fd813f1a64b6a3acefed69d0"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/session.py": {
+      "bytes": 8531,
+      "sha256": "caba30644ba4fcb007f03d7f2d59c75a75738175354d77a1402fb94f04f68ef4"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/simulation.py": {
+      "bytes": 8247,
+      "sha256": "8739b6dc951d55f7da8e7384b45eb7a053190f74bd5d2641c3ad72c895b2b6fe"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/utils.py": {
+      "bytes": 2324,
+      "sha256": "e2d61919a98e3c0e4611c7c82e6d8ff1cb71879eaf1f5978d9e55627d1e1e9a3"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/core/workspace.py": {
+      "bytes": 23596,
+      "sha256": "30544e8562010c61cdb3e91789d7b52cf6e3c017c83d37ee73855979e28e80bb"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/__init__.py": {
+      "bytes": 1103,
+      "sha256": "cd819f97b58e21bcfebe6083fe34647d4d674d0d32e462309f26d368dbb7bb54"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/canvas_3d.py": {
+      "bytes": 22023,
+      "sha256": "047f60bc0af9af5e4692793aa3222e9f44519db3a763439f1102ebbac1303462"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/components.py": {
+      "bytes": 11002,
+      "sha256": "237db5baa12d613783515b1e2bf91e87b022af301f6a8f55d0d6124eb45b616d"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/dashboard.py": {
+      "bytes": 59204,
+      "sha256": "4a8934d721b7a0ffe6fd468726c28252662c022cfb1ac0891ef694cb363583d0"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/svg_heatmap.py": {
+      "bytes": 4295,
+      "sha256": "8e77b6a09bd9fd05464c1e135614ea8633db6e2949a9aeca36c82c73a04e85de"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/svg_linechart.py": {
+      "bytes": 11736,
+      "sha256": "62a4f2e58d2a5681687c1d6dabd6d7061c05b92c6f0bb0087d3621b840b45dbb"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/render/svg_page.py": {
+      "bytes": 14543,
+      "sha256": "777bf2277b750d610a589d1e9b1d7cfcc6fe6140e9f6e6cd9ea1214e468a49fb"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/__init__.py": {
+      "bytes": 6888,
+      "sha256": "4785369c33d534e079971646e5acdc70cbc424ab8bfe8dbecb1e08998398ebd7"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/audit.py": {
+      "bytes": 7002,
+      "sha256": "4fcd263e5a1b707b7db520e3208ded5b4730abecaaa186efb2e3c9d90beb31d5"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/doe.py": {
+      "bytes": 3758,
+      "sha256": "1f425288ed0f52c528ae5db6843ee22d9c750ec5d2f79e9dec3b12a6c97c614a"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/farfield.py": {
+      "bytes": 8530,
+      "sha256": "96f962a76ace564c3cd321a52eb0b6d377d05e8702086f851064111206b70d4a"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/modeling.py": {
+      "bytes": 58627,
+      "sha256": "fca4592dcc452fa3a1c0bb37c9edd37296382c64e5597216d84d6d26002abe99"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/optimization.py": {
+      "bytes": 18163,
+      "sha256": "4300c9bf39003908787abd9c47ba1a13de1855e5d1180f10ed027b2e7fbac89c"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/project.py": {
+      "bytes": 37738,
+      "sha256": "5cad8d74944acabe8ae25caf83e02f35eee327b6850739d7b3f2ab3494b4b65b"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/results.py": {
+      "bytes": 18365,
+      "sha256": "68a98f4d964754c92128018f2a044b22c86e7d1f8aaa776a564bb8f4ebcc0520"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/session.py": {
+      "bytes": 6961,
+      "sha256": "87865069a94c3dc170d2ab59e68631b0fe13a99ab7872af9cf58ebb43fd40e35"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/simulation.py": {
+      "bytes": 2727,
+      "sha256": "e1aeaa489728da07f0fa7d7ebc37764985ca09643842b8f48d91057c0246341f"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/cst_runtime/tools/workspace.py": {
+      "bytes": 6445,
+      "sha256": "790831bc7af311102b3b94859760de24b2cf9379f21b8110adf48a80fcd0b8d2"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/pyproject.toml": {
+      "bytes": 639,
+      "sha256": "f6fa8c45db14407ad74e5a37705278782ba8445e6cbff65f1c72df99832bbb7e"
+    },
+    "MCP/CST/vendor/cst-runtime-cli/skills/cst-runtime-cli/scripts/README.md": {
+      "bytes": 741,
+      "sha256": "fd2894f7730cb7911c8910c708e4b7748299e2d6f4cf38c2cb1412538af0467a"
+    },
+    "MCP/CST-Brain/mcp_server.py": {
+      "bytes": 3701,
+      "sha256": "7aba01e879c2a4eab8eda0b9863c8cfd7015c8e68d34af82c32b431714bb5940"
+    },
+    "MCP/CST-Brain/pyproject.toml": {
+      "bytes": 502,
+      "sha256": "53ba83e14507068143eccdb6a0d9a5a3276bc6bc110564d62e33f3096d2d39e7"
+    },
+    "MCP/CST-Brain/src/cst_brain/__init__.py": {
+      "bytes": 244,
+      "sha256": "7a95f8fd7bf19deebd751bcd243a7e424551220fb0151915b80800d618718624"
+    },
+    "MCP/CST-Brain/src/cst_brain/__main__.py": {
+      "bytes": 63,
+      "sha256": "d7815f9da17bcd8e79d1d47170e5795e29cc5837f97d1049664813068a9e563f"
+    },
+    "MCP/CST-Brain/src/cst_brain/cli.py": {
+      "bytes": 4663,
+      "sha256": "cabead43dd907002bdf6aabf7d15fd83ebbc55efe6c75e5a191c0cbaf037cf41"
+    },
+    "MCP/CST-Brain/src/cst_brain/function_iterations.py": {
+      "bytes": 8538,
+      "sha256": "1d13e7d9e8c94492920312f833c93701612b299f8d8179760486a68e9cace51b"
+    },
+    "MCP/CST-Brain/src/cst_brain/index.py": {
+      "bytes": 9552,
+      "sha256": "762f5f1885a2ab193e4b43da307ae3c0595ff20e3e2917b11001be7751b5069f"
+    },
+    "MCP/CST-Brain/src/cst_brain/locking.py": {
+      "bytes": 2774,
+      "sha256": "6511865ae40761b583be7e99e8096cbb5151eb67118f6b51ae83a7287298b5f0"
+    },
+    "MCP/CST-Brain/src/cst_brain/markdown.py": {
+      "bytes": 2575,
+      "sha256": "f2935b430dfc40795e1ff1552f9c0adf1cfd8191bf7b91973d7bc7bb3ca11cdf"
+    },
+    "MCP/CST-Brain/src/cst_brain/operations.py": {
+      "bytes": 34556,
+      "sha256": "1d4d6794e4eaa483b42d932d4ee3d3d041d9bdc017cc1175fdd665b33b426154"
+    },
+    "MCP/CST-Brain/src/cst_brain/paths.py": {
+      "bytes": 2158,
+      "sha256": "7d3a9314ab4eea1d2c83bbdde0992b8293cfed846ec31402e4ca0455d72619c7"
+    },
+    "MCP/CST-Brain/stdio_smoke.py": {
+      "bytes": 1782,
+      "sha256": "c436221134ecda7e68aeb0e930d19ba8024c8698ec33e7d423822eed74d33e39"
+    },
+    "MCP/CST-Brain/tests/test_brain.py": {
+      "bytes": 8662,
+      "sha256": "97dd7dc35c6b6e3478fd31f042706e6e3a26edf3a5ded61e5cfebe56a1130ee4"
+    },
+    "MCP/CST-Brain/tests/test_function_iterations.py": {
+      "bytes": 2750,
+      "sha256": "25ac9bec64ee7f23a644c1ed162e2c2b8fcd83a5a7c7ca953bedc797fb526bef"
+    },
+    "MCP/CST-Brain/tests/test_manifest_contracts.py": {
+      "bytes": 1488,
+      "sha256": "efd383e92fe15a7215c4e7658d21a12a4dec1dbbfb919c7a9faf4139371e94de"
+    },
+    "MCP/CST-CAD/mcp_server.py": {
+      "bytes": 4109,
+      "sha256": "3b6bc0a248e54165514e02d93ccb81d8a63300d7ac42c75b76e5d9717ec0797c"
+    },
+    "MCP/CST-CAD/pyproject.toml": {
+      "bytes": 708,
+      "sha256": "8193195ff082b5aafb455a65407e87a8fe06a06e3bda015d8dd4a7953f8b7ea8"
+    },
+    "MCP/CST-CAD/src/cst_cad/__init__.py": {
+      "bytes": 572,
+      "sha256": "dce9df69a687d039db30ce942cbf0d9494ff99eb37dc66d516563a7d1f6a7280"
+    },
+    "MCP/CST-CAD/src/cst_cad/__main__.py": {
+      "bytes": 97,
+      "sha256": "bbcd327f6aceff0ebf32ec8e7e8d92112efdbbf17ab50522c05c0c7b12a91854"
+    },
+    "MCP/CST-CAD/src/cst_cad/assets/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "MCP/CST-CAD/src/cst_cad/assets/viewer.js": {
+      "bytes": 553186,
+      "sha256": "0c3e8ddbe8d60bba4a52a4c2d6e30b4f493d97156345605f4bc1a1614102d3d2"
+    },
+    "MCP/CST-CAD/src/cst_cad/audit.py": {
+      "bytes": 19488,
+      "sha256": "8a73f9bb30417f95deee89ee1d633784717e21cd29e2552ee4f8b84ffbeb867d"
+    },
+    "MCP/CST-CAD/src/cst_cad/audit_ui.py": {
+      "bytes": 5974,
+      "sha256": "e8a872c2da5911559040323c37216ae39ef0434ba3be2de55ba6203b24de0341"
+    },
+    "MCP/CST-CAD/src/cst_cad/cli.py": {
+      "bytes": 7751,
+      "sha256": "19606c906ae79cbe844f05ba023f46ef45d887072069f8ebc397f5e69e7ad2dd"
+    },
+    "MCP/CST-CAD/src/cst_cad/drc.py": {
+      "bytes": 23427,
+      "sha256": "e3b60e471e7db2a8774c13d4f96ac272d5a2d2a7bca3bc17637ada2911a4c2e3"
+    },
+    "MCP/CST-CAD/src/cst_cad/dsl.py": {
+      "bytes": 22145,
+      "sha256": "78076391ab134da2f02c5af9e676e2c4084df3e43e6536c1c262d24257d7847a"
+    },
+    "MCP/CST-CAD/src/cst_cad/emit_step.py": {
+      "bytes": 5617,
+      "sha256": "6cd59aaecac202e56f76f9e58bbf55b0a707857e9c8889b3c15b83dd3ec3a5a3"
+    },
+    "MCP/CST-CAD/src/cst_cad/emit_vba.py": {
+      "bytes": 27048,
+      "sha256": "8a1d39b398d0a4b60483258c76ae4fc1afe801731aa9d04b1d09270ddb8c7f59"
+    },
+    "MCP/CST-CAD/src/cst_cad/expressions.py": {
+      "bytes": 1725,
+      "sha256": "99d2014f1d85b4ba06b56549578d4655cb6de1e8d4101898f35a9a6d3ed3480d"
+    },
+    "MCP/CST-CAD/src/cst_cad/ir.py": {
+      "bytes": 21329,
+      "sha256": "a692a8eed231e520f7e9c22261632799f170511832f854262856c5ad12a660e6"
+    },
+    "MCP/CST-CAD/src/cst_cad/observation.py": {
+      "bytes": 2193,
+      "sha256": "9ecd996d80794bcdbbae6b929f86c76b76852d9cf22dab3a609220a332e4415a"
+    },
+    "MCP/CST-CAD/src/cst_cad/paths.py": {
+      "bytes": 1253,
+      "sha256": "f92b7561761e71034ab9bc95f50b657c88a063db31a751058e6153a499117fdf"
+    },
+    "MCP/CST-CAD/src/cst_cad/verify.py": {
+      "bytes": 9489,
+      "sha256": "1ef01858b9bb568f95c76892aba62237b06efde5a207ce16f1044b7b230bdf17"
+    },
+    "MCP/CST-CAD/src/cst_cad/workbench.py": {
+      "bytes": 15782,
+      "sha256": "9ab2b9b16b7beba1e9cbed0e1d480a9ce4f1e91f37cd448ab7f6a02c664cee58"
+    },
+    "MCP/CST-CAD/src/cst_cad/workbench_style.py": {
+      "bytes": 14743,
+      "sha256": "ebee954a7f7427dcf9c4a37ffa7077897cd7f0182e8c70a7fd2cc36c6fd8ffc8"
+    },
+    "MCP/CST-CAD/src/cst_cad/workbench_ui.py": {
+      "bytes": 11655,
+      "sha256": "6ad204229d12590336228a1fa45bdbe7ce6040dcd46acaf472f717d6af8e73ce"
+    },
+    "MCP/CST-CAD/tests/test_audit.py": {
+      "bytes": 8964,
+      "sha256": "5b55cae20b3b4c0c3bbfa76811be9312b0d5c14ba486ff69f2ae5c99646fc285"
+    },
+    "MCP/CST-CAD/tests/test_cad.py": {
+      "bytes": 36807,
+      "sha256": "04f18c53eaa2a211bb68f12f17654074b748e750f96f1e56e4552b2d6bd8e9be"
+    },
+    "MCP/CST-CAD/tests/test_resonator_fixture.py": {
+      "bytes": 2677,
+      "sha256": "40e51405263a149d0185439fc3e5bd6514b3c1aec502880ed817c8696f252a16"
+    },
+    "MCP/CST-CAD/tests/test_visual_cases.py": {
+      "bytes": 730,
+      "sha256": "1d73358faec4ebba7f933a2368c7e9cc462432a2d4dcdfb2081f28834340851b"
+    },
+    "MCP/CST-CAD/tools/compare_reference_params.py": {
+      "bytes": 8137,
+      "sha256": "4a7db11b29449f7008491c553d426729f207e697bf1924a39190f6582139fbe4"
+    },
+    "MCP/CST-CAD/tools/compare_sparams.py": {
+      "bytes": 7441,
+      "sha256": "fd768c256f3c7e3ab1fffb04983ac424d290bcf34a365d877defd05ba0b5089d"
+    },
+    "MCP/CST-CAD/tools/cst_build.py": {
+      "bytes": 4777,
+      "sha256": "559a3b320b2a83e5d4ddd239233e1e3d4d320b10046e15f94a3efdf625d829c5"
+    },
+    "MCP/CST-CAD/tools/cst_observe.py": {
+      "bytes": 2641,
+      "sha256": "6bbf9e74fc5bd8265b8b39a7f83bd258330b6e68576b2240d03e7f6d17a355ff"
+    },
+    "MCP/CST-CAD/tools/cst_probe.py": {
+      "bytes": 1054,
+      "sha256": "5407c643254971c24919311d8236fa789f4f9f506fcc9116a9417f7f427baf68"
+    },
+    "MCP/CST-CAD/tools/cst_solve.py": {
+      "bytes": 4500,
+      "sha256": "59251fb2c9b8af74fc208b49d38c1f38c2f72bf1d2c16fc508790a695dd3d748"
+    },
+    "MCP/CST-CAD/tools/dump_history.py": {
+      "bytes": 889,
+      "sha256": "6d2aee1a6be1a3c63066ac448702461e16570fe52264877f21b97c630a6659fd"
+    },
+    "MCP/CST-CAD/tools/emit_fast_solver.py": {
+      "bytes": 2312,
+      "sha256": "f79cb7155775afb33686aa71bde66ae99fb5706f5a198e56fda488aa3badaada"
+    },
+    "MCP/CST-CAD/tools/locate_delta.py": {
+      "bytes": 2059,
+      "sha256": "d11f64bf849c1d83bc7b632e7530a330e5ba27fd107589b293d69fb2d4055112"
+    },
+    "MCP/CST-CAD/tools/offline_results.py": {
+      "bytes": 3075,
+      "sha256": "b8b444e1c9954dc595831cd2931bd0cd47e159ea788a03241bf27f02c3cafba7"
+    },
+    "MCP/CST-CAD/tools/show_report.py": {
+      "bytes": 2579,
+      "sha256": "ee17f472c3423a0b89e4135bae941152d96ed2577774a58225e86d92afb0270d"
+    },
+    "MCP/CST-Lab/mcp_server.py": {
+      "bytes": 6864,
+      "sha256": "57c93544cb1f8625085dbc2f7cc683b046d28d0ed79d542921e5a3fcc5c7edf0"
+    },
+    "MCP/CST-Lab/pyproject.toml": {
+      "bytes": 650,
+      "sha256": "10f6767f036be03c80654fb6abe6e5d246e42ea098dcbe99675bfca174b20e8e"
+    },
+    "MCP/CST-Lab/src/cst_lab/__init__.py": {
+      "bytes": 201,
+      "sha256": "6e71385562058fc7c29e4ee97bb317da8dc64808c17fdff73877af2b2ee0b483"
+    },
+    "MCP/CST-Lab/src/cst_lab/__main__.py": {
+      "bytes": 63,
+      "sha256": "d7815f9da17bcd8e79d1d47170e5795e29cc5837f97d1049664813068a9e563f"
+    },
+    "MCP/CST-Lab/src/cst_lab/approval.py": {
+      "bytes": 11851,
+      "sha256": "f6fd1489aa042aa4b60ab4b212d18f054b592a3547582a7e3fea5480e3c46d8c"
+    },
+    "MCP/CST-Lab/src/cst_lab/artifacts.py": {
+      "bytes": 14522,
+      "sha256": "b942f60d37f4672246a1d375b25ecd8aad3e8abc8f4ddbc41a8c1a267dc190ce"
+    },
+    "MCP/CST-Lab/src/cst_lab/atomic.py": {
+      "bytes": 3524,
+      "sha256": "e4a1741ced9797bb1343c22105e53e1501fc1a22528ae725efb72f6d498c23af"
+    },
+    "MCP/CST-Lab/src/cst_lab/cli.py": {
+      "bytes": 13277,
+      "sha256": "2e2a6df21dc1c1b55be9b3159fd261850631ca0bf33d46323c90ffc3ac2d6bec"
+    },
+    "MCP/CST-Lab/src/cst_lab/collector.py": {
+      "bytes": 36363,
+      "sha256": "6585b7412fb5a8b4d42bc42cdf4cc8302d34ed736d98d7ee7c96c99e71df9778"
+    },
+    "MCP/CST-Lab/src/cst_lab/contracts/__init__.py": {
+      "bytes": 2687,
+      "sha256": "d8fc42851c8a3bc2a242e2941ad8b3e92eb34b4d3d81ca1eff37448d9d0b7cab"
+    },
+    "MCP/CST-Lab/src/cst_lab/contracts/attempt.py": {
+      "bytes": 6788,
+      "sha256": "fed358cf9c6fb2428343977f7f7e93acd9cfd910c82f52112c25d0e64d386d19"
+    },
+    "MCP/CST-Lab/src/cst_lab/contracts/design.py": {
+      "bytes": 10530,
+      "sha256": "6092f30ce26b2ffecd19c9777565b264f319828b45e1792d943335f9e6bdd58d"
+    },
+    "MCP/CST-Lab/src/cst_lab/contracts/frontmatter.py": {
+      "bytes": 3774,
+      "sha256": "7de49438e2df4e779ae188022e6c386173d44c2451f9b8b8ac1b0888c28a0410"
+    },
+    "MCP/CST-Lab/src/cst_lab/contracts/gates.py": {
+      "bytes": 8066,
+      "sha256": "730da95183f6fb1b98ab53c5af5a379d56145ffe54466d74b8b5be5f1365de61"
+    },
+    "MCP/CST-Lab/src/cst_lab/contracts/iterations.py": {
+      "bytes": 5523,
+      "sha256": "dd8bec4d34921289e028fa11d5eb810d14af1d9f8c62f7076872e226bd7869cf"
+    },
+    "MCP/CST-Lab/src/cst_lab/contracts/topic.py": {
+      "bytes": 1361,
+      "sha256": "8d6cee2210cc5d65c9816676afcbf69e339178bc4c11b66c29e1295f19a5adc7"
+    },
+    "MCP/CST-Lab/src/cst_lab/contracts/touchstone.py": {
+      "bytes": 10023,
+      "sha256": "a0242b7f0a6e0672bec326ad4a1620188d1cb5bf595a2134952301ebfd1f67ea"
+    },
+    "MCP/CST-Lab/src/cst_lab/diagnostics.py": {
+      "bytes": 19528,
+      "sha256": "9259b566e010babec7bc2b8dede5987ed541b49ed566766fd5977f77a22b049a"
+    },
+    "MCP/CST-Lab/src/cst_lab/files.py": {
+      "bytes": 2851,
+      "sha256": "6bc6ee2154f7943eca24d4fe3619dc44ba47fa6bf73f1ab2efcc0adbc208358c"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_audit.py": {
+      "bytes": 10409,
+      "sha256": "46b251d3b3ec23e2e7d306eb35a7a425a48f5d4d1de970c378154d05f92b51be"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_cache.py": {
+      "bytes": 8284,
+      "sha256": "a13d80dda0a030935c9d9769f9e8b9148dbdcc27059267c3f39ee6862c58337e"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_contract.py": {
+      "bytes": 7538,
+      "sha256": "077e906dfac406e11f6a0753248df5e366c444d8e13bd97a218b8a5a1df33212"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_evidence.py": {
+      "bytes": 9090,
+      "sha256": "95f54e984ad5d35b5053e6c256c4d5d27118128615559ee4d4b38b466e84cf7a"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_incremental.py": {
+      "bytes": 4024,
+      "sha256": "d65c73a473243a4e9c0bc3222d6d3e6c59db377bb97ba8e602f7fef53847f9b9"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_model.py": {
+      "bytes": 11745,
+      "sha256": "2b8cdfbf9ad3a3b61da28d0ef2c7aaf6c53743f3f2844d1eec2f049f9673adf2"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_offline.py": {
+      "bytes": 7952,
+      "sha256": "735aa205a5a437da1f9a1cf76777e5fb5354b0440f326e393ef95a62ca7268c5"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_readback.py": {
+      "bytes": 5764,
+      "sha256": "3c564396d38814eb700e6fb20c3683f37b4b5b74c6998cd271c46bcbae88eea9"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_setup.py": {
+      "bytes": 10068,
+      "sha256": "8d40d7af95ae9f7f799e12974ff1753c9ced3e7f5d898d0ec1a4d23b7b28cd9f"
+    },
+    "MCP/CST-Lab/src/cst_lab/function_simulation.py": {
+      "bytes": 14344,
+      "sha256": "751f5d53d2bb0ec22d6dfeddf7da07b8aee92bda42514825a92faa7226b85121"
+    },
+    "MCP/CST-Lab/src/cst_lab/inventory.py": {
+      "bytes": 17611,
+      "sha256": "1775d097ad9cda3cf130504924785305ef684f5285409fc5929a296a264fb5ff"
+    },
+    "MCP/CST-Lab/src/cst_lab/jobs.py": {
+      "bytes": 16497,
+      "sha256": "78602e98b4ada088c89adba869200846b9adce9df0bc5410fc1a3a2453424e51"
+    },
+    "MCP/CST-Lab/src/cst_lab/operations.py": {
+      "bytes": 18902,
+      "sha256": "7e6e15ac2be9c3e58019d200f27e04b3955962b7a0beea91a0d2d7aaca589fb3"
+    },
+    "MCP/CST-Lab/src/cst_lab/paths.py": {
+      "bytes": 2142,
+      "sha256": "848bba36c2665fb5d6fdc0b9ccdc9150c85b88e7c2080f7aec8536edb4014c48"
+    },
+    "MCP/CST-Lab/src/cst_lab/project_package.py": {
+      "bytes": 12032,
+      "sha256": "1ba593fff9ad72d37b1eb5c44299a9e393219519e1737ff9d552cda5e0a651f5"
+    },
+    "MCP/CST-Lab/src/cst_lab/registry.py": {
+      "bytes": 34195,
+      "sha256": "a1b7dd4b6670a43c6c8e6d5f07dcf8dfc44c0daea2bc272a160393eae09080a3"
+    },
+    "MCP/CST-Lab/src/cst_lab/retention.py": {
+      "bytes": 15025,
+      "sha256": "d2695e66609fea8fa9a53870b7f2917ab168ba8a4368e36a3747bde056c01d48"
+    },
+    "MCP/CST-Lab/src/cst_lab/standing_authorization.py": {
+      "bytes": 3298,
+      "sha256": "0cbadecc29b9f0c093ce4492127f5431a3d060dda5cd9d931912184f392d9335"
+    },
+    "MCP/CST-Lab/src/cst_lab/topic_workspace.py": {
+      "bytes": 15394,
+      "sha256": "d306ea8b744654578ae5fab533bea08bc494a42e4c8a232a6120bf096e969c3e"
+    },
+    "MCP/CST-Lab/src/cst_lab/validation.py": {
+      "bytes": 1253,
+      "sha256": "a0aa19b6abbdd13713360181626ba331a239dda8d1b57d9ace5444abd9ee20eb"
+    },
+    "MCP/CST-Lab/src/cst_lab/workspace.py": {
+      "bytes": 2305,
+      "sha256": "bf6462973cb9af370c5181ee4cb4a947510c601988d6fd22c2078e8c7f51127a"
+    },
+    "MCP/CST-Lab/stdio_smoke.py": {
+      "bytes": 1548,
+      "sha256": "8ec9da2751841d327d7c3217d770767dadac52fe4021dbf319585d84e590b4b0"
+    },
+    "MCP/CST-Lab/tests/fixtures/public-contract-fixture/designs/filter-fixture/attempts/a01-test/attempt.json": {
+      "bytes": 2924,
+      "sha256": "3c915a815e25f5aa161bd11d487b93c8aac02031093f613aa4cdbe6d486d0424"
+    },
+    "MCP/CST-Lab/tests/fixtures/public-contract-fixture/designs/filter-fixture/attempts/a01-test/geometry-ir.json": {
+      "bytes": 11584,
+      "sha256": "97217edabeed9b33d07a22c70370c3c34804fe2eb4a0bc9f3a138fe8176fdc71"
+    },
+    "MCP/CST-Lab/tests/fixtures/public-contract-fixture/designs/filter-fixture/design.md": {
+      "bytes": 1261,
+      "sha256": "d2ff38fe73b3ed407b375e63125165e6b43320f505e922d5c92ee344dcce5c65"
+    },
+    "MCP/CST-Lab/tests/fixtures/public-contract-fixture/designs/filter-fixture/model.py": {
+      "bytes": 2961,
+      "sha256": "96d9fd438beaac57697f2df43f86b77393b5f74d5faa78df47167c35778524b7"
+    },
+    "MCP/CST-Lab/tests/fixtures/public-contract-fixture/notes.md": {
+      "bytes": 24,
+      "sha256": "fec11b908746d1086fefaa3a2ba30d101fb3e60f60975073ce562b8b0462416e"
+    },
+    "MCP/CST-Lab/tests/fixtures/public-contract-fixture/topic.md": {
+      "bytes": 335,
+      "sha256": "3e6cecb4ab3712dd377a908aef506a54b14cf1faab0264217f8b2aeabfa6df67"
+    },
+    "MCP/CST-Lab/tests/job_process.py": {
+      "bytes": 4033,
+      "sha256": "6d7e2d9897e4fdd3914e8808384ecede278959222a82ff3e5f155996ad0a127e"
+    },
+    "MCP/CST-Lab/tests/test_approval.py": {
+      "bytes": 5198,
+      "sha256": "9f1bc95a5dcb8d42362098fc761c57e4adb9645dcd023bc551de968c321c6f12"
+    },
+    "MCP/CST-Lab/tests/test_atomic_json.py": {
+      "bytes": 2351,
+      "sha256": "28a354ac6a0ac5a889dd7ba0f9457d2d286ee37ff542f4fb5365b6f909611f34"
+    },
+    "MCP/CST-Lab/tests/test_atomic_read.py": {
+      "bytes": 3474,
+      "sha256": "ad47c84cf749bf0efd9aeab8bfa4719799f6bebffbfca29cd6228c87abfe457c"
+    },
+    "MCP/CST-Lab/tests/test_contracts.py": {
+      "bytes": 36740,
+      "sha256": "27a06de5e58b35b64ee013cd4c6ba88116e126179f48b75f5016af600c662648"
+    },
+    "MCP/CST-Lab/tests/test_function_cache.py": {
+      "bytes": 5673,
+      "sha256": "18242e9d76099b1eb8fcaa84f620d7962612c89ba8a39a27fe8234c4590e5577"
+    },
+    "MCP/CST-Lab/tests/test_function_diagnostics.py": {
+      "bytes": 4103,
+      "sha256": "57ee56edffd0a4c40d3930796a830f5bf857212f6f6bfe5e0882d1d455cb8e07"
+    },
+    "MCP/CST-Lab/tests/test_function_evidence.py": {
+      "bytes": 3310,
+      "sha256": "9d63bfd440f0403a59654de62176270ba6bccc5d78e698b481c90d939366b15e"
+    },
+    "MCP/CST-Lab/tests/test_function_jobs.py": {
+      "bytes": 9397,
+      "sha256": "71cc4f0e0d974582ebd3e3bafa44c9c94ae6557edd9e4ea4194a343baf635f6c"
+    },
+    "MCP/CST-Lab/tests/test_function_model.py": {
+      "bytes": 11999,
+      "sha256": "a13a085a651da2113a62d9d8f42c0a44122ad9445a64fc7653b8ab488e395133"
+    },
+    "MCP/CST-Lab/tests/test_function_publication.py": {
+      "bytes": 5994,
+      "sha256": "72b96df0b375de8c225a4e082d6ed237b6c48e773d69fd8963552cbd470ccc15"
+    },
+    "MCP/CST-Lab/tests/test_function_setup.py": {
+      "bytes": 2667,
+      "sha256": "1bad1a42b5ed13f766f7acde0b010001414ab2d6fb3e1394120819db5bad9819"
+    },
+    "MCP/CST-Lab/tests/test_function_simulation.py": {
+      "bytes": 15839,
+      "sha256": "49328039a4f98b386233806df4dcaef811aa6c0db1c44d339e93f07a55a2059a"
+    },
+    "MCP/CST-Lab/tests/test_lab.py": {
+      "bytes": 7530,
+      "sha256": "9a6dab3702886c9ff40214e88f199f218c8a4ea066abb03e1a527cf824be3d21"
+    },
+    "MCP/CST-Lab/tests/test_phase_convention.py": {
+      "bytes": 1243,
+      "sha256": "36c899fd00aacfc3c2b4d9ed735be173457a3647210c5c7306e3c634caa1f47f"
+    },
+    "MCP/CST-Lab/tests/test_project_package.py": {
+      "bytes": 6095,
+      "sha256": "b3212f0e2ba0f0a4bc424acdcad9f591ce447a4f2bad014e166b002ee81a5eae"
+    },
+    "MCP/CST-Lab/tests/test_retention.py": {
+      "bytes": 33274,
+      "sha256": "037d6a44323331bb55d15c0381c041a501bbf0d78a8e135b7d5d202dfe2a8ff7"
+    },
+    "MCP/CST-Lab/tests/test_topic_integrity.py": {
+      "bytes": 3078,
+      "sha256": "bcfcfaaf6002ab61b86f7c0f4197f8d544c29f8fe84fce2b7f780ab8c1deeb0b"
+    },
+    "MCP/CST-Lab/tests/test_topic_workspace.py": {
+      "bytes": 6156,
+      "sha256": "6cc7d8cbcf6e4a8579f7f773f83193621246f73088ab86c3c0fb4cb2ac769ef0"
+    },
+    "MCP/CST-Lab/tools/make_attempt.py": {
+      "bytes": 3815,
+      "sha256": "4e31e1b951d62b3accf341418fd6773d0894810809a1d150de1fe86262ae0bb2"
+    },
+    "MCP/CST-Lab/tools/verify_contracts_live.py": {
+      "bytes": 17461,
+      "sha256": "aa078d972521c5bee64fecf078439a66fe6c9de8a0c651650cbf54ad05e748c2"
+    },
+    "MCP/CST-Lab/tools/verify_gates_offline.py": {
+      "bytes": 5162,
+      "sha256": "d2ad25835be374cacfc068f85062e498f96892341aaeb7c999eadfba895282f2"
+    },
+    "MCP/CST-Lab/tools/verify_mmr_synthesis.py": {
+      "bytes": 19072,
+      "sha256": "e18c0d8e5ef656e7f9a2273ba2ae7ef74dac41b2b6f4696787d180ee02d2988c"
+    },
+    "requirements-dev.txt": {
+      "bytes": 26,
+      "sha256": "75d1698af66f7b7de25944022068f294d3a60d71ecd7a0a7225c06831d59990a"
+    },
+    "requirements-lock.txt": {
+      "bytes": 1039,
+      "sha256": "af849468ab30b629edaa0953035f6175de1e3a039d7f04294dd0eb7a323e0978"
+    },
+    "scripts/cst-research.py": {
+      "bytes": 15318,
+      "sha256": "1a4641de9d755e721f8c5c542bb7c8fc258202905d9ae77d208926855ac7f61d"
+    },
+    "scripts/cst-task.py": {
+      "bytes": 2789,
+      "sha256": "ac9d015bd40b71d1bc758ad4021019045b931400841d50f49c129e598da7a56f"
+    },
+    "scripts/cstlab_data.py": {
+      "bytes": 11412,
+      "sha256": "f8ceaf14152a93dcec5d4d66148489eff973f77bc30ef4d7e71ff364e320c2c4"
+    },
+    "scripts/plot-review.py": {
+      "bytes": 2108,
+      "sha256": "d7f2d2f0bf5d334f04ba60ebac4d2076b48dd027b1344c245bce07d784bf6a9c"
+    },
+    "scripts/protocol-check.py": {
+      "bytes": 1845,
+      "sha256": "3441ca8d2f92ccf70d0562c65e098a810ef9fb8de6555ea58b77d8934806f37a"
+    },
+    "scripts/repair-function-learning.py": {
+      "bytes": 1382,
+      "sha256": "53404e78eb8de4f2afa6e22d0ae4b1597c302e73919a5d5d7f0dcc0d85ed857a"
+    },
+    "scripts/run-core-tests.py": {
+      "bytes": 1637,
+      "sha256": "753932df68619cf91c8f2454ec8df54eceabc271e1db003859d355113bf6f9f9"
+    },
+    "scripts/validation/prepare_resonator.py": {
+      "bytes": 751,
+      "sha256": "0a87f7c2f7017335f961f2f57bb1ee640258a6f8ee52566465d82101a5badb38"
+    },
+    "scripts/validation/prepare_visual_cases.py": {
+      "bytes": 2171,
+      "sha256": "0776a3a2ded6c956b274dbed57931e205c49b2686ccdc7e11fef50ab7c95faed"
+    },
+    "scripts/validation/public_contract_fixture.py": {
+      "bytes": 4727,
+      "sha256": "ed70cb0e6a977bb10555ff3f5766da165fa0225d57495421ec4848ef2e5aa33c"
+    },
+    "scripts/validation/sample_window.py": {
+      "bytes": 1219,
+      "sha256": "e4925c447fcd2113f36e6ef4345350d1f59935aed2ca3ac2a94a315d795f676c"
+    },
+    "scripts/validation/verify_brain_manifests.py": {
+      "bytes": 852,
+      "sha256": "0e03a6cddc87e67fed647cb2d64622fa123c97683832b66cb8584fb337fd300c"
+    },
+    "scripts/validation/verify_fourport_results.py": {
+      "bytes": 1226,
+      "sha256": "1c09780d4061dcaad2f14a9efe510bb3edd80f1f485fb29a4fa35c7377db72e6"
+    },
+    "scripts/validation/verify_resonator_physics.py": {
+      "bytes": 2803,
+      "sha256": "abf66b1007de53bd9929ff9779678fadecb428f2224b2e14fa2cc0e7f2045633"
+    },
+    "scripts/verify-live.py": {
+      "bytes": 7655,
+      "sha256": "6ce48e9084f8a0cab47d014ab08500770b289166bb26da20f0d6406fc92bb4ea"
+    },
+    "THIRD_PARTY_NOTICES": {
+      "bytes": 1132,
+      "sha256": "91c438fc04373cf40f1b9e515e5093f60e8cf2b82923994753ae6aa77c915158"
+    }
+  }
+}

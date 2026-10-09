@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.cst-automation/schemas/trace-event.schema.json",
+  "title": "CST trace event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "trace_id",
+    "sequence",
+    "timestamp",
+    "stage",
+    "actor",
+    "tool",
+    "status"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "trace_id": {"type": "string", "minLength": 1},
+    "sequence": {"type": "integer", "minimum": 1},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "stage": {
+      "enum": [
+        "environment",
+        "session",
+        "inspection",
+        "modeling",
+        "simulation",
+        "results",
+        "optimization",
+        "audit"
+      ]
+    },
+    "actor": {"type": "string"},
+    "tool": {"type": "string"},
+    "args_redacted": {"type": "object"},
+    "parameter_delta": {"type": "object"},
+    "observation": {"type": "string"},
+    "decision": {"type": "string"},
+    "rationale_summary": {"type": "string"},
+    "evidence_paths": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "status": {
+      "enum": ["started", "success", "error", "blocked", "partial"]
+    },
+    "latency_ms": {"type": "number", "minimum": 0},
+    "error": {"type": ["object", "null"]}
+  },
+  "additionalProperties": true,
+  "x-superseded-by": "iteration.schema.json",
+  "x-supersession-note": "Superseded by the four contracts of the topic-driven architecture. Still present because its writer is still live; the file is removed together with the code that produces it, not before, so the running plane does not break in between."
+}
+

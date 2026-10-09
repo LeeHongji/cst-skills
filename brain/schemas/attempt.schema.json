@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/attempt.schema.json",
+  "title": "Attempt contract (attempt.json)",
+  "description": "An attempt binds exact audit evidence, topology and parameter ranges. Approval can follow individual human review or an explicit, scoped standing user authorization. Delegated approval does not attest that the human personally viewed the artifact. Changed evidence, topology or out-of-range parameters invalidate the binding before CST is touched.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "attempt_id",
+    "design_id",
+    "topic_id",
+    "topology_hash",
+    "baseline_parameters",
+    "approved_ranges",
+    "max_iterations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "design_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "topic_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "topology_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 of the geometry IR with dimensions dropped and expressions kept (cst_cad.ir.topology_hash). The iteration loop refuses to continue when the rebuilt IR hashes differently, because the approval was granted for a different structure."
+    },
+    "model_intent_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Identity of the exact IR that was audited. Recorded for provenance; it changes on every parameter move and is deliberately not what the approval is bound to."
+    },
+    "baseline_parameters": {
+      "type": "object",
+      "description": "Parameter values as audited. Approved ranges default to +/-20 percent of these.",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "approved_ranges": {
+      "type": "object",
+      "description": "Per-parameter [low, high] bounds a value may take without a fresh audit. Only parameters listed here may be moved by the loop; anything else is refused, so forgetting to approve a parameter fails closed.",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "number"
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "description": "Absent until an artifact-bound approval is recorded through human confirmation or an explicit active user delegation. An attempt without this cannot run.",
+      "required": [
+        "approved_by",
+        "approved_at",
+        "topology_hash",
+        "audit_html"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "approved_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "topology_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "Repeated inside the approval record so that editing the attempt's topology_hash without re-approving is detectable rather than silent."
+        },
+        "audit_html": {
+          "type": "string",
+          "description": "Path to the exact audit evidence bound to this approval; delegated approval does not assert personal viewing."
+        },
+        "drc_status": {
+          "enum": [
+            "pass",
+            "warn"
+          ]
+        },
+        "comment": {
+          "type": "string"
+        },
+        "audit_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "metadata_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "audit_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "Signed immutable model-audit revision manifest. Absent for legacy root-file reviews."
+        },
+        "baseline_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "model_intent_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "confirmation_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "signature": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "approved_ranges": {
+          "type": "object",
+          "description": "Per-parameter [low, high] bounds a value may take without a fresh audit. Only parameters listed here may be moved by the loop; anything else is refused, so forgetting to approve a parameter fails closed.",
+          "additionalProperties": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "channel": {
+          "enum": [
+            "mcp-elicitation",
+            "local-operator-console",
+            "standing-user-authorization"
+          ]
+        },
+        "human_reviewed": { "type": "boolean" },
+        "authorization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["schema_version", "kind", "workspace_root", "topic_id", "approved_by", "statement", "source", "recorded_at", "signature"],
+          "properties": {
+            "schema_version": { "const": 1 },
+            "kind": { "const": "standing-user-authorization" },
+            "workspace_root": { "type": "string", "minLength": 1 },
+            "topic_id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "approved_by": { "type": "string", "minLength": 1 },
+            "statement": { "type": "string", "minLength": 1 },
+            "source": { "type": "string", "minLength": 1 },
+            "recorded_at": { "type": "string", "format": "date-time" },
+            "signature": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        }
+      },
+      "allOf": [{
+        "if": { "required": ["channel"], "properties": { "channel": { "const": "standing-user-authorization" } } },
+        "then": { "required": ["authorization", "human_reviewed"], "properties": { "human_reviewed": { "const": false } } },
+        "else": { "not": { "required": ["authorization"] } }
+      }]
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Interpretation decisions this attempt rests on, carried over from the IR's assumption and strong_inference parameters. These are what the human is really approving.",
+      "items": {
+        "type": "object",
+        "required": [
+          "parameter",
+          "provenance",
+          "statement"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "parameter": {
+            "type": "string"
+          },
+          "provenance": {
+            "enum": [
+              "paper_explicit",
+              "strong_inference",
+              "assumption",
+              "synthesized",
+              "optimized"
+            ]
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "max_iterations": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Hard stop. Reaching it ends the attempt rather than prompting for more budget: the historical failure mode was runs that lost direction and were never closed, not runs that were stopped too early."
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "awaiting_approval",
+        "running",
+        "met",
+        "exhausted",
+        "abandoned"
+      ],
+      "default": "draft"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

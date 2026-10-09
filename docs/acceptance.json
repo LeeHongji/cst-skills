@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0",
+  "date": "2026-10-09",
+  "delivery_status": "awaiting-user-acceptance",
+  "release_sha256": "f021c600abd32bb0a5886ccd7010ab24baaaeb5629624540d642fb82c21cb407",
+  "runtime_files": 302,
+  "regression": [
+    {
+      "suite": "CST",
+      "passed": 293
+    },
+    {
+      "suite": "CST-Lab",
+      "passed": 345
+    },
+    {
+      "suite": "CST-CAD",
+      "passed": 121
+    },
+    {
+      "suite": "CST-Brain",
+      "passed": 9
+    },
+    {
+      "suite": "distribution",
+      "passed": 21
+    }
+  ],
+  "total_passed": 789,
+  "skills_cli_version": "1.7.1",
+  "skills_discovered": 10,
+  "copy_install_agents": [
+    "codex",
+    "claude-code"
+  ],
+  "source_preservation": {
+    "status": "pass",
+    "hashes_verified": 614
+  },
+  "standalone_install": "pass",
+  "unicode_and_space_paths": "pass",
+  "repeat_initialization": "pass",
+  "configured_stdio_protocol": "pass-for-both-client-configurations",
+  "execution_tools": [
+    "cst_run",
+    "cst_get",
+    "cst_approve"
+  ],
+  "brain_tools": 12,
+  "native_case": {
+    "status": "pass",
+    "cst_version": "2026.2",
+    "executor_sha256": "746d970984239d71ad2a398f13b0c5029e3e43b19f5ff79ac0bdd2410b78d587",
+    "native_test_archive_sha256": "faead57f2fb73380978dec0819cbf1949510232ed1cccbb18edb854e77a941a0",
+    "final_archive_binding": "Native executor source bytes match final release; subsequent changes are public test fixtures/provenance and Skill reference adaptations",
+    "approval_basis": "Explicit new human reply, recorded through scoped signed delegation; no client-elicitation claim",
+    "jobs": [
+      {
+        "role": "baseline",
+        "job": "job://115198cf80073477d40b7e3292dc11f18f9b59f1d0a74fc580bf085d1fa64589/860305687abc597fe7e57d34e75da4e1",
+        "fidelity": "screen",
+        "cache_hit": false,
+        "acceptance": {
+          "gates": [
+            {
+              "gate": "s2_1_db every point in [0.1, 1.5] GHz > -1",
+              "id": "passband",
+              "measured": -0.06565873896613433,
+              "metric": "s2_1_db",
+              "samples_in_band": 195,
+              "severity": "required",
+              "status": "pass",
+              "threshold": -1.0,
+              "worst_frequency_ghz": 0.648
+            },
+            {
+              "gate": "s2_1_db every point in [3.6, 4.2] GHz < -10",
+              "id": "stopband",
+              "measured": -18.032584558721965,
+              "metric": "s2_1_db",
+              "samples_in_band": 84,
+              "severity": "required",
+              "status": "pass",
+              "threshold": -10.0,
+              "worst_frequency_ghz": 3.6
+            }
+          ],
+          "status": "pass"
+        },
+        "learning_status": "published",
+        "evidence_manifest_sha256": "62cbbd0be199f9f472d33d06512fe9a1645abb2cd96a9e02b0f55c896957b133"
+      },
+      {
+        "role": "variation",
+        "job": "job://115198cf80073477d40b7e3292dc11f18f9b59f1d0a74fc580bf085d1fa64589/913ba0cc7b2a6ad080e1c0c888b4873e",
+        "fidelity": "screen",
+        "cache_hit": false,
+        "acceptance": {
+          "gates": [
+            {
+              "gate": "s2_1_db every point in [0.1, 1.5] GHz > -1",
+              "id": "passband",
+              "measured": -0.07129229369522443,
+              "metric": "s2_1_db",
+              "samples_in_band": 195,
+              "severity": "required",
+              "status": "pass",
+              "threshold": -1.0,
+              "worst_frequency_ghz": 0.6048
+            },
+            {
+              "gate": "s2_1_db every point in [3.6, 4.2] GHz < -10",
+              "id": "stopband",
+              "measured": -18.019169420575125,
+              "metric": "s2_1_db",
+              "samples_in_band": 84,
+              "severity": "required",
+              "status": "pass",
+              "threshold": -10.0,
+              "worst_frequency_ghz": 3.6
+            }
+          ],
+          "status": "pass"
+        },
+        "learning_status": "published",
+        "evidence_manifest_sha256": "48fcff0e552d8ec3b4d88fdfadd2558db96fb280ffa16a3991f721defc6f6959"
+      },
+      {
+        "role": "confirmation",
+        "job": "job://115198cf80073477d40b7e3292dc11f18f9b59f1d0a74fc580bf085d1fa64589/a3247e6f18efea24ef034b86f69f3f41",
+        "fidelity": "confirm",
+        "cache_hit": false,
+        "acceptance": {
+          "gates": [
+            {
+              "gate": "s2_1_db every point in [0.1, 1.5] GHz > -1",
+              "id": "passband",
+              "measured": -0.07129229369522443,
+              "metric": "s2_1_db",
+              "samples_in_band": 195,
+              "severity": "required",
+              "status": "pass",
+              "threshold": -1.0,
+              "worst_frequency_ghz": 0.6048
+            },
+            {
+              "gate": "s2_1_db every point in [3.6, 4.2] GHz < -10",
+              "id": "stopband",
+              "measured": -18.019169420575125,
+              "metric": "s2_1_db",
+              "samples_in_band": 84,
+              "severity": "required",
+              "status": "pass",
+              "threshold": -10.0,
+              "worst_frequency_ghz": 3.6
+            }
+          ],
+          "status": "pass"
+        },
+        "learning_status": "published",
+        "evidence_manifest_sha256": "213b45eeeaab24cb0e4f8c28ef8d4fe5b7e468c48a90f50f222687000619fa7f"
+      },
+      {
+        "role": "cache",
+        "job": "job://115198cf80073477d40b7e3292dc11f18f9b59f1d0a74fc580bf085d1fa64589/3c15dc46d422c44c2a722a2115aa015f",
+        "fidelity": "screen",
+        "cache_hit": true,
+        "acceptance": {
+          "gates": [
+            {
+              "gate": "s2_1_db every point in [0.1, 1.5] GHz > -1",
+              "id": "passband",
+              "measured": -0.07129229369522443,
+              "metric": "s2_1_db",
+              "samples_in_band": 195,
+              "severity": "required",
+              "status": "pass",
+              "threshold": -1.0,
+              "worst_frequency_ghz": 0.6048
+            },
+            {
+              "gate": "s2_1_db every point in [3.6, 4.2] GHz < -10",
+              "id": "stopband",
+              "measured": -18.019169420575125,
+              "metric": "s2_1_db",
+              "samples_in_band": 84,
+              "severity": "required",
+              "status": "pass",
+              "threshold": -10.0,
+              "worst_frequency_ghz": 3.6
+            }
+          ],
+          "status": "pass"
+        },
+        "learning_status": "published",
+        "evidence_manifest_sha256": "e8c198d2c41be171b68616eaf1ec0a6d3b7e744bc766ce5900644646af1b33cb"
+      }
+    ],
+    "comparison": [
+      "job://115198cf80073477d40b7e3292dc11f18f9b59f1d0a74fc580bf085d1fa64589/c48b12d32f9f39207fc4d74b3ae45e7f"
+    ],
+    "unapproved_refusal": "pass",
+    "out_of_range_refusal": "pass",
+    "idempotent_requests": "pass",
+    "cache_is_new_solve": false,
+    "failed_job_evidence_and_learning": "pass",
+    "initial_failure": "Repeated CST save failed before solver; exact owned-copy save with allow_overwrite=True fixed and retested",
+    "lock_conflict": "covered by isolated core regression, not a hardware concurrency experiment"
+  },
+  "pending": [
+    "User final acceptance",
+    "Codex project trust/reload and actual client tool/approval interaction",
+    "Claude Code not installed: actual client load and human elicitation",
+    "Remote CI execution and public repository publication"
+  ],
+  "scope_limit": "Specific two-port TD/Hex lowpass case; not all CST solvers, Eigenmode/field/far-field or arbitrary model adapters"
+}

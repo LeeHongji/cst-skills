@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.env
+.codex/config.toml
+.mcp.json
+verification/local/
+dist/
+build/
+node_modules/
+reports/
+verification workspace/
+cst_runs/
+runtime/
+system/
+projects/
+output/
+tmp/

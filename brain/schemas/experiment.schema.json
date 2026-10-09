@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/experiment.schema.json",
+  "title": "CST Experiment Specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "title", "project_revision_id", "hypothesis", "parameters", "objectives", "constraints", "fidelity_plan", "evaluation_budget", "approval_policy", "stop_conditions"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "title": {"type": "string", "minLength": 1},
+    "project_revision_id": {"type": "string", "pattern": "^revision-[a-f0-9]{12}$"},
+    "hypothesis": {"type": "string", "minLength": 1},
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "kind"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["continuous", "integer", "categorical", "fixed"]},
+          "low": {"type": "number"},
+          "high": {"type": "number"},
+          "step": {"type": "number", "exclusiveMinimum": 0},
+          "choices": {"type": "array", "minItems": 1},
+          "value": {},
+          "unit": {"type": "string"}
+        }
+      }
+    },
+    "objectives": {"type": "array", "minItems": 1, "items": {"$ref": "metric-definition.schema.json"}},
+    "constraints": {"type": "array", "items": {"$ref": "metric-definition.schema.json"}},
+    "fidelity_plan": {
+      "type": "object",
+      "required": ["stages"],
+      "properties": {
+        "stages": {"type": "array", "minItems": 1, "items": {"type": "object"}}
+      },
+      "additionalProperties": true
+    },
+    "evaluation_budget": {
+      "type": "object",
+      "required": ["max_trials"],
+      "properties": {
+        "max_trials": {"type": "integer", "minimum": 1},
+        "max_solver_minutes": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "approval_policy": {
+      "type": "object",
+      "required": ["before_solver", "before_source_change"],
+      "properties": {
+        "before_solver": {"type": "boolean"},
+        "before_source_change": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "stop_conditions": {"type": "array", "items": {"type": "object"}},
+    "tags": {"type": "array", "items": {"type": "string"}}
+  },
+  "x-superseded-by": "design.schema.json + attempt.schema.json",
+  "x-supersession-note": "Superseded by the four contracts of the topic-driven architecture. Still present because its writer is still live; the file is removed together with the code that produces it, not before, so the running plane does not break in between."
+}
+

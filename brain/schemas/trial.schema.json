@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cst-automation.local/schemas/trial.schema.json",
+  "title": "CST Experiment Trial",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "trial_id", "experiment_id", "sequence", "status", "parameters", "created_at", "updated_at"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "trial_id": {"type": "string", "pattern": "^trial-[a-z0-9-]+$"},
+    "experiment_id": {"type": "string", "pattern": "^experiment-[a-z0-9-]+$"},
+    "sequence": {"type": "integer", "minimum": 0},
+    "status": {"enum": ["planned", "queued", "running", "validating", "completed", "failed", "invalid", "partial", "pruned", "cancelled"]},
+    "parameters": {"type": "object"},
+    "objectives": {"type": ["object", "null"]},
+    "constraints": {"type": ["object", "null"]},
+    "error": {"type": ["object", "null"]},
+    "run_path": {"type": ["string", "null"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  },
+  "x-superseded-by": "iteration.schema.json",
+  "x-supersession-note": "Superseded by the four contracts of the topic-driven architecture. Still present because its writer is still live; the file is removed together with the code that produces it, not before, so the running plane does not break in between."
+}
+

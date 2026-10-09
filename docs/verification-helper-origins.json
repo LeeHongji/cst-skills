@@ -1,0 +1,47 @@
+[
+  {
+    "path": "scripts/validation/prepare_resonator.py",
+    "source_sha256": "ba344cb0366ccda5e631664f2898cdb0aebefc0560f9bc2ca0a6c6c0684ade94",
+    "retained_functions": [
+      "analytic"
+    ]
+  },
+  {
+    "path": "scripts/validation/verify_resonator_physics.py",
+    "source_sha256": "b8c8a81294d8b01ee21ec89085eb00e960dd29ab69554de30f31393ac6867dd6",
+    "retained_functions": [
+      "notch",
+      "compare"
+    ]
+  },
+  {
+    "path": "scripts/validation/verify_fourport_results.py",
+    "source_sha256": "6dfa4c6291daa476a1c5869649e09f5e6f5cf52870bf10a70938df1c3965acfa",
+    "retained_functions": [
+      "crosscheck_csv"
+    ]
+  },
+  {
+    "path": "scripts/validation/verify_brain_manifests.py",
+    "source_sha256": "c3f88553f2e09a4e33453cd70b8ed5a68073e2dac913e7905f1985b53e5ff2da",
+    "retained_functions": [
+      "validate"
+    ]
+  },
+  {
+    "path": "scripts/validation/prepare_visual_cases.py",
+    "source_sha256": "23208cae10a576e0780ad4f909f09c6423b7965489478fa226c07acf8be797f9",
+    "retained_functions": [
+      "primitives",
+      "multilayer",
+      "failed_spacing"
+    ]
+  },
+  {
+    "path": "scripts/validation/sample_window.py",
+    "source_sha256": "0db9f198e1f9e9d9f3898921d5bb1935bccaabf8e61cf2b7e3c882a9ef856199",
+    "retained_functions": [
+      "sample_window"
+    ]
+  }
+]
